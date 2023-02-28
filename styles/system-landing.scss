@@ -1,0 +1,110 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.system-landing-block {
+
+	background-color: $overlay;
+	color: $gray05;
+	padding: 1rem;
+	margin-top: 1rem;
+
+	ul {
+		@include cleanlist;
+		margin: 0;
+	}
+
+	li {
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		a {
+			display: block;
+			background-color: $light_blue;
+			padding: 1rem;
+			border-radius: .4rem;
+			font-weight: bold;
+			color: $gray85;
+			position: relative;
+			overflow: visible;
+			transition: color, background-color, font-size, 0.2s ease;
+			&:hover {
+				background-color: $blue;
+				color: $gray05;
+			}
+			span.badge {
+				display: inline-block;
+				background-color: #000;
+				border-radius: 50%;
+				font-size: 1em;
+				font-weight: bold;
+				height: 2em;
+				width: 2em;
+				line-height: 2em;
+				letter-spacing: normal;
+				position: absolute;
+				top: -.5em;
+				right: -.5em;
+				text-shadow: none;
+				text-align: center;
+				@include emboss;
+				&.pending {
+					background-color: $yellow;
+					color: $gray85;
+				}
+			}
+		}
+	}
+
+	@media #{$small} {
+
+		border-radius: .6rem;
+		padding: 1rem 0 0 1rem;
+
+		ul {
+			display: flex;
+			flex-flow: row wrap;
+		}
+
+		li {
+			flex: 0 0 calc(50% - 1rem);
+			margin: 0 1rem 1rem 0;
+		}
+
+	}
+
+	@media #{$large} {
+
+		&.entities {
+
+			li {
+				flex: 0 0 calc(20% - 1rem);
+				margin-bottom: 1rem;
+			}
+
+		}
+
+	}
+
+	@media #{$xlarge} {
+
+		li a {
+			font-size: 1.2em;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

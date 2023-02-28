@@ -1,0 +1,41 @@
+.shade {
+  z-index: 10000;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+.shade .dialog {
+  margin: 0 auto;
+  max-width: 30em;
+  border-radius: 0.6em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 100%;
+  padding: 1em;
+  text-align: left;
+}
+.shade .dialog header {
+  background-color: #d7cab4;
+  height: 3.5em;
+  margin: -1em -1em 2em -1em;
+  padding: 1em 1em 0.5em 1em;
+  border-radius: 0.6em 0.6em 0 0;
+}
+.shade .dialog header h2 {
+  height: 2em;
+  width: 2em;
+  border-radius: 1em;
+  line-height: 2em;
+  text-align: center;
+  color: #fff;
+  background-color: #223D5B;
+}

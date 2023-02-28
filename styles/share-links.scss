@@ -1,0 +1,196 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+// Share Links
+
+.share-links	{
+
+	position: absolute;
+	z-index: 11;
+	top: 0;
+	right: 0;
+	font-size: .8em;
+	height: 5em;
+	width: 5em;
+	overflow: hidden;
+	transition: width 0.2s ease-in;
+	&.open	{
+		width: 18.5em;
+	}
+
+	h4	{
+		background-color: $light_blue;
+		color: #fff !important;
+		font-size: .8em;
+		text-align: right;
+		text-transform: uppercase;
+		padding: 4.8em 4em .5em;
+		position: absolute;
+		top: -2.65em;
+		left: -.175em;
+		transform: rotate(45deg);
+		transition: background-color 0.2s ease;
+		&:hover	{
+			cursor: pointer;
+			background-color: $light_blue;
+		}
+		&:after {
+			content: "+";
+			display: block;
+			height: 1em;
+			font-size: 1.6em;
+			width: 100%;
+			text-align: center;
+			transform: rotate(-45deg);
+			position: absolute;
+			top: 2em;
+			left: 0;
+		}
+	}
+	&.open h4	{
+		background-color: $light_blue;
+	}
+
+	ul	{
+
+		@include cleanlist;
+		margin: 0;
+		position: absolute;
+		top: 0;
+		left: 5em;
+		height: 5em;
+		padding: 1em;
+		width: 15em;
+		background: $light_blue;
+
+		li {
+		
+			display: inline-block;
+			position: relative;
+			margin-right: 1em;
+
+			&:last-child	{
+				margin-right: 0;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: .1em;
+				left: .1em;
+				display: block;
+				height: 2.8em;
+				width: 2.8em;
+				background-color: transparent;
+				border-radius: 50%;
+				z-index: 0;
+				transition: background-color 0.2s ease;
+			}
+
+			&:hover:after {
+				background-color: $navy;
+			}
+		
+			a {
+				
+				display: inline-block;
+				@include ir;
+				position: relative;
+				height: 3em;
+				width: 3em;
+				background-size: contain;
+				background-repeat: no-repeat;
+				z-index: 10;
+				text-decoration: none;
+				border-bottom: none;
+
+				&.facebook	{
+					background-image: url(../public/img/facebook-share.svg);
+					.lt-ie9 &	{
+						background-image: url(../public/img/facebook-share.png);
+					}
+				}
+				&.twitter	{
+					background-image: url(../public/img/twitter-share.svg);
+					.lt-ie9 &	{
+						background-image: url(../public/img/twitter-share.png);
+					}
+				}
+				&.email	{
+					background-image: url(../public/img/email-share.svg);
+					.lt-ie9 &	{
+						background-image: url(../public/img/twitter-share.png);
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+// Bottom Share Link
+
+.share-links:last-child	{
+
+	position: relative;
+	margin: 1rem -1rem -1rem;
+	padding: 0 2em;
+	width: auto;
+	height: 2em;
+	background-color: $overlay;
+	font-size: 1.4em;
+	transition: background-color, height, 0.2s ease-in-out;
+	.classic & {
+		background-color: $gray30;
+	}
+	&:hover	{
+		background-color: $light_blue;
+	}
+	&.open	{
+		height: 5em;
+		background-color: $light_blue;
+	}
+
+	h4	{
+		transform: none;
+		position: relative;
+		text-align: left;
+		top: 0;
+		left: 0;
+		padding: .6em 2em 0;
+		margin: 0 -2em;
+		background-color: transparent;
+		&:after {
+			display: none;
+		}
+	}
+
+	ul	{
+		position: relative;
+		display: inline-block;
+		top: 0;
+		left: 0;
+		padding: .6em 0;
+		background-color: transparent;
+
+		li {
+
+			&:after {
+				height: 1.8em;
+				width: 1.8em;
+			}
+
+			a {
+				height: 2em;
+				width: 2em;
+			}
+
+		}
+
+	}
+
+}

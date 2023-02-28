@@ -1,0 +1,167 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.search-header {
+
+	color: #fff;
+	background-color: $overlay;
+	margin-bottom: 1rem;
+
+	.article-list & {
+		background-color: $light_blue;
+		padding-top: .25rem;
+		.search-search-widget {
+			padding-top: 0;
+		}
+	}
+
+	h2 {
+		display: none;
+	}
+
+	ul {
+		@include cleanlist;
+		padding: 0;
+		margin: 0;
+		height: 0;
+		overflow: hidden;
+		&.open {
+			height: auto;
+			padding: .25rem 1rem .75rem;
+		}
+	}
+
+	li {
+
+		display: inline;
+
+		a {
+			margin: 0 .5rem .5rem 0;
+			padding: .25rem .5rem;
+			border-radius: .3rem;
+			display: inline-block;
+			white-space: nowrap;
+			background-color: $blue;
+			color: #fff;
+			font-weight: bold;
+			&.selected {
+				background-color: $donatemiles;
+			}
+		}
+
+	}
+
+	form {
+		position: relative;
+	}
+
+	input[type=search]	{
+		display: inline-block;
+		line-height: 2.6em;
+		height: 2.6em;
+		padding: 0 2.6em 0 1em;
+		width: 100%;
+		margin: 0;
+	}
+	
+	input[type=submit]	{
+		display: inline-block;
+		background-color: $navy;
+		color: #fff;
+		border: none;
+		border-radius: .3em;
+		padding: 0 .4em;
+		text-indent: .1em;
+		height: 2.6em;
+		font-size: .8em;
+		font-weight: bold;
+		text-transform: uppercase;
+		line-height: 0;
+		position: absolute;
+		top: .3375em;
+		right: .325em;
+		transition: background-color 0.2s ease-in-out;
+		&:hover	{
+			background-color: $light_blue;
+		}
+	}
+
+	.topics-toggle	{
+		
+		display: block;
+		padding: .5rem 1rem;
+		color: #fff;
+		transition: color 0.2s ease, background-color 0.2s ease, padding, 0.2s ease;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			height: 1em;
+			width: 1em;
+			margin-right: .5em;
+			background-image: url(../public/img/cross.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			position: relative;
+			top: .1em;
+		}
+
+		&.open:before {
+			background-image: url(../public/img/cross.svg);
+		}
+
+		&:hover, &.open	{
+			color: #fff;
+			cursor: pointer;
+			border-bottom: none;
+		}
+
+	}
+
+	.search-widget {
+		padding: 1rem;
+	}
+
+}
+
+@media #{$small} {
+
+
+
+}
+
+@media #{$med} {
+
+	.search-header {
+
+		.topics-toggle {
+			padding: 1rem 1rem .5rem;
+		}
+
+		ul.open {
+			padding-bottom: 0;
+		}
+
+	}
+
+}
+
+@media #{$large} {
+
+
+
+}
+
+@media #{$xlarge} {
+
+	.search-header {
+		margin-bottom: 2rem;
+		.article-list & {
+			margin-bottom: 0;
+			padding: 1rem;
+		}
+	}
+
+}

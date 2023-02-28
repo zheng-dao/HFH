@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "api": {
+      "hotelsforheroes": ["Query"]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "minidev"
+    }
+  ],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "mailchimpApiKey",
+      "environmentVariableName": "MAILCHIMP_API_KEY"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.events-browser {
+  background-color: #fff;
+  padding: 0;
+  border-bottom: 0.6em solid #F4C182;
+  text-align: left;
+}
+.sidebar .events-browser {
+  margin-bottom: 1rem;
+}
+.events-browser h2 {
+  padding: 1rem;
+  margin: 0;
+  color: #333333;
+  border-bottom: 1px solid #d9d9d9;
+}
+.events-browser h2:before {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  margin-right: 0.5em;
+  position: relative;
+  top: 0.075em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-image: url(../public/img/calendar-dark.svg);
+}
+.events-browser ul.events {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  padding: 0;
+}
+.events-browser ul.events li {
+  border-bottom: 1px solid #d9d9d9;
+}
+.events-browser ul.events li:last-child {
+  border-bottom: none;
+}
+.events-browser ul.events li.more {
+  text-transform: uppercase;
+  padding: 0;
+}
+.events-browser ul.events li.more a {
+  display: block;
+  line-height: 3.5em;
+  font-size: 1em;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-align: center;
+  width: 100%;
+  color: #999999;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.events-browser ul.events li.more a:hover {
+  background-color: #6699cc;
+  color: #fff;
+}
+.events-browser .event {
+  display: block;
+  color: #333333;
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+}
+.events-browser .event:hover {
+  background-color: #f2f2f2;
+}
+.events-browser .event.foundation h3 span:after {
+  content: "FOUNDATION";
+  font-size: 0.7em;
+  line-height: 2em;
+  display: inline-block;
+  margin-left: 0.8em;
+  padding: 0 0.8em;
+  border-radius: 0.3em;
+  color: #fff;
+  background-color: #EE3124;
+  font-weight: normal;
+  position: relative;
+  top: -0.2em;
+}
+.events-browser .event .date {
+  font-size: 0.65em;
+  font-weight: normal;
+  display: block;
+  color: #999999;
+}
+.events-browser .event h3 {
+  margin-bottom: 0.25em;
+}
+.events-browser .event p {
+  font-family: "ff-tisa-web-pro", "Georgia", "Times", serif;
+  color: #666666;
+  margin: 0;
+}
+
+@media screen and (min-width: 65rem) {
+  .sidebar .events-browser {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .events-browser {
+    font-size: 1.25em;
+  }
+}

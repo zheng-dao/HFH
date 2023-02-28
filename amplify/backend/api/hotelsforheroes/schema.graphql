@@ -1,0 +1,744 @@
+type Subscription {
+  onCreateNoteByApplicationId(applicationID: ID): Note @aws_subscribe(mutations: ["createNote"])
+}
+
+enum GROUPSTATUS {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+type Group
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: groups, groups: ["Liaisons"], operations: [create, read, update] }
+      { allow: private, operations: [read] }
+      { allow: private, operations: [read], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  name: String!
+  status: GROUPSTATUS!
+  creator: User @hasOne
+}
+
+enum NOTEACTION {
+  NEW_APPLICATION
+  REQUEST_INITIAL_STAY
+  REQUEST_EXCEPTION
+  REQUEST_EXTENDED_STAY
+  COMPLETE_INITIAL_STAY
+  COMPLETE_EXTENDED_STAY
+  CHANGE_MANAGER
+  ADD_NOTE
+  REQUEST
+  RETURN
+  DECLINE
+  APPROVE
+  COMPLETE
+  REVIEWED
+  UNREVIEWED
+  CLOSE
+  CHANGE_ADMIN
+  CHANGE_DATA
+  REGRESS
+  APPROVE_EXTENDED_STAY
+  REGRESS_EXTENDED_STAY
+  ADD_GROUP
+  REMOVE_GROUP
+}
+
+enum ROOMFEATURES {
+  HEARINGACCESSIBLE
+  ROLLINSHOWER
+  NEARANELEVATOR
+  MOBILITYACCESSIBLE
+  LOWERFLOOR
+}
+
+enum AFFILIATIONSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+}
+
+enum AFFILIATIONTYPE {
+  FISHERHOUSE
+  MEDICALCENTER
+  BASE
+  ORGANIZATION
+}
+
+"""
+Affiliations are what group users together. Affiliations are one of 4 types (Fisher House, Medical Center, Base, or Organization).
+
+Affiliations can be created or read by any logged in user but only Administrators can update or delete.
+"""
+type Affiliation
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: private, operations: [read] }
+      { allow: private, operations: [create, read, update], provider: iam }
+      { allow: owner, operations: [create, read, update, delete] }
+    ]
+  )
+  @searchable {
+  id: ID!
+  name: String @default(value: "")
+  type: AFFILIATIONTYPE!
+  status: AFFILIATIONSTATUS!
+  display_name: String
+  address: String
+  address_2: String
+  city: String
+  state: String
+  zip: String
+  branch: BRANCHESOFSERVICE
+  AssociatedAffiliation: Affiliation @hasOne
+}
+
+enum APPLICATIONSTATUS {
+  REQUESTED
+  EXCEPTION
+  APPROVED
+  COMPLETED
+  DRAFT
+  RETURNED
+  DECLINED
+  REVIEWED
+  CLOSED
+}
+
+enum READSTATUS {
+  READ
+  UNREAD
+}
+
+"""
+Notes are messages left on an Application about actions that happen or other comments from parties.
+"""
+type Note
+  @model
+  @auth(
+    rules: [
+      { allow: private, operations: [create, read] }
+      { allow: private, operations: [read], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  message: String!
+  timestamp: AWSDateTime!
+  remote_address: AWSIPAddress!
+  noteApplicationId: ID!
+    @index(
+      name: "byApplication"
+      sortKeyFields: ["timestamp"]
+      queryField: "listNotesByApplicationAndTimestamp"
+    )
+  Application: Application! @belongsTo(fields: ["noteApplicationId"])
+  User: User! @hasOne
+  action: NOTEACTION
+}
+
+enum STAYSTATUS {
+  DRAFT
+  RETURNED
+  REQUESTED
+  EXCEPTION
+  APPROVED
+  DECLINED
+  COMPLETED
+  REVIEWED
+  CLOSED
+}
+
+enum GUESTTYPE {
+  PRIMARY
+  ADDITIONAL
+}
+
+enum ROOMTYPE {
+  KING1
+  QUEEN2
+  DOUBLE2
+  OTHER
+}
+
+enum SERVICEMEMBERSTATUS {
+  ACTIVEDUTY
+  RESERVE
+  NATIONALGUARD
+  VETERAN
+}
+
+enum BRANCHESOFSERVICE {
+  AIRFORCE
+  COASTGUARD
+  NAVY
+  ARMY
+  MARINES
+}
+
+type ServiceMember
+  @model
+  @auth(rules: [{ allow: private }, { allow: private, operations: [read], provider: iam }])
+  @searchable {
+  id: ID!
+  first_name: String
+  middle_initial: String
+  last_name: String
+  email: String
+  telephone: String
+  extension: String
+  branch_of_service: BRANCHESOFSERVICE
+  current_status: SERVICEMEMBERSTATUS
+  on_military_travel_orders: Boolean
+  other_patient: Boolean
+  lodging_explanation: String
+  unidentified_explanation: String
+  BaseAssignedTo: Affiliation @hasOne
+  TreatmentFacility: Affiliation @hasOne
+  Application: Application @belongsTo
+}
+
+enum RELATIONSHIPTOSERVICEMEMBER {
+  AUNT
+  BOYFRIEND
+  BROTHER
+  BROTHERINLAW
+  CAREGIVER
+  COUSIN
+  DAUGHTER
+  DAUGHTERINLAW
+  EXHUSBAND
+  EXWIFE
+  FATHER
+  FATHERINLAW
+  FIANCE
+  FIANCEE
+  FRIEND
+  GIRLFRIEND
+  GRANDCHILD
+  GRANDFATHER
+  GRANDMOTHER
+  HUSBAND
+  MOTHER
+  MOTHERINLAW
+  NEPHEW
+  NIECE
+  NONMEDICALASSISTANT
+  SELF
+  SISTER
+  SISTERINLAW
+  SON
+  STEPDAUGHTER
+  STEPSON
+  UNCLE
+  WIFE
+}
+
+type Patient @model @auth(rules: [{ allow: private }]) @searchable {
+  id: ID!
+  first_name: String
+  middle_initial: String
+  last_name: String
+  relationship: RELATIONSHIPTOSERVICEMEMBER
+  Application: Application @belongsTo
+}
+
+type ConfigurationSetting
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: groups, groups: ["Liaisons"], operations: [read] }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String @index(name: "byName", queryField: "getConfigurationSettingByName")
+  value: String
+}
+
+enum HOTELPROPERTYSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+  BLACKLISTED
+}
+
+type HotelProperty
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: private, operations: [read] }
+      { allow: private, operations: [read], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  name: String! @default(value: "")
+  address: String
+  address_2: String
+  city: String
+  state: String
+  zip: String
+  contact_name: String
+  contact_position: String
+  telephone: String
+  email: String
+  is_blacklist: Boolean
+  status: HOTELPROPERTYSTATUS
+  extension: String
+  FisherHouseID: ID
+  HotelChainID: ID
+  HotelBrandID: ID
+  FisherHouse: Affiliation @hasOne(fields: ["FisherHouseID"])
+  HotelChain: HotelChain @hasOne(fields: ["HotelChainID"])
+  HotelBrand: HotelBrand @hasOne(fields: ["HotelBrandID"])
+}
+
+enum HOTELBRANDSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+}
+
+type HotelBrand
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: private, operations: [read] }
+      { allow: private, operations: [read], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  name: String! @default(value: "")
+  status: HOTELBRANDSTATUS
+  HotelChain: HotelChain @hasOne
+  logo: String
+}
+
+enum HOTELCHAINSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+}
+
+type HotelChain
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: private, operations: [read] }
+      { allow: private, operations: [read], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  name: String! @default(value: "")
+  status: HOTELCHAINSTATUS
+}
+
+enum CARDTYPE {
+  AMEX
+  MASTERCARD
+  VISA
+}
+
+enum CARDSTATUS {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+type Card
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  )
+  @searchable {
+  id: ID!
+  name: String
+  number: String
+  status: CARDSTATUS
+    @index(name: "cardsByStatus", queryField: "listCardsByStatus", sortKeyFields: ["name"])
+  type: CARDTYPE
+}
+
+enum PAYMENTTYPESTATUS {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum PAYMENTTYPETYPE {
+  SYSTEM
+  USERGENERATED
+}
+
+type PaymentType
+  @model
+  @searchable
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  description: String
+  status: PAYMENTTYPESTATUS
+    @index(
+      name: "paymentTypesByStatus"
+      queryField: "listPaymentTypesByStatus"
+      sortKeyFields: ["name"]
+    )
+  type: PAYMENTTYPETYPE @default(value: "USERGENERATED")
+}
+
+type Guest
+  @model
+  @auth(rules: [{ allow: private }, { allow: private, operations: [read], provider: iam }])
+  @searchable {
+  id: ID!
+  first_name: String
+  relationship: String
+  middle_initial: String
+  last_name: String
+  email: String
+  telephone: String
+  extension: String
+  applicationID: ID @index(name: "byApplication")
+  type: GUESTTYPE
+  under_age_three: Boolean
+  address: String
+  address_2: String
+  city: String
+  state: String
+  zip: String
+  Application: Application @belongsTo
+}
+
+type Applicant
+  @model
+  @auth(rules: [{ allow: private }, { allow: private, operations: [read], provider: iam }])
+  @searchable {
+  id: ID!
+  first_name: String
+  last_name: String
+  email: String
+  telephone: String
+  signature: String
+  job: String
+  branch_of_service: String
+  current_status: String
+  base_assigned_to: String
+  relation_to_service_member: String
+  referrer_date: AWSDate
+  user_type: String
+  middle_initial: String
+  patient_type: String
+  extension: String
+  family_lodge: String
+  location_name: String
+  location_address: String
+  lodging_explanation: String
+  Affiliation: Affiliation @hasOne
+  affiliation_type: AFFILIATIONTYPE
+  collected_outside_fisherhouse: Boolean
+  Application: Application @belongsTo
+}
+
+enum USERSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  INACTIVE
+}
+
+enum TIMEZONE {
+  EASTERN
+  CENTRAL
+  MOUNTAIN
+  PACIFIC
+}
+
+type User
+  @model
+  @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: private, operations: [read, delete], provider: iam }
+      { allow: public, operations: [create] }
+      { allow: groups, groups: ["Administrators"] }
+      { allow: owner, operations: [create, read, update], ownerField: "owner" }
+    ]
+  )
+  @searchable {
+  id: ID!
+  username: String @index(name: "byEmail", queryField: "UsersByEmail")
+  pending_email: String
+  first_name: String
+  last_name: String
+  middle_initial: String
+  telephone: String
+  signature: String
+  job: String
+  admin_approval: Boolean
+  expiration_date: AWSDateTime
+  extension: String
+  affiliation: String
+  timezone: TIMEZONE
+  observes_dst: String
+  receive_emails: Boolean
+  status: USERSTATUS @index(name: "byStatus", queryField: "UsersByStatus")
+  AffiliationID: ID
+  Affiliation: Affiliation @hasOne(fields: ["AffiliationID"])
+  affiliation_type: AFFILIATIONTYPE
+  owner: String @index(name: "byOwner", queryField: "UserByOwner")
+}
+
+enum STAYTYPE {
+  INITIAL
+  EXTENDED
+}
+
+type S3Object {
+  key: String!
+  user: String
+}
+
+type Stay
+  @model
+  @auth(rules: [{ allow: private }, { allow: private, operations: [read, update], provider: iam }])
+  @searchable {
+  id: ID!
+  applicationID: ID @index(name: "byApplication")
+  type: STAYTYPE
+  state: String
+  reservation_number: String
+  payment_type: String
+  PaymentTypeID: ID @index(name: "byPaymentType", queryField: "listStaysByPaymentType")
+  payment_method: PaymentType @hasOne(fields: ["PaymentTypeID"])
+  payment_points_used: String
+  payment_cost_of_reservation: String
+  checkout_points_used: String
+  checkout_cost_of_reservation: String
+  requested_check_in: AWSDate
+  requested_check_out: AWSDate
+  status: STAYSTATUS
+  actual_check_in: AWSDate
+  actual_check_out: AWSDate
+  guest_stayed_at_hotel: Boolean
+  reason_guest_did_not_stay: String
+  payment_incidental_cost: String
+  charge_type: String
+  card: String
+  note: String
+  reconciled: Boolean
+  ready_for_final_reconcile: Boolean
+  comment: String
+  comparable_cost: String
+  certificate_number: String
+  confirmation_number: String
+  card_used_for_incidentals: Boolean
+  room_type_requests: ROOMTYPE
+  room_feature_requests: [ROOMFEATURES]
+  room_type_actual: ROOMTYPE
+  room_feature_actual: [ROOMFEATURES]
+  room_description: String
+  room_description_actual: String
+  reason_decline: String
+  reason_return: String
+  charge_reconcile: Boolean
+  hotel_reconcile: Boolean
+  points_reconcile: Boolean
+  giftcard_reconcile: Boolean
+  batch_no: String
+  city: String
+  HotelPropertyID: ID
+  HotelBooked: HotelProperty @hasOne(fields: ["HotelPropertyID"])
+  Application: Application @belongsTo
+  FisherHouse: Affiliation @hasOne
+  narrative: String
+  special_requests: String
+  hotel_files: [S3Object]
+  notified_about_checkout: Int
+    @default(value: "0")
+    @index(
+      name: "byNotificationAfterCheckout"
+      queryField: "stayByNotificationAfterCheckout"
+      sortKeyFields: ["status"]
+    )
+}
+
+type Application
+  @model
+  @auth(rules: [{ allow: private }, { allow: private, operations: [read], provider: iam }])
+  @searchable {
+  id: ID!
+  StaysInApplication: [Stay] @hasMany(indexName: "byApplication", fields: ["id"])
+  status: APPLICATIONSTATUS @index(name: "byStatus", queryField: "listApplicationsByStatus")
+  User: User @hasOne
+  AssignedTo: User @hasOne
+  liaison_read: READSTATUS
+  admin_read: READSTATUS
+  applicationPatientId: ID @index(name: "byPatientId", queryField: "listApplicationsByPatientId")
+  Patient: Patient @hasOne(fields: ["applicationPatientId"])
+  applicationServiceMemberId: ID
+    @index(name: "byServiceMemberId", queryField: "listApplicationsByServiceMemberId")
+  ServiceMember: ServiceMember @hasOne(fields: ["applicationServiceMemberId"])
+  exception_narrative: String
+  Guests: [Guest] @hasMany(indexName: "byApplication", fields: ["id"])
+  liaison_terms_of_use_agreement: Boolean
+  sm_terms_of_use_agreement: Boolean
+  Applicant: Applicant @hasOne
+  applicationGroupId: ID
+    @index(name: "byGroupId", queryField: "ApplicationByGroupId", sortKeyFields: ["status"])
+  Group: Group @hasOne(fields: ["applicationGroupId"])
+  Notes: [Note] @hasMany(indexName: "byApplication", fields: ["id"])
+  AffiliationID: ID
+}
+
+# A flattened record used for table views with complex queries.
+# Note that this model has a custom resolver in amplify/backend/api/hotelsforheroes/resolvers that will
+# need to have the $nonKeywordFields line updated to include any new fields that are used for sorting.
+type ApplicationSearchRecord
+  @model
+  @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: private, operations: [create, read, update, delete], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  applicationID: ID!
+    @index(name: "byApplicationId", queryField: "getApplicationSearchRecordsByApplicationID")
+  Application: Application @hasOne(fields: ["applicationID"])
+  applicationStatus: APPLICATIONSTATUS
+  staysStatus: [STAYSTATUS]
+  checkInDates: [AWSDate]
+  checkOutDates: [AWSDate]
+  primaryCheckInDate: AWSDate
+  primaryCheckOutDate: AWSDate
+  primaryCheckinDateStamp: AWSTimestamp
+  primaryCheckoutDateStamp: AWSTimestamp
+  noteActions: [AWSJSON]
+  assignedAdminID: ID
+  assignedAdminName: String
+  assignedLiaisonID: ID
+  assignedLiaisonName: String
+  groupID: ID
+  groupName: String
+  confirmationNumber: [String]
+  referrerName: String
+  referrerEmail: String
+  serviceMemberFirstName: String
+  serviceMemberLastName: String
+  serviceMemberEmail: String
+  serviceMemberBranchOfService: String
+  serviceMemberDutyStatus: String
+  adminIsUnread: Boolean
+  liaisonIsUnread: Boolean
+  guestFirstNames: [String]
+  guestLastNames: [String]
+  guestEmails: [String]
+  liaisonAffiliationID: ID
+  liaisonAffiliationName: String
+  referrerAffiliationID: ID
+  referrerAffiliationName: String
+  adminAffiliationID: ID
+  adminAffiliationName: String
+  treatmentCenterID: ID
+  treatmentCenterName: String
+  baseAssignedID: ID
+  baseAssignedName: String
+  vaAssignedID: ID
+  vaAssignedName: String
+  hotelChainID: [ID]
+  hotelChainName: [String]
+  hotelBrandID: [ID]
+  hotelBrandName: [String]
+  hotelPropertyName: String
+  assignedAffiliationID: ID
+}
+
+# A flattened record used for table views with complex queries.
+# Note that this model has a custom resolver in amplify/backend/api/hotelsforheroes/resolvers that will
+# need to have the $nonKeywordFields line updated to include any new fields that are used for sorting.
+type StaySearchRecord
+  @model
+  @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: private, operations: [create, read, update, delete], provider: iam }
+    ]
+  )
+  @searchable {
+  id: ID!
+  applicationID: ID!
+    @index(name: "byApplicationId", queryField: "getStaySearchRecordsByApplicationID")
+  stayID: ID! @index(name: "byStayId", queryField: "getStaySearchRecordsByStayID")
+  Application: Application @hasOne(fields: ["applicationID"])
+  Stay: Stay @hasOne(fields: ["stayID"])
+  applicationStatus: APPLICATIONSTATUS
+  staysStatus: STAYSTATUS
+  checkInDates: AWSDate
+  checkOutDates: AWSDate
+  primaryCheckInDate: AWSDate
+  primaryCheckOutDate: AWSDate
+  primaryCheckinDateStamp: AWSTimestamp
+  primaryCheckoutDateStamp: AWSTimestamp
+  noteActions: [AWSJSON]
+  assignedAdminID: ID
+  assignedAdminName: String
+  assignedLiaisonID: ID
+  assignedLiaisonName: String
+  groupID: ID
+  groupName: String
+  confirmationNumber: String
+  referrerName: String
+  referrerEmail: String
+  serviceMemberFirstName: String
+  serviceMemberLastName: String
+  serviceMemberEmail: String
+  serviceMemberBranchOfService: String
+  serviceMemberDutyStatus: String
+  adminIsUnread: Boolean
+  liaisonIsUnread: Boolean
+  guestFirstNames: [String]
+  guestLastNames: [String]
+  guestEmails: [String]
+  liaisonAffiliationID: ID
+  liaisonAffiliationName: String
+  referrerAffiliationID: ID
+  referrerAffiliationName: String
+  adminAffiliationID: ID
+  adminAffiliationName: String
+  treatmentCenterID: ID
+  treatmentCenterName: String
+  baseAssignedID: ID
+  baseAssignedName: String
+  vaAssignedID: ID
+  vaAssignedName: String
+  hotelChainID: [ID]
+  hotelChainName: [String]
+  hotelBrandID: [ID]
+  hotelBrandName: [String]
+  hotelPropertyName: String
+  assignedAffiliationID: ID
+}

@@ -1,0 +1,526 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+h4 + .detail-block, h4 + .reconcile.checkboxes, h4 + .files {
+  margin-top: -1em;
+}
+
+.detail-block {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  margin-bottom: 1em;
+  clear: both;
+}
+.detail-block:last-child {
+  margin-bottom: 0;
+}
+.detail-block.preferred {
+  padding-bottom: 0.5rem;
+}
+.detail-block.returned-note {
+  border: 0.2em solid #a45ca0;
+}
+.detail-block.collapsible {
+  margin-bottom: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+.detail-block.collapsible h4 {
+  margin: 0;
+}
+.detail-block.collapsible .contents {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  transition: clip 0.2s ease;
+  transition: height 0.2s ease;
+}
+.detail-block.collapsible.open h4 {
+  margin: 0 0 0.25em 0;
+}
+.detail-block.collapsible.open .contents {
+  clip: none;
+  height: auto;
+  margin: 0;
+  position: static;
+  width: auto;
+}
+@media screen and (min-width: 45rem) {
+  .detail-block.collapsible {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  .detail-block.collapsible h4 {
+    margin: 0 0 0.25em 0;
+  }
+  .detail-block.collapsible .contents {
+    clip: none;
+    height: auto;
+    margin: 0;
+    position: static;
+    width: auto;
+  }
+  .detail-block.collapsible.group .contents {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    transition: clip 0.2s ease;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .detail-block.collapsible {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 35rem) {
+  .detail-block {
+    margin-bottom: 1.5rem;
+  }
+}
+.detail-block + .stay-controls {
+  padding-top: 0;
+}
+.sidebar .detail-block {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.sidebar .detail-block p {
+  margin: 0.5em 0;
+}
+.sidebar .detail-block p a {
+  color: #6699cc;
+}
+.sidebar .detail-block p a:hover {
+  color: #fff;
+}
+.sidebar .detail-block p strong {
+  color: #f2f2f2;
+}
+.sidebar .detail-block p em, .sidebar .detail-block li em {
+  color: #fff !important;
+  text-shadow: 0 0 1px #000, 0 1px 1px #000, 0 1px 2px #000, 0 1px 2px #000 !important;
+}
+.sidebar .detail-block p span.field {
+  display: inline-block;
+  padding: 0 0.6em;
+  line-height: 1.3em;
+  background-color: rgba(255, 255, 255, 0.65);
+  color: #262626;
+  border-radius: 0.75em;
+  font-weight: bold;
+  font-style: normal;
+}
+.sidebar .detail-block p span.status {
+  display: inline-block;
+  padding: 0 0.25em;
+  line-height: 1.3em;
+  border-radius: 0.25em;
+  font-weight: bold;
+  font-style: normal;
+  color: #fff;
+  text-transform: capitalize;
+}
+.sidebar .detail-block p span.status.requested, .sidebar .detail-block p span.status.submitted {
+  background-color: orange;
+  color: #262626;
+}
+.sidebar .detail-block p span.status.returned {
+  background-color: #a45ca0;
+}
+.sidebar .detail-block p span.status.approved {
+  background-color: #07a672;
+}
+.sidebar .detail-block p span.status.ammended {
+  background-color: #F4C182;
+  color: #262626;
+}
+.sidebar .detail-block p span.status.reviewed {
+  background-color: #104c19;
+}
+.sidebar .detail-block p span.status.completed {
+  background-color: #004b8d;
+}
+.sidebar .detail-block p span.status.canceled, .sidebar .detail-block p span.status.declined {
+  background-color: #990000;
+}
+.sidebar .detail-block p span.status.closed {
+  background-color: #1a1a1a;
+}
+.sidebar .detail-block p span.status.exception {
+  background-color: #ff8cd4;
+  color: #262626;
+}
+.sidebar .detail-block p.proposed-entity, .sidebar .detail-block p span.proposed-entity {
+  border: 0.15em dashed #f2f2f2;
+  font-weight: bold;
+  padding: 0.2em 0.4em;
+  border-radius: 0.75em;
+  margin-left: -0.25em;
+}
+.sidebar .detail-block p span.proposed-entity {
+  display: inline-block;
+  padding: 0 0.4em;
+}
+.detail-block.suggestion {
+  background-color: #e6e6e6;
+}
+.detail-block ul {
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+}
+.detail-block ul li {
+  margin: 0 0 0.5em 0;
+}
+.detail-block.status {
+  border-left: 0.5rem solid;
+}
+.detail-block.status.requested, .detail-block.status.submitted {
+  border-color: orange;
+}
+.detail-block.status.returned {
+  border-color: #a45ca0;
+}
+.detail-block.status.approved {
+  border-color: #07a672;
+}
+.detail-block.status.ammended {
+  border-color: #F4C182;
+}
+.detail-block.status.extended-stay, .detail-block.status.early-checkout, .detail-block.status.completed {
+  border-color: #004b8d;
+}
+.detail-block.status.canceled, .detail-block.status.declined {
+  border-color: #990000;
+}
+.detail-block.status.closed {
+  border-color: #1a1a1a;
+}
+.detail-block.status.exception {
+  border-color: #ff8cd4;
+}
+.detail-block.status.reviewed {
+  border-color: #104c19;
+}
+.detail-block.message {
+  background-color: #fff;
+  border-left: 1em solid #b3b3b3;
+}
+.detail-block.message h4 strong {
+  color: #b3b3b3;
+}
+.detail-block.message.admin {
+  border-left: 1em solid #1d344d;
+}
+.detail-block.message.admin h4 strong {
+  color: #1d344d;
+}
+.detail-block.message p {
+  font-style: italic;
+  font-size: 1em;
+  text-transform: none;
+}
+.detail-block .detail-block {
+  padding: 0.5rem 0.75rem 0.75rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.detail-block .detail-block:last-child {
+  margin-bottom: 0;
+}
+.detail-block .detail-block h5 {
+  margin-bottom: 0 !important;
+}
+.detail-block > input:last-child {
+  margin-bottom: 0;
+}
+.detail-block span.check {
+  display: inline-block;
+  height: 1.4em;
+  width: 1.4em;
+  font-size: 1.4em;
+  border-radius: 0.7em;
+  line-height: 1.4em;
+  text-align: center;
+  color: #fff;
+  background-color: #07a672;
+}
+.detail-block span.check img {
+  width: 55%;
+  height: auto;
+  position: relative;
+  top: -0.05em;
+  left: -0.015em;
+}
+.detail-block h4, .detail-block h5 {
+  margin: 0.25em 0 !important;
+}
+.detail-block h4:first-child, .detail-block h5:first-child {
+  margin-top: 0 !important;
+  margin-bottom: 0.5em !important;
+}
+.detail-block h4 + p, .detail-block h5 + p, .detail-block h4 + ul, .detail-block h5 + ul {
+  margin-top: 0 !important;
+}
+.detail-block h4 + p:last-child, .detail-block h5 + p:last-child, .detail-block h4 + ul:last-child, .detail-block h5 + ul:last-child {
+  margin: 0 !important;
+}
+.detail-block h5 {
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.detail-block h5:last-child, .detail-block h5.last-child-hack {
+  margin-bottom: 0 !important;
+}
+.detail-block h5 a {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-left: 1em;
+}
+.detail-block h5 a.more {
+  background-color: #8c8c8c;
+  display: inline-block;
+  position: relative;
+  top: -0.2em;
+  color: #f2f2f2;
+  padding: 0 0.75em;
+  line-height: 1.75em;
+  font-size: 0.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0.6em;
+  transition: background-color, color, 0.2s ease;
+}
+.detail-block h5 a.more:hover {
+  background-color: #262626;
+}
+.detail-block h5 a.more.add {
+  width: auto !important;
+}
+.detail-block h5 a.more.add:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.05em;
+  left: -0.05em;
+  height: 0.8em;
+  width: 0.8em;
+  background-image: url(../public/img/cross.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  margin-right: 0.5em;
+  filter: opacity(0.9);
+}
+@media screen and (min-width: 35rem) {
+  .detail-block h5 a.more {
+    font-size: 0.8em;
+    top: 0;
+  }
+}
+.detail-block h5 a.add {
+  background-color: #004b8d;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  top: 0;
+}
+.detail-block h5 a.add:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.05em;
+  left: -0.05em;
+  height: 0.8em;
+  width: 0.8em;
+  background-image: url(../public/img/cross.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  margin-right: 0.5em;
+  filter: opacity(0.9);
+}
+.detail-block hr {
+  margin: 0;
+}
+.detail-block p, .detail-block ul {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+.detail-block p:first-child, .detail-block ul:first-child {
+  margin-top: 0;
+}
+.detail-block p:last-child, .detail-block ul:last-child {
+  margin-bottom: 0;
+}
+.detail-block p a, .detail-block ul a {
+  color: #004b8d;
+  border: none;
+}
+.detail-block p a:hover, .detail-block ul a:hover {
+  color: #1d344d;
+}
+.detail-block p strong, .detail-block ul strong {
+  color: #262626;
+}
+.detail-block > *:last-child, .detail-block .hidden-content *:last-child {
+  margin-bottom: 0 !important;
+}
+.detail-block a.review-link {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.2) 100%);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+  display: inline-block;
+  background-color: #a45ca0;
+  color: #fff !important;
+  border-radius: 0.75em;
+  text-align: center;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  font-weight: bold;
+  padding: 0 1em;
+  text-transform: uppercase;
+  position: relative;
+  top: -0.2em;
+  text-decoration: none;
+  transition: background-color, color 0.2s ease;
+}
+.detail-block a.review-link:hover {
+  background-color: #834a80;
+}
+.detail-block a.review-link:active {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+  top: 1px !important;
+  top: -0.125em !important;
+}
+.detail-block a.review-link:active.disabled {
+  top: 0 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.2) 100%) !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.detail-block a.review-link span {
+  font-size: 1.5em;
+  line-height: 0.75em;
+}
+.detail-block ul.exception-fields, .detail-block ul.room-features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.5em !important;
+}
+.detail-block ul.exception-fields li, .detail-block ul.room-features li {
+  display: inline-block;
+  padding: 0 0.8em;
+  line-height: 1.5em;
+  background-color: #ff8cd4;
+  color: #262626 !important;
+  border-radius: 0.75em;
+  font-weight: bold;
+  font-style: normal;
+}
+.detail-block ul.room-features {
+  margin-bottom: 0 !important;
+}
+.detail-block ul.room-features li {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.detail-block ul.room-features.preferred li:last-child {
+  margin-bottom: 0;
+}
+.detail-block .filters {
+  margin-bottom: 0.8em;
+}
+.detail-block .filters.disabled {
+  visibility: hidden;
+}
+.detail-block .filters h4 {
+  margin-bottom: 0;
+  font-size: 0.8em;
+}
+.detail-block .filters ul {
+  list-style: none;
+  padding-left: 0;
+  display: inline;
+  margin: 0 !important;
+}
+.detail-block .filters li {
+  display: inline;
+  font-size: 0.8em;
+}
+.detail-block .filters select {
+  display: inline;
+  width: auto !important;
+  margin-right: 1em;
+}
+.detail-block .filters label {
+  position: relative;
+  display: inline-block !important;
+  font-size: inherit;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.3em 0.7em;
+  top: -0.2em;
+  border-radius: 0.5em;
+  width: auto;
+  margin-bottom: 0.2em;
+}
+.detail-block .filters label.status-incomplete, .detail-block .filters label.status-draft {
+  background-color: #a45ca0;
+}
+.detail-block .filters label.status-pending, .detail-block .filters label.status-unreconciled {
+  background-color: orange;
+}
+.detail-block .filters label.status-returned {
+  background-color: #a45ca0;
+}
+.detail-block .filters label.status-admin {
+  background-color: #004b8d;
+}
+.detail-block .filters label.status-expired {
+  background-color: #666666;
+}
+.detail-block .filters label.status-submitted {
+  background-color: orange;
+}
+.detail-block .filters label.status-deleted, .detail-block .filters label.status-declined {
+  background-color: #990000;
+}
+.detail-block .filters label.status-approved, .detail-block .filters label.status-reconciled {
+  background-color: #07a672;
+}
+.detail-block .filters label.status-blacklisted {
+  background-color: #000;
+}
+.detail-block .filters label:hover, .detail-block .filters label.active {
+  background-color: #404040 !important;
+  color: #fff !important;
+}
+.detail-block .stay-controls, .detail-block .stay-controls input {
+  margin: 0;
+}
+.detail-block .stay-controls .cancel {
+  background-color: #737373;
+  float: left;
+}
+.detail-block .stay-controls .cancel:hover {
+  background-color: #404040;
+}
+.detail-block .displaybox {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (min-width: 65rem) {
+  .detail-block.status {
+    border-left: 1rem solid;
+  }
+  .detail-block textarea {
+    margin-bottom: 0 !important;
+  }
+}

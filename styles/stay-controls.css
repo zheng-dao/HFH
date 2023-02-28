@@ -1,0 +1,115 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.stay-controls {
+  padding-top: 1rem;
+  flex: 0 0 100%;
+}
+.stay-controls::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.detail-block .stay-controls {
+  padding-top: 0;
+}
+.stay-controls button, .stay-controls input[type=submit] {
+  float: right;
+  margin-bottom: 0;
+  margin-right: 0;
+  font-size: 0.8em;
+}
+.stay-controls button.smaller, .stay-controls input[type=submit].smaller {
+  font-size: 0.6em;
+}
+.stay-controls button.smaller.green, .stay-controls input[type=submit].smaller.green {
+  background-color: #07a672;
+}
+.stay-controls button.request, .stay-controls button.submit, .stay-controls button.save, .stay-controls input[type=submit].request, .stay-controls input[type=submit].submit, .stay-controls input[type=submit].save {
+  background-color: #07a672;
+  float: right;
+}
+.stay-controls button.request.as-exception:before, .stay-controls button.submit.as-exception:before, .stay-controls button.save.as-exception:before, .stay-controls input[type=submit].request.as-exception:before, .stay-controls input[type=submit].submit.as-exception:before, .stay-controls input[type=submit].save.as-exception:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.15em;
+  height: 1em;
+  width: 1.2em;
+  background-image: url(../public/img/caution.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  margin-right: 0.5em;
+}
+.stay-controls button.approve, .stay-controls input[type=submit].approve {
+  background-color: #07a672;
+}
+.stay-controls button.approve:hover, .stay-controls input[type=submit].approve:hover {
+  background-color: #06855b;
+}
+.stay-controls button.return, .stay-controls input[type=submit].return {
+  background-color: #a45ca0;
+  margin-right: 1em;
+}
+.stay-controls button.return.final, .stay-controls input[type=submit].return.final {
+  margin-right: 0;
+}
+.stay-controls button.return:hover, .stay-controls input[type=submit].return:hover {
+  background-color: #834a80;
+}
+.stay-controls button.decline, .stay-controls button.delete, .stay-controls input[type=submit].decline, .stay-controls input[type=submit].delete {
+  background-color: #990000;
+  float: left;
+}
+.stay-controls button.decline.final, .stay-controls button.delete.final, .stay-controls input[type=submit].decline.final, .stay-controls input[type=submit].delete.final {
+  float: right !important;
+}
+.stay-controls button.decline:hover, .stay-controls button.delete:hover, .stay-controls input[type=submit].decline:hover, .stay-controls input[type=submit].delete:hover {
+  background-color: #7a0000;
+}
+.stay-controls button.reopen, .stay-controls button.reconsider, .stay-controls input[type=submit].reopen, .stay-controls input[type=submit].reconsider {
+  background-color: #a45ca0;
+  float: left;
+}
+.stay-controls button.reopen:hover, .stay-controls button.reconsider:hover, .stay-controls input[type=submit].reopen:hover, .stay-controls input[type=submit].reconsider:hover {
+  background-color: #834a80;
+}
+.stay-controls button.close, .stay-controls input[type=submit].close {
+  background-color: #1a1a1a;
+}
+.stay-controls button.complete, .stay-controls input[type=submit].complete {
+  background-color: #004b8d;
+}
+.stay-controls button.complete:hover, .stay-controls input[type=submit].complete:hover {
+  background-color: #003c71;
+}
+.stay-controls button.reviewed, .stay-controls input[type=submit].reviewed {
+  background-color: #104c19;
+}
+.stay-controls button.reviewed:hover, .stay-controls input[type=submit].reviewed:hover {
+  background-color: #0d3d14;
+}
+.stay-controls button.inactive, .stay-controls input[type=submit].inactive {
+  background-color: #b3b3b3;
+  color: #e6e6e6;
+  cursor: default;
+}
+.stay-controls button.inactive:hover, .stay-controls input[type=submit].inactive:hover {
+  background-color: #b3b3b3;
+  color: #e6e6e6;
+}
+.stay-controls button.cancel, .stay-controls input[type=submit].cancel {
+  float: left;
+  background-color: #666666;
+}
+.stay-controls button.cancel:hover, .stay-controls input[type=submit].cancel:hover {
+  background-color: #4d4d4d;
+}
+
+@media screen and (min-width: 65rem) {
+  .stay-controls {
+    padding-top: 1rem;
+  }
+  .stay-controls button, .stay-controls input[type=submit] {
+    font-size: 0.9em;
+  }
+}

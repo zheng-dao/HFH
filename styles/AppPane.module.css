@@ -1,0 +1,548 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.app-pane {
+  background: #f2f2f2;
+  background: linear-gradient(0deg, #f2f2f2 100%, #e6e6e6 0%);
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  color: #404040;
+  box-sizing: border-box;
+  transition: font-size, padding, 0.2s ease;
+}
+.app-pane .app-status {
+  float: right;
+  display: inline-block;
+  padding: 0.3em 0.8em 0.2em;
+  border-radius: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  color: #fff;
+  position: relative;
+  top: 0.2em;
+}
+.app-pane .app-status.status-returned {
+  background-color: #a45ca0;
+}
+.app-pane .app-status.status-submitted, .app-pane .app-status.status-requested, .app-pane .app-status.status-pending {
+  background-color: orange;
+  color: #262626;
+}
+.app-pane .app-status.status-approved, .app-pane .app-status.status-active {
+  background-color: #07a672;
+}
+.app-pane .app-status.status-declined {
+  background-color: #990000;
+}
+.app-pane .app-status.status-closed, .app-pane .app-status.status-expired {
+  background-color: #333333;
+}
+.app-pane .app-status.status-completed {
+  background-color: #004b8d;
+}
+.app-pane .app-status.status-exception {
+  background-color: #ff8cd4;
+  color: #262626;
+}
+.app-pane .app-status.status-reviewed {
+  background-color: #104c19;
+}
+.app-pane .app-status.status-draft {
+  background-color: #d9d9d9;
+  border: 0.2em solid #bfbfbf;
+  color: #8c8c8c;
+  padding: 0.1em 0.6em 0;
+}
+.app-pane p.stay-dates, .app-pane p.confirmation-number, .app-pane p.large-value {
+  border-radius: 0.4rem;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+.app-pane .displaybox p.large-value {
+  line-height: 2em;
+}
+.app-pane.primary {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.sidebar .app-pane, .main-column .inner.sidebar .app-pane, .app-pane.hud {
+  background: transparent;
+  color: #f2f2f2;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+.sidebar .app-pane > *:last-child, .main-column .inner.sidebar .app-pane > *:last-child, .app-pane.hud > *:last-child {
+  margin-bottom: 0;
+}
+.sidebar .app-pane label, .main-column .inner.sidebar .app-pane label, .app-pane.hud label {
+  background-color: #8cb3d9;
+  font-weight: bold;
+  color: #262626;
+}
+.sidebar .app-pane button, .sidebar .app-pane input[type=submit], .main-column .inner.sidebar .app-pane button, .main-column .inner.sidebar .app-pane input[type=submit], .app-pane.hud button, .app-pane.hud input[type=submit] {
+  font-size: 0.8em;
+  filter: drop-shadow(0px 0px 0.1rem rgba(0, 0, 0, 0.75));
+}
+.sidebar .app-pane .selectbox, .main-column .inner.sidebar .app-pane .selectbox, .app-pane.hud .selectbox {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sidebar .app-pane .displaybox, .main-column .inner.sidebar .app-pane .displaybox, .app-pane.hud .displaybox {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #f2f2f2;
+}
+.sidebar .app-pane [type=color], .sidebar .app-pane [type=date], .sidebar .app-pane [type=datetime], .sidebar .app-pane [type=datetime-local], .sidebar .app-pane [type=email], .sidebar .app-pane [type=month], .sidebar .app-pane [type=number], .sidebar .app-pane [type=password], .sidebar .app-pane [type=search], .sidebar .app-pane [type=tel], .sidebar .app-pane [type=text], .sidebar .app-pane [type=time], .sidebar .app-pane [type=url], .sidebar .app-pane [type=week], .sidebar .app-pane input:not([type]), .sidebar .app-pane textarea, .sidebar .app-pane textarea, .main-column .inner.sidebar .app-pane [type=color], .main-column .inner.sidebar .app-pane [type=date], .main-column .inner.sidebar .app-pane [type=datetime], .main-column .inner.sidebar .app-pane [type=datetime-local], .main-column .inner.sidebar .app-pane [type=email], .main-column .inner.sidebar .app-pane [type=month], .main-column .inner.sidebar .app-pane [type=number], .main-column .inner.sidebar .app-pane [type=password], .main-column .inner.sidebar .app-pane [type=search], .main-column .inner.sidebar .app-pane [type=tel], .main-column .inner.sidebar .app-pane [type=text], .main-column .inner.sidebar .app-pane [type=time], .main-column .inner.sidebar .app-pane [type=url], .main-column .inner.sidebar .app-pane [type=week], .main-column .inner.sidebar .app-pane input:not([type]), .main-column .inner.sidebar .app-pane textarea, .main-column .inner.sidebar .app-pane textarea, .app-pane.hud [type=color], .app-pane.hud [type=date], .app-pane.hud [type=datetime], .app-pane.hud [type=datetime-local], .app-pane.hud [type=email], .app-pane.hud [type=month], .app-pane.hud [type=number], .app-pane.hud [type=password], .app-pane.hud [type=search], .app-pane.hud [type=tel], .app-pane.hud [type=text], .app-pane.hud [type=time], .app-pane.hud [type=url], .app-pane.hud [type=week], .app-pane.hud input:not([type]), .app-pane.hud textarea, .app-pane.hud textarea {
+  display: block;
+  padding: 0 1em;
+  margin-bottom: 1em;
+  background: #e7f0f7;
+  border: none;
+  width: 100%;
+  border-radius: 0.3em;
+  -webkit-appearance: none;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0.3em 0.3em 0.3em;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar .app-pane [type=color].nolabel, .sidebar .app-pane [type=date].nolabel, .sidebar .app-pane [type=datetime].nolabel, .sidebar .app-pane [type=datetime-local].nolabel, .sidebar .app-pane [type=email].nolabel, .sidebar .app-pane [type=month].nolabel, .sidebar .app-pane [type=number].nolabel, .sidebar .app-pane [type=password].nolabel, .sidebar .app-pane [type=search].nolabel, .sidebar .app-pane [type=tel].nolabel, .sidebar .app-pane [type=text].nolabel, .sidebar .app-pane [type=time].nolabel, .sidebar .app-pane [type=url].nolabel, .sidebar .app-pane [type=week].nolabel, .sidebar .app-pane input:not([type]).nolabel, .sidebar .app-pane textarea.nolabel, .sidebar .app-pane textarea.nolabel, .main-column .inner.sidebar .app-pane [type=color].nolabel, .main-column .inner.sidebar .app-pane [type=date].nolabel, .main-column .inner.sidebar .app-pane [type=datetime].nolabel, .main-column .inner.sidebar .app-pane [type=datetime-local].nolabel, .main-column .inner.sidebar .app-pane [type=email].nolabel, .main-column .inner.sidebar .app-pane [type=month].nolabel, .main-column .inner.sidebar .app-pane [type=number].nolabel, .main-column .inner.sidebar .app-pane [type=password].nolabel, .main-column .inner.sidebar .app-pane [type=search].nolabel, .main-column .inner.sidebar .app-pane [type=tel].nolabel, .main-column .inner.sidebar .app-pane [type=text].nolabel, .main-column .inner.sidebar .app-pane [type=time].nolabel, .main-column .inner.sidebar .app-pane [type=url].nolabel, .main-column .inner.sidebar .app-pane [type=week].nolabel, .main-column .inner.sidebar .app-pane input:not([type]).nolabel, .main-column .inner.sidebar .app-pane textarea.nolabel, .main-column .inner.sidebar .app-pane textarea.nolabel, .app-pane.hud [type=color].nolabel, .app-pane.hud [type=date].nolabel, .app-pane.hud [type=datetime].nolabel, .app-pane.hud [type=datetime-local].nolabel, .app-pane.hud [type=email].nolabel, .app-pane.hud [type=month].nolabel, .app-pane.hud [type=number].nolabel, .app-pane.hud [type=password].nolabel, .app-pane.hud [type=search].nolabel, .app-pane.hud [type=tel].nolabel, .app-pane.hud [type=text].nolabel, .app-pane.hud [type=time].nolabel, .app-pane.hud [type=url].nolabel, .app-pane.hud [type=week].nolabel, .app-pane.hud input:not([type]).nolabel, .app-pane.hud textarea.nolabel, .app-pane.hud textarea.nolabel {
+  border-radius: 0.3em;
+}
+.sidebar .app-pane [type=color]:focus, .sidebar .app-pane [type=date]:focus, .sidebar .app-pane [type=datetime]:focus, .sidebar .app-pane [type=datetime-local]:focus, .sidebar .app-pane [type=email]:focus, .sidebar .app-pane [type=month]:focus, .sidebar .app-pane [type=number]:focus, .sidebar .app-pane [type=password]:focus, .sidebar .app-pane [type=search]:focus, .sidebar .app-pane [type=tel]:focus, .sidebar .app-pane [type=text]:focus, .sidebar .app-pane [type=time]:focus, .sidebar .app-pane [type=url]:focus, .sidebar .app-pane [type=week]:focus, .sidebar .app-pane input:not([type]):focus, .sidebar .app-pane textarea:focus, .sidebar .app-pane textarea:focus, .main-column .inner.sidebar .app-pane [type=color]:focus, .main-column .inner.sidebar .app-pane [type=date]:focus, .main-column .inner.sidebar .app-pane [type=datetime]:focus, .main-column .inner.sidebar .app-pane [type=datetime-local]:focus, .main-column .inner.sidebar .app-pane [type=email]:focus, .main-column .inner.sidebar .app-pane [type=month]:focus, .main-column .inner.sidebar .app-pane [type=number]:focus, .main-column .inner.sidebar .app-pane [type=password]:focus, .main-column .inner.sidebar .app-pane [type=search]:focus, .main-column .inner.sidebar .app-pane [type=tel]:focus, .main-column .inner.sidebar .app-pane [type=text]:focus, .main-column .inner.sidebar .app-pane [type=time]:focus, .main-column .inner.sidebar .app-pane [type=url]:focus, .main-column .inner.sidebar .app-pane [type=week]:focus, .main-column .inner.sidebar .app-pane input:not([type]):focus, .main-column .inner.sidebar .app-pane textarea:focus, .main-column .inner.sidebar .app-pane textarea:focus, .app-pane.hud [type=color]:focus, .app-pane.hud [type=date]:focus, .app-pane.hud [type=datetime]:focus, .app-pane.hud [type=datetime-local]:focus, .app-pane.hud [type=email]:focus, .app-pane.hud [type=month]:focus, .app-pane.hud [type=number]:focus, .app-pane.hud [type=password]:focus, .app-pane.hud [type=search]:focus, .app-pane.hud [type=tel]:focus, .app-pane.hud [type=text]:focus, .app-pane.hud [type=time]:focus, .app-pane.hud [type=url]:focus, .app-pane.hud [type=week]:focus, .app-pane.hud input:not([type]):focus, .app-pane.hud textarea:focus, .app-pane.hud textarea:focus {
+  background-color: #fff;
+}
+.sidebar .app-pane textarea, .main-column .inner.sidebar .app-pane textarea, .app-pane.hud textarea {
+  padding: 1em;
+}
+.sidebar .app-pane a, .sidebar .app-pane p a, .main-column .inner.sidebar .app-pane a, .main-column .inner.sidebar .app-pane p a, .app-pane.hud a, .app-pane.hud p a {
+  color: #d9d9d9;
+}
+.sidebar .app-pane a:hover, .sidebar .app-pane p a:hover, .main-column .inner.sidebar .app-pane a:hover, .main-column .inner.sidebar .app-pane p a:hover, .app-pane.hud a:hover, .app-pane.hud p a:hover {
+  color: #fff;
+}
+.app-pane.group-actions {
+  background-color: #161e26 !important;
+  box-shadow: inset 0 4rem 4rem rgba(255, 255, 255, 0.025), inset 0 2px 0 rgba(255, 255, 255, 0.25), inset 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.025) 0%, rgba(0, 0, 0, 0.025) 100%);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: none;
+  filter: drop-shadow(0px 0px 0.1rem rgba(0, 0, 0, 0.75));
+  overflow: hidden;
+}
+.app-pane.group-actions h1, .app-pane.group-actions h2, .app-pane.group-actions h3, .app-pane.group-actions h4 {
+  color: #f2f2f2;
+}
+.app-pane.group-actions .detail-block, .app-pane.group-actions .displaybox, .app-pane.group-actions .checkboxes, .app-pane.group-actions .radios, .app-pane.group-actions .inner-pane {
+  background-color: #d9d9d9;
+  text-shadow: none;
+}
+.app-pane.group-actions .detail-block h1, .app-pane.group-actions .detail-block h2, .app-pane.group-actions .detail-block h3, .app-pane.group-actions .detail-block h4, .app-pane.group-actions .displaybox h1, .app-pane.group-actions .displaybox h2, .app-pane.group-actions .displaybox h3, .app-pane.group-actions .displaybox h4, .app-pane.group-actions .checkboxes h1, .app-pane.group-actions .checkboxes h2, .app-pane.group-actions .checkboxes h3, .app-pane.group-actions .checkboxes h4, .app-pane.group-actions .radios h1, .app-pane.group-actions .radios h2, .app-pane.group-actions .radios h3, .app-pane.group-actions .radios h4, .app-pane.group-actions .inner-pane h1, .app-pane.group-actions .inner-pane h2, .app-pane.group-actions .inner-pane h3, .app-pane.group-actions .inner-pane h4 {
+  color: #262626;
+}
+.app-pane.group-actions .detail-block .detail-block, .app-pane.group-actions .detail-block .displaybox, .app-pane.group-actions .detail-block .checkboxes, .app-pane.group-actions .detail-block .radios, .app-pane.group-actions .displaybox .detail-block, .app-pane.group-actions .displaybox .displaybox, .app-pane.group-actions .displaybox .checkboxes, .app-pane.group-actions .displaybox .radios, .app-pane.group-actions .checkboxes .detail-block, .app-pane.group-actions .checkboxes .displaybox, .app-pane.group-actions .checkboxes .checkboxes, .app-pane.group-actions .checkboxes .radios, .app-pane.group-actions .radios .detail-block, .app-pane.group-actions .radios .displaybox, .app-pane.group-actions .radios .checkboxes, .app-pane.group-actions .radios .radios, .app-pane.group-actions .inner-pane .detail-block, .app-pane.group-actions .inner-pane .displaybox, .app-pane.group-actions .inner-pane .checkboxes, .app-pane.group-actions .inner-pane .radios {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app-pane form, .app-pane form * {
+  box-sizing: border-box;
+}
+.app-pane form > *:last-child, .app-pane form .last-child-hack {
+  margin-bottom: 0;
+}
+.app-pane .inner-pane {
+  background-color: rgba(0, 0, 0, 0.075);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: padding-top, transform, background-color, box-shadow, 0.4s ease;
+}
+.app-pane .inner-pane:after {
+  font-size: 1em;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.3em;
+  color: #fff;
+  font-weight: bold;
+}
+.app-pane .inner-pane.requested:after {
+  content: "Requested";
+  background-color: #6699cc;
+  color: #262626;
+}
+.app-pane .inner-pane.exception:after {
+  content: "Exception";
+  background-color: #ff8cd4;
+  color: #262626;
+}
+.app-pane .inner-pane.pending:after {
+  content: "Pending";
+  background-color: #F4C182;
+  color: #262626;
+  border: 2px solid #262626;
+}
+.app-pane .inner-pane.active {
+  overflow: hidden;
+}
+.app-pane .inner-pane.active:after {
+  content: "Active";
+  background-color: #07a672;
+}
+.app-pane .inner-pane.remove {
+  transform: scale(1.05);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
+}
+@media screen and (max-width: 65rem) {
+  .app-pane .inner-pane.remove {
+    padding-top: 2rem;
+  }
+}
+.app-pane .inner-pane.remove label {
+  background-color: #4d4d4d;
+}
+.app-pane .inner-pane.remove [type=color], .app-pane .inner-pane.remove [type=date], .app-pane .inner-pane.remove [type=datetime], .app-pane .inner-pane.remove [type=datetime-local], .app-pane .inner-pane.remove [type=email], .app-pane .inner-pane.remove [type=month], .app-pane .inner-pane.remove [type=number], .app-pane .inner-pane.remove [type=password], .app-pane .inner-pane.remove [type=search], .app-pane .inner-pane.remove [type=tel], .app-pane .inner-pane.remove [type=text], .app-pane .inner-pane.remove [type=time], .app-pane .inner-pane.remove [type=url], .app-pane .inner-pane.remove [type=week], .app-pane .inner-pane.remove input:not([type]), .app-pane .inner-pane.remove textarea, .app-pane .inner-pane.remove textarea {
+  background-color: #f2f2f2;
+}
+.app-pane .inner-pane.removed {
+  transform: scale(0);
+}
+.app-pane .inner-pane button.remove {
+  background-color: #EE3124;
+  background-image: url(../public/img/close.svg);
+  background-position: 50% 50%;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  font-size: 0.4em;
+  padding: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  text-indent: 200px;
+  position: absolute;
+  right: 0.75rem;
+  top: -0.75rem;
+  transition: padding, height, width, border-radius, background-color 0.2s ease;
+}
+.app-pane .inner-pane button.remove:before {
+  content: "";
+  display: none;
+}
+.app-pane .inner-pane button.remove:hover {
+  background-color: #990000;
+}
+.app-pane .inner-pane button.remove:active {
+  top: -0.65rem !important;
+}
+.app-pane .inner-pane button.remove.clicked {
+  background-color: #990000;
+  overflow: visible;
+  text-indent: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0.6em;
+  padding: 0 1em;
+  font-size: 0.8em;
+  background-position: -150% 50%;
+}
+.app-pane .inner-pane button.remove.clicked:hover {
+  background-color: #7a0000;
+}
+.app-pane .inner-pane button.confirm {
+  background-color: #1d344d;
+  display: block;
+  position: absolute;
+  width: auto;
+  height: auto;
+  border-radius: 0.6em;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+  position: absolute;
+  top: -0.75rem;
+  right: 0.75rem;
+}
+.app-pane .inner-pane button.confirm:hover {
+  background-color: #262626;
+}
+.app-pane .inner-pane > div:last-child .input-combo:last-child {
+  margin-bottom: 0;
+}
+.app-pane .inner-pane > *:last-child {
+  margin-bottom: 0;
+}
+.app-pane .inner-pane .detail-block {
+  background-color: #f2f2f2;
+}
+.app-pane .inner-pane.admin-extras {
+  background-color: #cccccc;
+}
+.app-pane .inner-pane.admin-extras.suggestion {
+  background-color: #999999;
+}
+.app-pane .inner-pane.admin-extras h3 {
+  margin-bottom: 1em;
+}
+.app-pane .inner-pane.admin-extras .reveal {
+  display: inline-block;
+  position: relative;
+  top: -0.4em;
+  padding: 0.2em 0.8em;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.5em;
+  color: #fff;
+  background-color: #1d344d;
+  transition: background-color, 0.2s ease;
+}
+.app-pane .inner-pane.admin-extras .reveal:hover {
+  cursor: pointer;
+  background-color: #6699cc;
+}
+.app-pane .inner-pane.admin-extras h4 .reveal {
+  float: right;
+  top: 0.2em;
+}
+.app-pane .inner-pane.admin-extras .details-container, .app-pane .inner-pane.admin-extras .detail-contents {
+  display: none;
+}
+.app-pane .inner-pane.admin-extras .details-container.open, .app-pane .inner-pane.admin-extras .detail-contents.open {
+  display: block;
+}
+.app-pane h1 {
+  font-size: 2.4em;
+}
+.app-pane h2 {
+  font-size: 1.8em;
+}
+.app-pane h3 {
+  font-size: 1.4em;
+  margin: 1em 0;
+}
+.app-pane h4 {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+.app-pane h1, .app-pane h2, .app-pane h3, .app-pane h4, .app-pane h5 {
+  color: #262626;
+}
+.app-pane h1:first-child, .app-pane h2:first-child, .app-pane h3:first-child, .app-pane h4:first-child, .app-pane h5:first-child {
+  margin-top: 0;
+}
+.sidebar .app-pane h1, .sidebar .app-pane h2, .sidebar .app-pane h3, .sidebar .app-pane h4, .sidebar .app-pane h5 {
+  color: #f2f2f2;
+  text-shadow: 0 0 2px #000, 0 0 2px #000;
+}
+.app-pane h1.collapsed, .app-pane h2.collapsed, .app-pane h3.collapsed, .app-pane h4.collapsed, .app-pane h5.collapsed {
+  margin-bottom: 0;
+}
+.app-pane.hud h1, .app-pane.hud h2, .app-pane.hud h3, .app-pane.hud h4, .app-pane.hud h5 {
+  color: #f2f2f2;
+}
+.app-pane h3.user-profile {
+  margin-bottom: 2em;
+}
+.app-pane h3 > button {
+  font-size: 0.6em !important;
+  position: relative;
+  top: -0.2em;
+  margin-left: 1rem;
+}
+.app-pane h3 + p.instructions {
+  position: relative;
+  top: -1rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.app-pane p, .app-pane ul, .app-pane ol {
+  line-height: 1.4em;
+  margin-top: 0;
+}
+.app-pane p a, .app-pane ul a, .app-pane ol a {
+  color: #004b8d;
+  text-decoration: underline;
+}
+.app-pane p a:hover, .app-pane ul a:hover, .app-pane ol a:hover {
+  color: #1d344d;
+}
+.app-pane .stay-controls::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.app-pane .stay-controls input {
+  margin-bottom: 0;
+}
+.app-pane .stay-controls input.delete {
+  background-color: #990000;
+}
+.app-pane .stay-controls input.request {
+  float: right;
+  margin-right: 0;
+}
+.app-pane .stay-heading {
+  cursor: default;
+}
+.app-pane .stay-heading:before {
+  content: "▸";
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  transform: rotate(90deg) translate(0.6rem);
+  transition: transform 0.2s ease;
+}
+.app-pane .stay-heading.collapsed:before {
+  transform: translate(0.05rem) rotate(0deg);
+}
+.app-pane .awaiting-admin-response {
+  text-align: center;
+  padding: 2rem 2rem 1rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+.app-pane .awaiting-admin-response .loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 2000ms infinite;
+  animation: ellipsis steps(4, end) 2000ms infinite;
+  content: "…";
+  /* ascii code for the ellipsis character */
+  width: 0px;
+}
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@media screen and (min-width: 35rem) {
+  .app-pane, .app-pane:last-child {
+    border-radius: 0.4rem;
+    margin-bottom: 2rem;
+  }
+  .app-pane .app-status, .app-pane:last-child .app-status {
+    font-size: 0.75em;
+    top: 0;
+  }
+  .sidebar .app-pane, .main-column .inner.sidebar .app-pane, .app-pane.hud, .sidebar .app-pane:last-child, .main-column .inner.sidebar .app-pane:last-child, .app-pane:last-child.hud {
+    padding: 0;
+  }
+  .main-column .app-pane, .main-column .app-pane:last-child {
+    border-radius: 0.6rem;
+    padding: 2rem;
+  }
+  .main-column .app-pane.primary, .main-column .app-pane:last-child.primary {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 1rem;
+  }
+  .app-pane .inner-pane, .app-pane:last-child .inner-pane {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .app-pane, .app-pane:last-child {
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .main-column .app-pane, .main-column .app-pane:last-child {
+    border-radius: 0.6rem;
+    padding: 1rem;
+  }
+  .main-column .inner.sidebar .app-pane, .main-column .inner.sidebar .app-pane:last-child {
+    padding: 0;
+  }
+  .app-pane .inner-pane, .app-pane:last-child .inner-pane {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .app-pane, .app-pane:last-child {
+    margin-bottom: 2rem;
+    border-radius: 0.6rem;
+  }
+  .main-column .app-pane, .main-column .app-pane:last-child {
+    padding: 2rem;
+  }
+  .main-column .app-pane.primary, .main-column .app-pane:last-child.primary {
+    padding-bottom: 2rem;
+  }
+
+  .group.app-pane {
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .app-pane .inner-pane, .app-pane:last-child .inner-pane {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .sidebar .app-pane, .sidebar .app-pane:last-child {
+    padding: 0 2rem;
+  }
+  .admin-extras .sidebar .app-pane, .three .sidebar .app-pane, .admin-extras .sidebar .app-pane:last-child, .three .sidebar .app-pane:last-child {
+    padding: 0;
+  }
+  .main-column .app-pane, .main-column .app-pane:last-child {
+    padding: 3rem 4rem;
+  }
+  .main-column .app-pane.primary, .main-column .app-pane:last-child.primary {
+    padding-bottom: 3rem;
+  }
+  .main-column .app-pane h3, .main-column .app-pane:last-child h3 {
+    font-size: 1.4em;
+  }
+  .main-column .inner.sidebar .app-pane, .main-column .inner.sidebar .app-pane:last-child {
+    padding: 0;
+  }
+  .app-pane .inner-pane, .app-pane:last-child .inner-pane {
+    padding: 2rem;
+  }
+
+  .sub-column .app-pane, .sub-column .app-pane.primary {
+    padding: 2rem !important;
+  }
+  .inner.sidebar .app-pane, .inner.sidebar .app-pane.primary {
+    padding: 0 !important;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .sub-column .app-pane, .sub-column .app-pane.primary {
+    padding: 2rem !important;
+  }
+  .inner.sidebar .app-pane, .inner.sidebar .app-pane.primary {
+    padding: 0 !important;
+  }
+}
+@media screen and (min-width: 102rem) {
+  .main-column .app-pane, .main-column .app-pane:last-child {
+    padding: 5rem 8rem 6rem;
+    border-radius: 1rem;
+  }
+  .main-column .app-pane.primary, .main-column .app-pane:last-child.primary {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 2rem;
+  }
+
+  .sub-column .app-pane, .sub-column .app-pane.primary {
+    padding: 2rem !important;
+  }
+  .inner.sidebar .app-pane, .inner.sidebar .app-pane.primary {
+    padding: 0 !important;
+  }
+}

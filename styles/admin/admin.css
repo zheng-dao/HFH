@@ -1,0 +1,40 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+#mm_menu li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+#jfu_upload_actions_btns, #pw-dropdown-toggle-jfu_upload_actions_btns {
+  margin-top: 1rem;
+}
+
+#jfu_drop_area_wrapper .InputfieldHeader.uk-form-label {
+  padding-left: 1rem !important;
+}
+
+.jfu-uploaded-files-list.uk-overflow-auto.uk-width-1-1 .InputfieldHeader.uk-form-label {
+  padding-left: 1rem !important;
+}
+
+#streetaddress_house_address {
+  transform: scale(1.3);
+  transform-origin: left;
+}
+
+.streetaddress_input_frame {
+  padding: 1em 0;
+}
+
+#selected_image_settings #resize_action,
+#selected_image_settings #crop_action,
+#selected_image_settings #max_action,
+#selected_image_settings #min_action,
+#selected_image_settings #description_action,
+#selected_image_settings #wrap_link_original,
+#selected_image_settings #show_when_rte,
+#selected_image_settings #selected_image_checkboxes,
+#selected_image_settings #selected_image_pixels {
+  display: none;
+  visibility: hidden;
+}

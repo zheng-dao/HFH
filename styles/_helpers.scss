@@ -1,0 +1,125 @@
+@mixin cleanlist	{
+    list-style: none;
+    padding-left: 0;
+}
+
+@mixin cleanlabel {
+    background-color: transparent;
+    color: $gray85;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin emboss {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 -1px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.2) 100%);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25), 0 1px 0 rgba(255,255,255,.25);
+}
+
+@mixin subtle_emboss {
+    box-shadow: inset 0 4rem 4rem rgba(255,255,255,.025), inset 0 2px 0 rgba(255,255,255,.25), inset 0 -2px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5);
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(0,0,0,0.025) 100%);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25), 0 1px 0 rgba(255,255,255,.25);
+}
+
+@mixin pressed {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 -1px 0 rgba(0,0,0,.25) !important;
+    top: 1px !important;  
+    &.disabled {
+        top: 0 !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 -1px 0 rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.5) !important;
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.2) 100%) !important;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.25), 0 1px 0 rgba(255,255,255,.25) !important;
+    }
+}
+
+@mixin fullbleed	{
+    display: block;
+    margin: 0 -2em;
+    padding: 0 2em;
+}
+
+@mixin ir {
+    text-indent: 400%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    transition: clip 0.2s ease;
+}
+
+@mixin visuallyhiddenoverride {
+    clip: none;
+    height: auto;
+    margin: 0;
+    position: static;
+    width: auto;
+}
+
+@mixin focusable	{
+    &:active, &:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+}
+
+@mixin invisible {
+    visibility: hidden;
+}
+
+@mixin cleanlabel {
+    background-color: transparent;
+    color: $gray85;
+    font-weight: bold;
+    text-transform: none;
+    font-size: 1em;
+}
+
+@mixin sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+// Font Awesome Mixin
+// usage: @include icon(\f107, 0,0,0,0)
+// where \f107 is an example content value for the icon you want to display
+// 0,0,0,0 represents margin values for top,right,bottom,left
+
+
+@mixin icon($content, $t: 0, $r: 0, $b: 0, $l: 0){
+    content: "#{$content}";
+    margin: #{$t}px #{$r}px #{$b}px #{$l}px;
+    font-family: FontAwesome;
+}
+
+// Example usage
+// add icon-angle-down to nav items with the class of .parent
+
+// a.parent:after {
+//     @include icon(\f107, 0,0,0,7);
+// }

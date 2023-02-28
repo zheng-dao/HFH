@@ -1,0 +1,655 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.subscribe	{
+
+	padding: 0;
+	margin-bottom: 1rem;
+	text-align: left;
+	background-color: #fff;
+
+	.patriot-cover {
+
+		display: block;
+		overflow: hidden;
+		position: static;
+
+		img	{
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+	}
+	
+	h2	{
+		color: $gray85;
+		margin-bottom: 1em;
+	}
+
+	h3 {
+		margin-bottom: 0;
+	}
+	
+	p {
+		color: $gray65;
+		font-family: $serif;
+		strong {
+			color: $gray85;
+		}
+	}
+
+	.magazine	{
+		padding: 0;
+		position: static;
+		.instructions	{
+			padding: 1em;
+		}
+	}
+
+	.newsletter	{
+		color: #fff;
+		padding: 1em;
+		h3 {
+			color: $gray85;
+		}
+		p {
+			color: $gray65;
+			font-size: .9em;
+		}
+	}
+
+	.signup-selector {
+		background-color: $gold;
+		position: static;
+		h3 {
+			font-size: 1.4em;
+			padding: .7em;
+			margin: 0;
+			color: $gray85;
+		}
+		ul {
+			@include cleanlist;
+			margin: 0;
+			li {
+				display: inline;
+				a {
+					display: block;
+					position: relative;
+					padding: .5em 1em;
+					background-color: shade($navy, 30);
+					color: #fff;
+					border-bottom: 1px solid #fff;
+					&:after {
+						content: "";
+						display: block;
+						position: absolute;
+						top: .65em;
+						right: .5em;
+						height: 1em;
+						width: 1em;
+						background-image: url(../public/img/next.svg);
+						background-size: 1em 1em;
+						background-position: 50% 50%;
+						background-repeat: no-repeat;
+						-webkit-transform: rotate(0deg);
+						transform: rotate(0deg);
+						transition: -webkit-transform 0.2s ease ,transform 0.2s ease;
+					}
+					&:hover {
+						background-color: $light_blue;
+					}
+					&.current {
+						background-color: $light_blue;
+						&:after {
+							-webkit-transform: rotate(90deg);
+							transform: rotate(90deg);
+						}
+					}
+				}
+				&:last-child a {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.forms {
+		clear: left;
+		background-color: $gray15;
+		display: none;
+		&.open {
+			display: block !important;
+		}
+		h3 {
+			font-size: 1.4em;
+			padding: 1rem 1rem 0;
+		}
+		.thank-you {
+			background-color: #fff;
+			margin: 0;
+			padding: 1em;
+			h2 {
+				margin-top: 0 !important;
+				margin-bottom: .5em;
+			}
+			p {
+				margin: 0 !important;
+			}
+		}
+		form {
+			font-size: 1em;
+			padding: 1rem;
+			&.open {
+				display: flex;
+			}
+			label	{
+				display: inline-block;
+				clear: left !important;
+				font-family: $sans;
+				font-size: .6em;
+				text-transform: uppercase;
+				padding: .3em 1em;
+				color: #fff;
+				background-color: $navy;
+				border-radius: .5em .5em 0 0;
+				&.required	{
+					&:after {
+						content: "";
+						display: inline-block;
+						background-color: #fff;
+						height: .5em;
+						width: .5em;
+						border-radius: 50%;
+						margin-left: .8em;
+						position: relative;
+						top: -.1em;
+					}
+				}
+			}
+			.errMsg,
+			.infoMsg {
+				position: relative;
+				top: -1.25em;
+				text-align: right;
+				padding-right: 1em;
+				span {
+					background-color: $red;
+					display: inline-block;
+					border-radius: 0 0 .5em .5em;
+					font-family: $sans;
+					font-size: .6em;
+					text-transform: uppercase;
+					padding: .3em 1em;
+					color: #fff;
+				} 
+			}
+			#{$all-text-inputs}, textarea	{
+				border-radius: 0 .3em .3em .3em;
+				&.nolabel	{
+					border-radius: .3em;
+				}
+			}
+			.selectbox, .displaybox	{
+				display: block;
+				padding: .7em .8em .5em .8em;
+				background-color: $gray25;
+				border-radius: 0 .3em .3em .3em;
+				margin-bottom: 1em;
+				select	{
+					margin: 0 0 .15em 0;
+					width: 100%;
+				}
+				label {
+					background-color: transparent;
+					text-transform: none;
+					color: $gray80;
+					font-size: 1em;
+					padding: 0;
+					border-radius: 0;
+					margin-bottom: 0;
+					position: relative;
+					top: -.1em;
+				}
+			}
+
+			.displaybox {
+				font-family: $sans;
+				background-color: $gray10;
+			}
+
+			.button {
+				background-color: $navy;
+				&:hover {
+					background-color: $light_blue;
+				}
+			}
+			
+			.error-contact-msg {
+				clear: both;
+				background-color: $navy;
+				color: #fff;
+				padding: 1em 2em 1em 1em;
+				border-left: 1em solid $red;
+				border-radius: .4em;
+				margin: 0 0 2em 0;
+				p {
+					font-family: $sans;
+					margin: 0;
+					padding: 0;
+					color: #fff;
+					a {
+						color: $gold;
+						text-decoration: none;
+						font-weight: bold;
+						&:hover {
+							border-bottom: 2px solid #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.reading-block & {
+		background-color: transparent;
+		.forms {
+			background-color: transparent;
+			form {
+				padding: 0;
+			}
+			label {
+				background-color: $blue;
+			}
+			.button {
+				background-color: $blue;
+				&:hover {
+					background-color: $overlay;
+				}
+			}
+		}
+	}
+	
+	.email-subscription {
+		width: 100%;
+		.selectbox > div {
+			@include clearfix;
+			label {
+				display: inline;
+				float: none;
+			}
+			&.yes {
+				margin-bottom: 1em;
+			}
+		}
+		input[type=radio] {
+			height: .8em;
+			width: .8em;
+			float: left;
+			margin-right: 1em;
+		}
+	}
+
+	.email-yes {
+		width: 100%;
+		display: none;
+		&.yes {
+			display: block;
+		}
+	}
+
+	@media #{$small}	{
+
+		border-radius: .6rem;
+		overflow: hidden;
+
+		.patriot-cover	{
+			display: block;
+			overflow-x: hidden;
+		}
+
+		.magazine {
+			overflow: hidden;
+			.instructions {
+				padding: 1rem;
+				border-bottom: 0;
+				h2	{
+					margin-top: 0;
+				}
+			}
+		}
+
+		.name-set {
+			display: flex;
+			flex-flow: row wrap;
+			.labeled-input {
+				margin-right: 1rem;
+				flex: 0 0 calc(50% - .5rem);
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		.street-address-set {
+			display: flex;
+			flex-flow: row wrap;
+			.labeled-input {
+				margin-right: 1rem;
+				flex: 0 0 calc(50% - .5rem);
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.street-address, .city {
+				flex: 0 0 100%;
+				margin-right: 0;
+			}
+		}
+	
+	}
+	
+	@media #{$med}	{
+
+		.subscribe {
+			overflow: hidden;
+			border-radius: .6rem;
+			border: 1px solid red;
+		}
+
+		.magazine	{
+
+			display: flex;
+			border-radius: 0;
+	
+			.patriot-cover	{
+				flex: 2;
+				overflow-x: hidden;
+				text-align: right;
+				position: relative;
+				img {
+					height: 100%;
+					width: auto;
+					max-width: none;
+					text-align: right;
+					position: absolute;
+					top: 0;
+					right: 0;
+					border-radius: 0;
+				}
+			}
+
+			.instructions	{
+				flex: 4;
+				h2 {
+					margin-bottom: .6em;
+				}
+				p {
+					margin-top: 0;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+		}
+
+		.newsletter	{
+			h3 {
+				margin-bottom: .8em;
+			}
+		}
+
+		.signup-selector {
+
+			ul {
+				li {
+					margin-top: .8em;
+				}
+			}
+			
+		}
+
+		.signup-selector {
+			display: flex;
+			ul {
+				display: flex;
+				flex: 1;
+				li {
+					margin-right: 1rem;
+					flex: 1;
+					a {
+						border-bottom: 0;
+						border-radius: .3em;
+						box-sizing: border-box;
+						padding: .5em 3em .5em 1em;
+						font-size: .85em;
+					}
+				}
+			}
+		}
+
+		.forms {
+			.button {
+				margin-left: auto;
+			}
+			form {
+				display: flex;
+				flex-flow: row wrap;
+				.name-set {
+					flex: 0 0 calc(66.666666% - .5rem);
+					margin-right: 1rem;
+				}
+				.labeled-input.email-address {
+					flex: 0 0 calc(33.333333% - .5rem);
+				}
+				.street-address-set {
+					flex: 0 0 100%;
+					.street-address {
+						flex: 0 0 100%;
+						margin-right: 0;
+					}
+					.city {
+						flex: 0 0 calc(40% - 1rem);
+						margin-right: 1rem;
+					}
+					.state {
+						flex: 0 0 calc(40% - 1rem);
+						margin-right: 1rem;
+					}
+					.zip {
+						flex: 0 0 20%;
+						margin-right: 0;
+					}
+				}
+				.button {
+					margin-bottom: 0;
+				}
+			}
+		}
+	
+	}
+
+	@media #{$large}	{
+	
+		.magazine	{
+
+			.patriot-cover	{
+			}
+
+			.instructions	{
+				h2 {
+					margin-bottom: .6em;
+					font-size: 2em;
+				}
+				p {
+					margin-top: 0;
+					font-size: 1.2em;
+				}
+			}
+
+		}
+
+		.signup-selector {
+			display: flex;
+			ul {
+				display: flex;
+				flex: 1;
+				li {
+					margin-right: 1rem;
+					flex: 1;
+					a {
+						border-bottom: 0;
+						border-radius: .3em;
+						box-sizing: border-box;
+						padding: .5em 3em .5em 1em;
+						font-size: 1em;
+					}
+				}
+			}
+		}
+
+	}
+	
+	@media #{$xlarge}	{
+
+		&.overhang {
+			margin-top: -4rem;
+			z-index: 11;
+			position: relative;
+		}
+
+		margin-bottom: 2rem;
+
+		.magazine {
+
+			.instructions {
+				padding: 1.6rem 2rem 2rem;
+			}
+
+			p {
+				line-height: 1.6em;
+			}
+
+		}
+
+		.newsletter	{
+			padding-top: 1.25em;
+		}
+
+		.signup-selector {
+			h3 {
+				font-size: 1.4em;
+				padding: .7em;
+			}
+		}
+
+		.reading-block & {
+			padding: 0 1rem;
+		}
+		
+	}
+
+	@media #{$xxlarge} {
+
+		.magazine {
+
+			.patriot-cover {
+				flex: 5;
+			}
+
+			.instructions {
+				flex: 10;
+			}
+
+		}
+
+	}
+
+	@media #{$xxxlarge} {
+
+		.magazine {
+
+			.patriot-cover {
+				flex: 5;
+				img {
+					width: auto;
+					height: 100%;
+				}
+			}
+
+			.instructions {
+				flex: 10;
+				font-size: 1.25em;
+			}
+
+		}
+
+		.signup-selector, .forms {
+			font-size: 1.25em;
+		}
+
+		.reading-block & {
+			padding: 0 3rem 2rem;
+			.forms {
+				font-size: 1em;
+			}
+		}
+
+	}
+
+	@media #{$xxxxlarge} {
+
+		.magazine {
+
+			.patriot-cover {
+				flex: 5;
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+#print-only.open, #email-only.open, #both.open, .thankyou.open {
+
+	display: block !important;
+
+}
+
+#print-only.closed, #email-only.closed, #both.closed, .thankyou.closed {
+
+	display: none !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

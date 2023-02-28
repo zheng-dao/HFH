@@ -1,0 +1,23 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.sectionfront-intro {
+  margin-bottom: 1rem;
+}
+.sectionfront-intro .reading-block {
+  padding-bottom: 1rem;
+}
+.sectionfront-intro .reading-block *:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 65rem) {
+  .sectionfront-intro {
+    margin-bottom: 2rem;
+  }
+  .sectionfront-intro .reading-block {
+    padding-bottom: 2rem;
+  }
+  .sectionfront-intro .reading-block *:last-child {
+    margin-bottom: 0;
+  }
+}

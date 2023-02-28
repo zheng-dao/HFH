@@ -1,0 +1,118 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.page-item {
+  background-color: #fff;
+  border-bottom: 0.6rem solid #F4C182;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.prime .page-item {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #bfbfbf;
+  border-bottom: 0.6em solid #325a85;
+}
+.prime .page-item .page-item-body header h1 {
+  color: #f2f2f2;
+}
+.prime .page-item .page-item-body header p {
+  color: #b3b3b3;
+}
+.prime .page-item .page-item-body p, .prime .page-item .page-item-body ul, .prime .page-item .page-item-body ol {
+  color: #cccccc;
+}
+.page-item:last-child {
+  margin-bottom: 0;
+}
+.page-item .full-bleed-image {
+  position: relative;
+  overflow: hidden;
+}
+.page-item .full-bleed-image img {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+.page-item .page-item-body {
+  padding: 1rem;
+  font-family: "ff-tisa-web-pro", "Georgia", "Times", serif;
+  color: #595959;
+  position: relative;
+  z-index: 11;
+}
+.page-item .page-item-body header h1 {
+  padding: 0;
+  margin: 0;
+  color: #333333;
+  font-size: 2.4em;
+}
+.page-item .page-item-body header p {
+  margin: 0;
+  padding: 0;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  color: #bfbfbf;
+  font-size: 0.75em;
+  line-height: normal;
+}
+.page-item .page-item-body p, .page-item .page-item-body ul, .page-item .page-item-body ol {
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 45rem) {
+  .page-item .full-bleed-image {
+    position: relative;
+    overflow: hidden;
+  }
+  .page-item .full-bleed-image img {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .page-item .full-bleed-image img:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: 100%;
+    left: -25%;
+    box-shadow: 0 0 50px 60px #1d344d;
+    z-index: 10;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .page-item {
+    margin-bottom: 2rem;
+  }
+  .page-item:last-child {
+    margin-bottom: 0;
+  }
+  .page-item .page-item-body {
+    padding: 2rem;
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .page-item {
+    margin-bottom: 2rem;
+  }
+  .page-item:last-child {
+    margin-bottom: 0;
+  }
+  .page-item .page-item-body {
+    padding: 2rem 3rem;
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .page-item {
+    margin-bottom: 2rem;
+    font-size: 1.25em;
+  }
+  .page-item:last-child {
+    margin-bottom: 0;
+  }
+  .page-item .page-item-body {
+    padding: 3rem 5rem;
+    font-size: 1.2em;
+  }
+}

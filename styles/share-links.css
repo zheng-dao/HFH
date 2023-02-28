@@ -1,0 +1,166 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.share-links {
+  position: absolute;
+  z-index: 11;
+  top: 0;
+  right: 0;
+  font-size: 0.8em;
+  height: 5em;
+  width: 5em;
+  overflow: hidden;
+  transition: width 0.2s ease-in;
+}
+.share-links.open {
+  width: 18.5em;
+}
+.share-links h4 {
+  background-color: #6699cc;
+  color: #fff !important;
+  font-size: 0.8em;
+  text-align: right;
+  text-transform: uppercase;
+  padding: 4.8em 4em 0.5em;
+  position: absolute;
+  top: -2.65em;
+  left: -0.175em;
+  transform: rotate(45deg);
+  transition: background-color 0.2s ease;
+}
+.share-links h4:hover {
+  cursor: pointer;
+  background-color: #6699cc;
+}
+.share-links h4:after {
+  content: "+";
+  display: block;
+  height: 1em;
+  font-size: 1.6em;
+  width: 100%;
+  text-align: center;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 2em;
+  left: 0;
+}
+.share-links.open h4 {
+  background-color: #6699cc;
+}
+.share-links ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 5em;
+  height: 5em;
+  padding: 1em;
+  width: 15em;
+  background: #6699cc;
+}
+.share-links ul li {
+  display: inline-block;
+  position: relative;
+  margin-right: 1em;
+}
+.share-links ul li:last-child {
+  margin-right: 0;
+}
+.share-links ul li:after {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  display: block;
+  height: 2.8em;
+  width: 2.8em;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 0;
+  transition: background-color 0.2s ease;
+}
+.share-links ul li:hover:after {
+  background-color: #1d344d;
+}
+.share-links ul li a {
+  display: inline-block;
+  text-indent: 400%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  height: 3em;
+  width: 3em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  text-decoration: none;
+  border-bottom: none;
+}
+.share-links ul li a.facebook {
+  background-image: url(../public/img/facebook-share.svg);
+}
+.lt-ie9 .share-links ul li a.facebook {
+  background-image: url(../public/img/facebook-share.png);
+}
+.share-links ul li a.twitter {
+  background-image: url(../public/img/twitter-share.svg);
+}
+.lt-ie9 .share-links ul li a.twitter {
+  background-image: url(../public/img/twitter-share.png);
+}
+.share-links ul li a.email {
+  background-image: url(../public/img/email-share.svg);
+}
+.lt-ie9 .share-links ul li a.email {
+  background-image: url(../public/img/twitter-share.png);
+}
+
+.share-links:last-child {
+  position: relative;
+  margin: 1rem -1rem -1rem;
+  padding: 0 2em;
+  width: auto;
+  height: 2em;
+  background-color: rgba(0, 0, 0, 0.25);
+  font-size: 1.4em;
+  transition: background-color, height, 0.2s ease-in-out;
+}
+.classic .share-links:last-child {
+  background-color: #b3b3b3;
+}
+.share-links:last-child:hover {
+  background-color: #6699cc;
+}
+.share-links:last-child.open {
+  height: 5em;
+  background-color: #6699cc;
+}
+.share-links:last-child h4 {
+  transform: none;
+  position: relative;
+  text-align: left;
+  top: 0;
+  left: 0;
+  padding: 0.6em 2em 0;
+  margin: 0 -2em;
+  background-color: transparent;
+}
+.share-links:last-child h4:after {
+  display: none;
+}
+.share-links:last-child ul {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  padding: 0.6em 0;
+  background-color: transparent;
+}
+.share-links:last-child ul li:after {
+  height: 1.8em;
+  width: 1.8em;
+}
+.share-links:last-child ul li a {
+  height: 2em;
+  width: 2em;
+}

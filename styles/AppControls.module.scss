@@ -1,0 +1,252 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.app-controls	{
+	
+	padding: 1rem;
+	margin-bottom: 1rem;
+	font-size: .8em;
+	@include clearfix;
+
+	background-color: $gray20;
+	transition: width, padding, font-size, 0.2s ease;
+
+	&.group-actions {
+		background-color: $gray80;
+		@include subtle_emboss;
+
+		button {
+			position: static;
+		}
+	}
+
+	&.top {
+		padding-top: 0;
+	}
+
+	> button {
+		margin-bottom: 0;
+	}
+
+	button.cancel {
+		background-color: $gray50;
+	}
+
+	.save	{
+		&:last-child {
+			float: right !important;
+			margin-right: 0;
+		}
+	}
+
+	.complete, .approve, .submit {
+		float: right;
+		background-color: $green;
+		margin-right: 0;
+		&:hover {
+			background-color: darken($green, 20%);
+		}
+	}
+
+	.request {
+		float: right;
+		background-color: $light_blue;
+		&:hover {
+			background-color: darken($light_blue, 20%);
+		}
+	}
+
+	.decline, .delete {
+		background-color: $dark_red;
+		&:hover {
+			background-color: darken($dark_red, 20%);
+		}
+	}
+
+	.return {
+		background-color: $purple;
+		&:hover {
+			background-color: darken($purple, 20%);
+		}
+	}
+
+	&.list-items {
+		.save {
+			float: right;
+			margin: 0;
+			font-size: 1.2em !important;
+		}
+		.delete, .archive, .cancel, .return {
+			float: left !important;
+			width: auto !important;
+			margin-bottom: 1em;
+			font-size: 1.2em !important;
+		}
+		.delete {
+			background-color: $dark_red !important;
+			&:hover {
+				background-color: $red !important;
+			}
+		}
+		.cancel {
+			background-color: $gray60;
+		}
+		.approve {
+			font-size: 1.2em !important;
+		}
+	}
+
+	.pager {
+		
+		@include clearfix;
+		border-radius: .6rem;
+		margin-bottom: 1rem;
+		float: right;
+		min-width: 70%;
+
+		button	{
+			margin: 0;
+			display: block;
+			float: left;
+			width: 50%;
+			transition: text-align 0.2s ease;
+			&.prev-page	{
+				background-color: $navy;
+				border-radius: .6em 0 0 .6em;
+				&:hover {
+					background-color: $gray85;
+				}
+			}
+			&.next-page {
+				background-color: $green;
+				border-radius: 0 .6em .6em 0;
+				&:hover {
+					background-color: shade($green, 20%);
+				}
+			}
+			&.inactive	{
+				background-color: $gray30;
+				color: $gray10;
+				&:hover {
+					background-color: $gray30;
+					color: $gray10;
+				}
+			}
+		}
+
+	}
+
+	.awaiting-admin-response {
+		text-align: center;
+		padding: 2rem 2rem 1rem;
+		color: rgba(0,0,0,.3);
+
+		.loading:after {
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: bottom;
+			-webkit-animation: ellipsis steps(4,end) 2000ms infinite;      
+			animation: ellipsis steps(4,end) 2000ms infinite;
+			content: "\2026"; /* ascii code for the ellipsis character */
+			width: 0px;
+		}
+		  
+		@keyframes ellipsis {
+			to {
+				width: 1.25em;    
+			}
+		}
+		  
+		@-webkit-keyframes ellipsis {
+			to {
+				width: 1.25em;    
+			}
+		}
+	}
+
+}
+
+@media #{$small} {
+
+	.app-controls {
+
+		border-bottom-left-radius: .6rem;
+		border-bottom-right-radius: .6rem;
+		padding: 2rem;
+		font-size: 1em;
+		margin-bottom: 2rem;
+
+		.pager {
+			margin-bottom: 2rem;
+		}
+
+	}
+
+}
+
+@media #{$med} {
+
+	.app-controls {
+
+		padding: 1rem;
+		margin-bottom: 1rem;
+
+	}
+
+}
+
+@media #{$large} {
+
+	.app-controls {
+
+		padding: 2rem;
+		margin-bottom: 2rem;
+
+		.pager {
+			float: right;
+			width: 50%;
+		}
+
+		.save:last-child {
+			float: left;
+		}
+
+	}
+
+}
+
+@media #{$xxlarge} {
+
+	.app-controls {
+
+		padding: 3rem 4rem;
+		font-size: 1.2em;
+	
+	}
+
+}
+
+@media #{$xxxxlarge} {
+
+	.app-controls {
+
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+		padding: 3rem 8rem 6rem;
+	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

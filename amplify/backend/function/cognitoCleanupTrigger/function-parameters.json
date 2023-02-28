@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "auth": {
+      "hotelsforheroes": ["read", "delete"]
+    },
+    "api": {
+      "hotelsforheroes": ["Query"]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "staleProfileDuration",
+      "environmentVariableName": "STALE_PROFILE_DURATION"
+    }
+  ]
+}

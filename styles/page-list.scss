@@ -1,0 +1,188 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.page-list {
+
+}
+
+.page-item {
+	
+	background-color: #fff;
+	border-bottom: .6rem solid $gold;
+	margin-bottom: 1rem;
+	position: relative;
+
+	.prime & {
+		background-color: $overlay;
+		color: $gray25;
+		border-bottom: .6em solid lighten($navy, 15);
+		.page-item-body {
+			header {
+				h1 {
+					color: $gray05;
+				}
+				p {
+					color: $gray30;
+				}
+			}
+			p, ul, ol {
+				color: $gray20;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.full-bleed-image {
+
+		position: relative;
+		overflow: hidden;
+
+		img {
+			padding: 0;
+			position: relative;
+			z-index: 1;
+		}
+
+	}
+
+	.page-item-body {
+
+		padding: 1rem;
+		font-family: $serif;
+		color: $gray65;
+		position: relative;
+		z-index: 11;
+
+		header {
+
+			h1 {
+				padding: 0;
+				margin: 0;
+				color: $gray80;
+				font-size: 2.4em;
+			}
+
+			p {
+				margin: 0;
+				padding: 0;
+				font-family: $sans;
+				text-transform: uppercase;
+				color: $gray25;
+				font-size: .75em;
+				line-height: normal;
+			}
+
+		}
+
+		p, ul, ol {
+			line-height: 1.6;
+		}
+
+	}
+
+}
+
+@media #{$med} {
+
+	.page-item {
+
+		.full-bleed-image {
+
+			position: relative;
+			overflow: hidden;
+
+			img {
+				padding: 0;
+				position: relative;
+				z-index: 1;
+				&:after {
+					content: "";
+					position: absolute;
+					height: 100%;
+					width: 150%;
+					top: 100%;
+					left: -25%;
+					box-shadow: 0 0 50px 60px $navy;
+					z-index: 10;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.page-item {
+
+		margin-bottom: 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.page-item-body {
+			padding: 2rem;
+			font-size: 1.2em;
+		}
+
+	}
+
+}
+
+@media #{$xxlarge} {
+
+	.page-item {
+
+		margin-bottom: 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.page-item-body {
+			padding: 2rem 3rem;
+			font-size: 1.2em;
+		}
+
+	}
+
+}
+
+@media #{$xxxlarge} {
+
+	.page-item {
+
+		margin-bottom: 2rem;
+		font-size: 1.25em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.page-item-body {
+			padding: 3rem 5rem;
+			font-size: 1.2em;
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

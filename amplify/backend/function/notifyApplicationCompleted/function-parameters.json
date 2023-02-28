@@ -1,0 +1,17 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "minidev"
+    }
+  ],
+  "secretNames": ["MAILCHIMP_API_KEY"],
+  "permissions": {
+    "api": {
+      "hotelsforheroes": ["Query"]
+    }
+  }
+}

@@ -1,0 +1,387 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+#regress-stay.dialog {
+
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	background-color: $overlay;
+	filter: drop-shadow(0px .5rem 1rem #000);
+	top: 0;
+
+	@media screen and (max-width: 45rem) {
+		.dialog-box {
+			border: 1rem solid rgba(0, 0, 0, .9);
+			border-radius: 1.5rem;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			max-width: 50%;
+			max-height: 80%;
+			transform: translate(-50%, -50%);
+			z-index: 1001;
+			color: $gray05;
+			background-color: $navy;
+			text-align: left;
+		}
+	}
+
+	@media (min-width: 45rem ) and (max-width: 65rem) {
+		.dialog-box {
+			border: 1rem solid rgba(0, 0, 0, .9);
+			border-radius: 1.5rem;
+			position: absolute;
+			left: 20%;
+			top: 50%;
+			max-width: 50%;
+			max-height: 80%;
+			transform: translate(-50%, -50%);
+			z-index: 1001;
+			color: $gray05;
+			background-color: $navy;
+			text-align: left;
+		}
+	}
+
+	@media (min-width: 65rem ) and (max-width: 85rem) {
+		.dialog-box {
+			border: 1rem solid rgba(0, 0, 0, .9);
+			border-radius: 1.5rem;
+			position: absolute;
+			left: 15%;
+			top: 50%;
+			max-width: 50%;
+			max-height: 80%;
+			transform: translate(-50%, -50%);
+			z-index: 1001;
+			color: $gray05;
+			background-color: $navy;
+			text-align: left;
+		}
+	}
+	
+	@media screen and (min-width: 85rem) {
+		.dialog-box {
+			border: 1rem solid rgba(0, 0, 0, .9);
+			border-radius: 1.5rem;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			max-width: 50%;
+			max-height: 80%;
+			transform: translate(-50%, -50%);
+			z-index: 1001;
+			color: $gray05;
+			background-color: $navy;
+			text-align: left;
+		}
+	}
+
+	button.close {
+		background-color: $red;
+		background-image: url(../public/img/close.svg);
+		background-position: 50% 50%;
+		background-size: 50% auto;
+		background-repeat: no-repeat;
+		font-size: .4em;
+		padding: 0;
+		height: 1.5rem;
+		width: 1.5rem;
+		margin: 0;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: 200px;
+		position: absolute;
+		right: 1rem;
+		top: 0;
+		transform: translate(0%, -85%);
+		transition: padding, height, width, border-radius, background-color 0.2s ease;
+		z-index: 1002;
+
+		&:before {
+			content: "";
+			display: none;
+		}
+
+		&:hover {
+			background-color: $dark_red;
+		}
+
+		&:active {}
+
+		&.clicked {
+			background-color: $dark_red;
+			overflow: visible;
+			text-indent: 0;
+			width: auto;
+			height: auto;
+			border-radius: .6em;
+			padding: 0 1em;
+			font-size: .8em;
+			background-position: -150% 50%;
+
+			&:hover {
+				background-color: shade($dark_red, 20%);
+			}
+		}
+	}
+
+	.presets {
+		padding: 1rem;
+		border-radius: .4rem;
+		background-color: $light_overlay;
+		margin-bottom: 1rem;
+
+		h4 {
+			display: inline;
+			margin-right: 1em;
+		}
+
+		button {
+			line-height: 1.6em;
+		}
+
+		* {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.dialog {
+
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	background-color: $overlay;
+	filter: drop-shadow(0px .5rem 1rem #000);
+	top: 0;
+
+	.dialog-box {
+		border: 1rem solid rgba(0, 0, 0, .9);
+		border-radius: 1.5rem;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		max-width: 50%;
+		max-height: 80%;
+		transform: translate(-50%, -50%);
+		z-index: 1001;
+		color: $gray05;
+		background-color: $navy;
+		text-align: left;
+	}
+
+	button.close {
+		background-color: $red;
+		background-image: url(../public/img/close.svg);
+		background-position: 50% 50%;
+		background-size: 50% auto;
+		background-repeat: no-repeat;
+		font-size: .4em;
+		padding: 0;
+		height: 1.5rem;
+		width: 1.5rem;
+		margin: 0;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: 200px;
+		position: absolute;
+		right: 1rem;
+		top: 0;
+		transform: translate(0%, -85%);
+		transition: padding, height, width, border-radius, background-color 0.2s ease;
+		z-index: 1002;
+
+		&:before {
+			content: "";
+			display: none;
+		}
+
+		&:hover {
+			background-color: $dark_red;
+		}
+
+		&:active {}
+
+		&.clicked {
+			background-color: $dark_red;
+			overflow: visible;
+			text-indent: 0;
+			width: auto;
+			height: auto;
+			border-radius: .6em;
+			padding: 0 1em;
+			font-size: .8em;
+			background-position: -150% 50%;
+
+			&:hover {
+				background-color: shade($dark_red, 20%);
+			}
+		}
+	}
+
+	.presets {
+		padding: 1rem;
+		border-radius: .4rem;
+		background-color: $light_overlay;
+		margin-bottom: 1rem;
+
+		h4 {
+			display: inline;
+			margin-right: 1em;
+		}
+
+		button {
+			line-height: 1.6em;
+		}
+
+		* {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.dialog-content {
+	position: relative;
+	top: 0;
+	left: 0;
+	max-height: 70vh;
+	padding: 1rem;
+	overflow: auto;
+
+	&.scrollable {
+		
+		overflow: scroll;
+
+		::-webkit-scrollbar {
+		  -webkit-appearance: none;
+		  -webkit-overflow-scrolling: auto;
+		}
+
+		::-webkit-scrollbar:vertical {
+		  width: 12px;
+		  -webkit-overflow-scrolling: auto;
+		}
+
+		::-webkit-scrollbar-thumb {
+		  background-color: rgba(0, 0, 0, .5);
+		  border-radius: 10px;
+		  border: 2px solid #ffffff;
+		  -webkit-overflow-scrolling: auto;
+		}
+
+		::-webkit-scrollbar-track {
+		  border-radius: 10px;  
+		  background-color: #ffffff; 
+		  -webkit-overflow-scrolling: auto;
+		}
+
+	}
+
+	label {
+		background-color: $light_blue;
+		color: $gray85;
+		font-weight: bold;
+	}
+
+	.selectbox {
+		background-color: $gray15;
+		color: $gray85;
+	}
+
+	fieldset.checkboxes,
+	fieldset.radios {
+		label {
+			color: $gray15;
+		}
+	}
+
+	.history-and-notes {
+		padding: 1rem;
+		width: 35rem;
+		height: 85vh;
+		overflow: scroll;
+
+		.detail-block {
+			background-color: $overlay;
+
+			strong {
+				color: $gray05;
+			}
+		}
+	}
+
+	form *:first-child {
+		margin-top: 0;
+	}
+
+	form *:last-child {
+		margin-bottom: 0;
+	}
+
+	.dialog-controls {
+		@include clearfix;
+
+		.delete {
+			background-color: $dark_red;
+
+			&:hover {
+				background-color: shade($dark_red, 20%);
+			}
+		}
+
+		.cancel {
+			background-color: $gray75;
+			float: left;
+			margin-bottom: 0;
+		}
+
+		.ok {
+			float: right;
+			margin-right: 0;
+			margin-bottom: 0;
+		}
+		.progress-cancel {
+			float: right;
+			margin-top: 16px;
+			margin-bottom: 0;
+		}
+	}
+
+	@media #{$med} {
+		min-width: 40%;
+	}
+
+}
+
+@media #{$med} {
+
+	.dialog {
+		.dialog-box {
+			max-width: 90% !important;
+			min-width: 30% !important;
+		}
+	}
+
+}
+
+@media #{$med-and-under} {
+
+	.dialog {
+		.dialog-box {
+			max-width: 90% !important;
+			min-width: 90% !important;
+		}
+	}
+
+}
+
+.custom-export {
+	margin-bottom: 1rem;
+}

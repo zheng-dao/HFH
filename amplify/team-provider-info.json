@@ -1,0 +1,1039 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-dev-85940-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-dev-85940-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-dev-85940-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-dev-85940-unauthRole",
+      "StackName": "amplify-hotelsforheroes-dev-85940",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-dev-85940/23271c90-0e49-11ec-a027-0a720c487c5f",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-dev-85940-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-dev-85940-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "api": {
+        "hotelsforheroes": {},
+        "AdminQueries": {},
+        "Utils": {}
+      },
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-776143475a5765374847-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://dev-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-4c6f5041496b5266374d-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4f795a5a43746f644d72-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-37686449584643773162-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-346a724568546b633138-build.zip",
+          "redirecturl": "https://dev-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-3473754e654954694c78-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/changeLiaisonEmail-45642b6d484768616833-build.zip",
+          "redirecturl": "https://dev-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/changeAdminEmail-795173486e5769357655-build.zip",
+          "redirecturl": "https://dev-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "emailApplicationFiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-5139426e65647544446a-build.zip",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "hotelsforheroesmakeAuthenticatedGraphqlRequest": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesmakeAuthenticatedGraphqlRequest-LambdaLayerVersion50f1b4fe-build.zip"
+        },
+        "cleanupOldUsers": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/cleanupOldUsers-756a69374f6868584b67-build.zip",
+          "staleProfileDuration": "1"
+        },
+        "cognitoCleanupTrigger": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/cognitoCleanupTrigger-3742796943784e477733-build.zip",
+          "staleProfileDuration": "1"
+        },
+        "notifyAdminsNewAccount": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyAdminsNewAccount-534c5359505347777259-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyOwnerAccountApproval": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyOwnerAccountApproval-6f6e535144546b323075-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationAction": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationAction-542f5651556551786a6d-build.zip"
+        },
+        "hotelsforheroessendMailMessage": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/hotelsforheroessendMailMessage-LambdaLayerVersion07aca19f-build.zip"
+        },
+        "notifyNewApplicationRequested": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyNewApplicationRequested-526f4941686877724733-build.zip"
+        },
+        "notifyApplicationException": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationException-796b52646f733136624a-build.zip"
+        },
+        "notifyApplicationApproved": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationApproved-58466f69524c6d617573-build.zip"
+        },
+        "notifyApplicationReturned": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationReturned-4f4b524b5a4165327879-build.zip"
+        },
+        "notifyApplicationDeclined": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationDeclined-4b4577534933785a3432-build.zip"
+        },
+        "notifyApplicationCompleted": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationCompleted-75333445675369544b33-build.zip"
+        },
+        "notifyApplicationNote": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/notifyApplicationNote-72574c777847486e6630-build.zip"
+        },
+        "confirmNewUserEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/confirmNewUserEmail-596135524e486d394d35-build.zip"
+        },
+        "downloadPdf": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/downloadPdf-306f73556742474c5758-build.zip"
+        },
+        "exportCsvWorker": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/exportCsvWorker-416d707446364469464b-build.zip"
+        },
+        "exportCsvTrigger": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/exportCsvTrigger-634c575764765a33544d-build.zip"
+        },
+        "hotelsforheroesgeneratePdf": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesgeneratePdf-LambdaLayerVersionb4248b8c-build.zip"
+        }
+      },
+      "storage": {
+        "HFHFiles": {}
+      },
+      "custom": {
+        "announcementEmailSESTemplate": {},
+        "exportCsvQueue": {}
+      }
+    }
+  },
+  "beta": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-beta-153512-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-beta-153512-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-beta-153512-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-beta-153512-unauthRole",
+      "StackName": "amplify-hotelsforheroes-beta-153512",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-beta-153512/dc379e70-0e5e-11ec-8e15-0aa7be51d725",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-beta-153512-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-36495a38584d63747752-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://beta-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-7843467065672b4d566f-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-794f4265324b526b7a56-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4a476a62374b75516c4e-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-756a554f6f4246705366-build.zip",
+          "redirecturl": "https://beta-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-32614b444230682f482f-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/changeLiaisonEmail-3339442f634b4b502f6c-build.zip",
+          "redirecturl": "https://beta-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/changeAdminEmail-6c703131482f686f4842-build.zip",
+          "redirecturl": "https://beta-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "emailApplicationFiles": {
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "deploymentBucketName": "amplify-hotelsforheroes-beta-153512-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-50564a55543341315a5a-build.zip"
+        },
+        "cleanupOldUsers": {
+          "deploymentBucketName": "amplify-hotelsforheroes-dev-85940-deployment",
+          "s3Key": "amplify-builds/cleanupOldUsers-6e4f5032613936433939-build.zip",
+          "staleProfileDuration": "5"
+        },
+        "hotelsforheroesmakeAuthenticatedGraphqlRequest": {},
+        "hotelsforheroes": {}
+      }
+    }
+  },
+  "design": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-design-202848-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-design-202848-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-design-202848-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-design-202848-unauthRole",
+      "StackName": "amplify-hotelsforheroes-design-202848",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-design-202848/dbf434d0-1cac-11ec-bd77-0e05e98ac277",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-design-202848-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-36495a38584d63747752-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://design-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-7843467065672b4d566f-build.zip"
+        },
+        "migrateAdvancedSettings": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/migrateAdvancedSettings-6b44426e7779725a4945-build.zip"
+        },
+        "deactivateUserAccounts": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/deactivateUserAccounts-344e614a586b374c4336-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-6d713335745233387143-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "redirecturl": "https://design-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-6f332b5049676c2f794b-build.zip"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "1",
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-6665726d6e767735786c-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "redirecturl": "https://design-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/changeLiaisonEmail-3339442f634b4b502f6c-build.zip"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "redirecturl": "https://design-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/changeAdminEmail-6c703131482f686f4842-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-design-202848-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4a476a62374b75516c4e-build.zip"
+        }
+      }
+    }
+  },
+  "essie": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-essie-190231-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-essie-190231-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-essie-190231-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-essie-190231-unauthRole",
+      "StackName": "amplify-hotelsforheroes-essie-190231",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-essie-190231/94756df0-cfca-11ec-8545-126e21b01e0f",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-essie-190231-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "api": {
+        "hotelsforheroes": {}
+      },
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-36495a38584d63747752-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-7843467065672b4d566f-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4a476a62374b75516c4e-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-794f4265324b526b7a56-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-6e765a4f454b46496a48-build.zip",
+          "redirecturl": "https://mini-dev-v3.hfh.fisherhouse.org/"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-6665726d6e767735786c-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "redirecturl": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/changeLiaisonEmail-3339442f634b4b502f6c-build.zip"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "redirecturl": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/changeAdminEmail-6c703131482f686f4842-build.zip"
+        },
+        "emailApplicationFiles": {
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "deploymentBucketName": "amplify-hotelsforheroes-essie-190231-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-50564a55543341315a5a-build.zip"
+        }
+      }
+    }
+  },
+  "minidev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-minidev-161146-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-minidev-161146-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-minidev-161146-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-minidev-161146-unauthRole",
+      "StackName": "amplify-hotelsforheroes-minidev-161146",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-minidev-161146/95f4cac0-d166-11ec-9f41-0a91a68d48a5",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-minidev-161146-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-minidev-161146-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-776143475a5765374847-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-4c6f5041496b5266374d-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4f795a5a43746f644d72-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-37686449584643773162-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-346a724568546b633138-build.zip",
+          "redirecturl": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-3473754e654954694c78-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "redirecturl": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "s3Key": "amplify-builds/changeLiaisonEmail-45642b6d484768616833-build.zip"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "redirecturl": "https://mini-dev-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "s3Key": "amplify-builds/changeAdminEmail-795173486e5769357655-build.zip"
+        },
+        "emailApplicationFiles": {
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-5139426e65647544446a-build.zip"
+        },
+        "hotelsforheroesmakeAuthenticatedGraphqlRequest": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesmakeAuthenticatedGraphqlRequest-LambdaLayerVersion6d480fae-build.zip"
+        },
+        "cleanupOldUsers": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/cleanupOldUsers-756a69374f6868584b67-build.zip",
+          "staleProfileDuration": "1"
+        },
+        "cognitoCleanupTrigger": {
+          "staleProfileDuration": "1",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/cognitoCleanupTrigger-3742796943784e477733-build.zip"
+        },
+        "notifyAdminsNewAccount": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyAdminsNewAccount-534c5359505347777259-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "hotelsforheroessendMailMessage": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/hotelsforheroessendMailMessage-LambdaLayerVersion7503792b-build.zip"
+        },
+        "notifyOwnerAccountApproval": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyOwnerAccountApproval-6f6e535144546b323075-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationAction": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationAction-542f5651556551786a6d-build.zip"
+        },
+        "notifyNewApplicationRequested": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyNewApplicationRequested-437632647a3948467733-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationException": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationException-76376451636556304245-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationApproved": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationApproved-58466f69524c6d617573-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationReturned": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationReturned-4f4b524b5a4165327879-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationDeclined": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationDeclined-4b4577534933785a3432-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationCompleted": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationCompleted-4a6b5a545145682b7a76-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "notifyApplicationNote": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/notifyApplicationNote-77665251705a4356336f-build.zip",
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70"
+        },
+        "confirmNewUserEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/confirmNewUserEmail-596135524e486d394d35-build.zip"
+        },
+        "downloadPdf": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/downloadPdf-306f73556742474c5758-build.zip"
+        },
+        "exportCsvTrigger": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/exportCsvTrigger-2b44616f504849473745-build.zip"
+        },
+        "exportCsvWorker": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/exportCsvWorker-304d645a334564343176-build.zip"
+        },
+        "hotelsforheroesgeneratePdf": {
+          "deploymentBucketName": "amplify-hotelsforheroes-minidev-161146-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesgeneratePdf-LambdaLayerVersion0ab599ac-build.zip"
+        }
+      },
+      "api": {
+        "hotelsforheroes": {},
+        "AdminQueries": {},
+        "Utils": {}
+      },
+      "storage": {
+        "HFHFiles": {}
+      },
+      "custom": {
+        "announcementEmailSESTemplate": {},
+        "exportCsvQueue": {}
+      }
+    }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-prod-121018-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-prod-121018-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-prod-121018-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-prod-121018-unauthRole",
+      "StackName": "amplify-hotelsforheroes-prod-121018",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-prod-121018/b8f53640-38fe-11ed-8e2c-0e021d8b6d4b",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-prod-121018-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-prod-121018-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-36495a38584d63747752-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://staging-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-7843467065672b4d566f-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4f795a5a43746f644d72-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-794f4265324b526b7a56-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-3869753050726b58572f-build.zip",
+          "redirecturl": "https://staging-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-6665726d6e767735786c-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "redirecturl": "https://staging-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "s3Key": "amplify-builds/changeLiaisonEmail-45642b6d484768616833-build.zip"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "redirecturl": "https://staging-v3.hfh.fisherhouse.org/",
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "s3Key": "amplify-builds/changeAdminEmail-795173486e5769357655-build.zip"
+        },
+        "emailApplicationFiles": {
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-42724e6d594274557a4e-build.zip"
+        },
+        "hotelsforheroesmakeAuthenticatedGraphqlRequest": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-121018-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesmakeAuthenticatedGraphqlRequest-LambdaLayerVersion1c19923e-build.zip"
+        },
+        "cleanupOldUsers": {
+          "deploymentBucketName": "amplify-hotelsforheroes-prod-85940-deployment",
+          "s3Key": "amplify-builds/cleanupOldUsers-6e4f5032613936433939-build.zip",
+          "staleProfileDuration": "30"
+        }
+      }
+    }
+  },
+  "stage": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-stage-133253-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-stage-133253-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-stage-133253-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-stage-133253-unauthRole",
+      "StackName": "amplify-hotelsforheroes-stage-133253",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-stage-133253/98455a00-5eca-11ed-81d5-126782c830a3",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-stage-133253-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-stage-133253-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-776143475a5765374847-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://staging-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-4c6f5041496b5266374d-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4f795a5a43746f644d72-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-686c6b49776768567539-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-346a724568546b633138-build.zip",
+          "redirecturl": "https://staging-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-3473754e654954694c78-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/changeLiaisonEmail-45642b6d484768616833-build.zip",
+          "redirecturl": "https://staging-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/changeAdminEmail-795173486e5769357655-build.zip",
+          "redirecturl": "https://staging-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "emailApplicationFiles": {
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-5139426e65647544446a-build.zip"
+        },
+        "hotelsforheroesmakeAuthenticatedGraphqlRequest": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesmakeAuthenticatedGraphqlRequest-LambdaLayerVersione05c3eb7-build.zip"
+        },
+        "cleanupOldUsers": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/cleanupOldUsers-756a69374f6868584b67-build.zip",
+          "staleProfileDuration": "5"
+        },
+        "hotelsforheroes": {},
+        "cognitoCleanupTrigger": {
+          "staleProfileDuration": "30",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/cognitoCleanupTrigger-3742796943784e477733-build.zip"
+        },
+        "notifyAdminsNewAccount": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyAdminsNewAccount-534c5359505347777259-build.zip"
+        },
+        "hotelsforheroessendMailMessage": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/hotelsforheroessendMailMessage-LambdaLayerVersione232c2f9-build.zip"
+        },
+        "notifyOwnerAccountApproval": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyOwnerAccountApproval-6f6e535144546b323075-build.zip"
+        },
+        "notifyApplicationAction": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationAction-542f5651556551786a6d-build.zip"
+        },
+        "notifyNewApplicationRequested": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyNewApplicationRequested-526f4941686877724733-build.zip"
+        },
+        "notifyApplicationException": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationException-796b52646f733136624a-build.zip"
+        },
+        "notifyApplicationApproved": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationApproved-716354504c4836644459-build.zip"
+        },
+        "notifyApplicationReturned": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationReturned-66614852356d5851444f-build.zip"
+        },
+        "notifyApplicationDeclined": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationDeclined-7668506832504d753157-build.zip"
+        },
+        "notifyApplicationCompleted": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationCompleted-75333445675369544b33-build.zip"
+        },
+        "notifyApplicationNote": {
+          "secretsPathAmplifyAppId": "d3hoh37ulqup70",
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/notifyApplicationNote-72574c777847486e6630-build.zip"
+        },
+        "confirmNewUserEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-stage-133253-deployment",
+          "s3Key": "amplify-builds/confirmNewUserEmail-596135524e486d394d35-build.zip"
+        }
+      },
+      "api": {
+        "hotelsforheroes": {},
+        "AdminQueries": {},
+        "Utils": {}
+      },
+      "storage": {
+        "HFHFiles": {}
+      },
+      "custom": {
+        "announcementEmailSESTemplate": {}
+      }
+    }
+  },
+  "betas": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hotelsforheroes-betas-211246-authRole",
+      "UnauthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-betas-211246-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::744473394486:role/amplify-hotelsforheroes-betas-211246-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+      "UnauthRoleName": "amplify-hotelsforheroes-betas-211246-unauthRole",
+      "StackName": "amplify-hotelsforheroes-betas-211246",
+      "StackId": "arn:aws:cloudformation:us-east-1:744473394486:stack/amplify-hotelsforheroes-betas-211246/2b840e00-609d-11ed-b652-0a6495c06365",
+      "AmplifyAppId": "d3hoh37ulqup70",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-betas-211246-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-hotelsforheroes-betas-211246-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "hotelsforheroes": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "AdminQueries5cfc6a1b": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/AdminQueries5cfc6a1b-36495a38584d63747752-build.zip"
+        },
+        "getIpAddress": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/getIpAddress-50425964635a42544b4d-build.zip"
+        },
+        "getCurrentTimestamp": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/getCurrentTimestamp-4d564131633967376856-build.zip"
+        },
+        "hotelsforheroesCustomMessage": {
+          "REDIRECTURL": "https://beta-v3.hfh.fisherhouse.org/",
+          "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+          "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesCustomMessage-7843467065672b4d566f-build.zip"
+        },
+        "deactiveExpiredProfiles": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/deactiveExpiredProfiles-4f795a5a43746f644d72-build.zip"
+        },
+        "getCountry": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/getCountry-49626d44776265736546-build.zip"
+        },
+        "hotelsforheroesd502aea1": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesd502aea1-686c6b49776768567539-build.zip"
+        },
+        "liaisonCheckoutWarning": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/liaisonCheckoutWarning-346a724568546b633138-build.zip",
+          "redirecturl": "https://beta-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "notifyNewAnnouncement": {
+          "emailRewriteEnabled": "0",
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/notifyNewAnnouncement-787057476f6d6666676e-build.zip"
+        },
+        "getLiaisons": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/getLiaisons-4548764b696d46705175-build.zip"
+        },
+        "changeLiaisonEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/changeLiaisonEmail-45642b6d484768616833-build.zip",
+          "redirecturl": "https://beta-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "listAdmins": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/listAdmins-315846553475356a4d47-build.zip"
+        },
+        "changeAdminEmail": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/changeAdminEmail-795173486e5769357655-build.zip",
+          "redirecturl": "https://beta-v3.hfh.fisherhouse.org/",
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg"
+        },
+        "emailApplicationFiles": {
+          "mailchimpApiKey": "DUXkPvAYpDl5FznO-pJhCg",
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/emailApplicationFiles-41415062673351556167-build.zip"
+        },
+        "hotelsforheroesmakeAuthenticatedGraphqlRequest": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/hotelsforheroesmakeAuthenticatedGraphqlRequest-LambdaLayerVersion9e5b2ba0-build.zip"
+        },
+        "cleanupOldUsers": {
+          "deploymentBucketName": "amplify-hotelsforheroes-betas-211246-deployment",
+          "s3Key": "amplify-builds/cleanupOldUsers-6e4f5032613936433939-build.zip",
+          "staleProfileDuration": "5"
+        },
+        "hotelsforheroes": {}
+      },
+      "api": {
+        "hotelsforheroes": {},
+        "AdminQueries": {},
+        "Utils": {}
+      },
+      "storage": {
+        "HFHFiles": {}
+      },
+      "custom": {
+        "announcementEmailSESTemplate": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "api": {
+      "hotelsforheroes": ["Query"]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "minidev"
+    },
+    {
+      "type": "ProjectLayer",
+      "resourceName": "hotelsforheroesgeneratePdf",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "minidev"
+    }
+  ]
+}

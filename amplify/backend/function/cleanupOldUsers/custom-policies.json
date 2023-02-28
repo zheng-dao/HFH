@@ -1,0 +1,14 @@
+[
+  {
+    "Action": ["dynamodb:BatchWriteItem"],
+    "Resource": ["arn:aws:dynamodb:*:*:table/User-*-${env}"]
+  },
+  {
+    "Action": ["dynamodb:Query"],
+    "Resource": ["arn:aws:dynamodb:*:*:table/User-*-${env}/index/byStatus"]
+  },
+  {
+    "Action": ["cognito-idp:AdminDeleteUser"],
+    "Resource": ["arn:aws:cognito-idp:*:*:*"]
+  }
+]

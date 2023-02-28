@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "api": {
+      "hotelsforheroes": ["Query", "Mutation"]
+    }
+  },
+  "lambdaLayers": []
+}

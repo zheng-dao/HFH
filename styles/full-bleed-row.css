@@ -1,0 +1,358 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.full-bleed-row {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.full-bleed-row.underhang {
+  z-index: 1;
+  margin-top: -1.5rem;
+}
+.full-bleed-row .slide {
+  width: 100%;
+  overflow: hidden;
+}
+.full-bleed-row img {
+  width: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 1;
+}
+.full-bleed-row .shadow-box {
+  position: relative;
+}
+.full-bleed-row .shadow-box:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 150%;
+  top: -100%;
+  left: -25%;
+  box-shadow: 0 0 17px 20px #1d344d;
+  z-index: 10;
+}
+.full-bleed-row .floating-block {
+  z-index: 20;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-align: left;
+  padding: 1rem;
+}
+.full-bleed-row h1 {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5em;
+}
+.full-bleed-row p {
+  margin: 0;
+  font-size: 1em;
+}
+.full-bleed-row a.more {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.3rem;
+  position: relative;
+  top: -0.05rem;
+  text-shadow: none;
+  transition: all 0.2s ease-in-out;
+  background-color: #6699cc;
+}
+.full-bleed-row a.more:hover {
+  background-color: #004b8d;
+}
+
+@media screen and (min-width: 35rem) {
+  .full-bleed-row {
+    overflow: hidden;
+    position: relative;
+  }
+  .full-bleed-row.underhang {
+    position: relative;
+    z-index: 1;
+    margin-top: -2rem;
+  }
+  .full-bleed-row .shadow-box {
+    position: relative;
+  }
+  .full-bleed-row .shadow-box:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: -100%;
+    left: -25%;
+    box-shadow: 0 0 30px 35px #1d344d;
+    z-index: 10;
+  }
+  .full-bleed-row .floating-block {
+    margin: 0;
+    padding: 0.75rem 2rem 1rem;
+    position: relative;
+    z-index: 20;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .full-bleed-row {
+    overflow: hidden;
+    z-index: 9;
+    padding: 0;
+  }
+  .full-bleed-row.underhang {
+    position: relative;
+    z-index: 1;
+    margin-top: -4rem;
+  }
+  .full-bleed-row .shadow-box {
+    position: relative;
+  }
+  .full-bleed-row .shadow-box:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: -100%;
+    left: -25%;
+    box-shadow: 0 0 60px 75px #1d344d;
+    z-index: 10;
+  }
+  .full-bleed-row .shadow-box:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: 100%;
+    left: -25%;
+    box-shadow: 0 0 50px 60px #1d344d;
+    z-index: 10;
+  }
+  .full-bleed-row .floating-block {
+    position: absolute;
+    left: 1rem;
+    bottom: 0;
+    margin: 0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  .full-bleed-row h1 {
+    font-size: 1.6em;
+    padding: 0;
+    margin-bottom: 0.25rem;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .full-bleed-row {
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+  }
+  .full-bleed-row.underhang {
+    margin-top: -4rem;
+  }
+  .full-bleed-row .shadow-box:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: -100%;
+    left: -25%;
+    box-shadow: 0 0 60px 80px #1d344d;
+    z-index: 10;
+  }
+  .full-bleed-row .shadow-box:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: 100%;
+    left: -25%;
+    box-shadow: 0 0 60px 80px #1d344d;
+  }
+  .full-bleed-row h1 {
+    color: #fff;
+    margin: 0;
+    line-height: 1em;
+    font-size: 1.8em;
+    margin-bottom: 0.5rem;
+  }
+  .full-bleed-row .toggle {
+    display: none;
+  }
+  .full-bleed-row nav {
+    height: auto;
+    overflow: visible;
+    width: 100%;
+    z-index: 90;
+  }
+  .full-bleed-row nav li {
+    display: inline-block;
+    border-bottom: none;
+  }
+  .full-bleed-row nav li:first-child {
+    border-top: none;
+  }
+  .full-bleed-row nav a {
+    padding: 0.5em 1em;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .full-bleed-row .shadow-box:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: -100%;
+    left: -25%;
+    box-shadow: 0 0 50px 80px #1d344d;
+    z-index: 3;
+  }
+  .full-bleed-row .shadow-box:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: 100%;
+    left: -25%;
+    box-shadow: 0 0 60px 80px #1d344d;
+  }
+  .full-bleed-row.underhang {
+    margin-top: -5.5rem;
+  }
+  .full-bleed-row .floating-block {
+    padding-left: 1rem;
+    top: 6rem;
+    bottom: auto;
+    position: absolute;
+    margin: 0;
+    max-width: 50%;
+  }
+  .full-bleed-row .floating-block h1 {
+    font-size: 2em;
+  }
+  .full-bleed-row .floating-block p {
+    font-size: 1.1em;
+  }
+  .full-bleed-row .floating-block p a.more {
+    background-color: #004b8d;
+    color: #fff !important;
+    margin-left: 0.5em;
+  }
+  .full-bleed-row .floating-block p a.more:hover {
+    background-color: #1d344d;
+  }
+  .full-bleed-row .floating-block.top-left {
+    top: 6rem;
+    left: 2rem;
+  }
+  .full-bleed-row .floating-block.top-right {
+    top: 6rem;
+    right: 2rem;
+    left: auto;
+  }
+  .full-bleed-row .floating-block.middle-left {
+    top: calc(50% - 2rem);
+    left: 2rem;
+  }
+  .full-bleed-row .floating-block.middle-right {
+    top: calc(50% - 2rem);
+    right: 2rem;
+  }
+  .full-bleed-row .floating-block.baseline-left {
+    top: auto;
+    bottom: 5rem;
+    left: 2rem;
+  }
+  .full-bleed-row .floating-block.baseline-right {
+    top: auto;
+    bottom: 5rem;
+    right: 2rem;
+    left: auto;
+  }
+  .full-bleed-row .floating-block.light {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  .full-bleed-row .floating-block.light h1 {
+    color: #262626;
+    text-shadow: none;
+  }
+  .full-bleed-row .floating-block.light p {
+    color: #333333;
+    text-shadow: none;
+  }
+  .full-bleed-row .floating-block.overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #fff;
+  }
+  .full-bleed-row .floating-block.boundless {
+    background-color: transparent;
+  }
+  .full-bleed-row .floating-block.boundless h1, .full-bleed-row .floating-block.boundless p {
+    text-shadow: 0 0.05em 0.1em #000;
+  }
+  .full-bleed-row .floating-block.boundless a.more {
+    box-shadow: 0 0.05em 0.1em #000;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .full-bleed-row .shadow-box:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: -100%;
+    left: -25%;
+    box-shadow: 0 0 60px 80px #1d344d;
+  }
+  .full-bleed-row .shadow-box:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: 100%;
+    left: -25%;
+    box-shadow: 0 0 60px 80px #1d344d;
+  }
+  .full-bleed-row h1 {
+    font-size: 2.6em;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .full-bleed-row .shadow-box:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: -100%;
+    left: -25%;
+    box-shadow: 0 0 80px 100px #1d344d;
+  }
+  .full-bleed-row .shadow-box:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 150%;
+    top: 100%;
+    left: -25%;
+    box-shadow: 0 0 80px 100px #1d344d;
+  }
+  .full-bleed-row .floating-block {
+    top: 10rem;
+  }
+  .full-bleed-row h1 {
+    font-size: 3em;
+  }
+}
+@media screen and (min-width: 102rem) {
+  .full-bleed-row h1 {
+    font-size: 3em;
+  }
+}
+@media screen and (min-width: 1919px) {
+  .full-bleed-row img {
+    position: relative;
+    top: -2vh;
+  }
+}

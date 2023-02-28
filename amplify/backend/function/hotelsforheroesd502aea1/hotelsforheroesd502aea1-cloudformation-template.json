@@ -1,0 +1,850 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.4.0\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Parameters": {
+    "CloudWatchRule": {
+      "Type": "String",
+      "Default": "NONE",
+      "Description": " Schedule Expression"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "env": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
+    },
+    "apihotelsforheroesGraphQLAPIIdOutput": {
+      "Type": "String",
+      "Default": "apihotelsforheroesGraphQLAPIIdOutput"
+    },
+    "apihotelsforheroesGraphQLAPIEndpointOutput": {
+      "Type": "String",
+      "Default": "apihotelsforheroesGraphQLAPIEndpointOutput"
+    },
+    "apihotelsforheroesGraphQLAPIKeyOutput": {
+      "Type": "String",
+      "Default": "apihotelsforheroesGraphQLAPIKeyOutput"
+    }
+  },
+  "Conditions": {
+    "ShouldNotCreateEnvResources": {
+      "Fn::Equals": [
+        {
+          "Ref": "env"
+        },
+        "NONE"
+      ]
+    }
+  },
+  "Resources": {
+    "LambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Metadata": {
+        "aws:asset:path": "./src",
+        "aws:asset:property": "Code"
+      },
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
+        "Handler": "index.handler",
+        "FunctionName": {
+          "Fn::If": [
+            "ShouldNotCreateEnvResources",
+            "hotelsforheroesd502aea1",
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "hotelsforheroesd502aea1",
+                  "-",
+                  {
+                    "Ref": "env"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "ENV": {
+              "Ref": "env"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "API_HOTELSFORHEROES_GRAPHQLAPIIDOUTPUT": {
+              "Ref": "apihotelsforheroesGraphQLAPIIdOutput"
+            },
+            "API_HOTELSFORHEROES_GRAPHQLAPIENDPOINTOUTPUT": {
+              "Ref": "apihotelsforheroesGraphQLAPIEndpointOutput"
+            },
+            "API_HOTELSFORHEROES_GRAPHQLAPIKEYOUTPUT": {
+              "Ref": "apihotelsforheroesGraphQLAPIKeyOutput"
+            }
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": ["LambdaExecutionRole", "Arn"]
+        },
+        "Runtime": "nodejs14.x",
+        "Layers": [],
+        "Timeout": 60
+      }
+    },
+    "LambdaFunctionVersion": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "ProvisionedConcurrencyConfig": {
+          "ProvisionedConcurrentExecutions": 10
+        }
+      }
+    },
+    "LambdaExecutionRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": {
+          "Fn::If": [
+            "ShouldNotCreateEnvResources",
+            "hotelsforheroesLambdaRole7b91ef85",
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "hotelsforheroesLambdaRole7b91ef85",
+                  "-",
+                  {
+                    "Ref": "env"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": ["lambda.amazonaws.com"]
+              },
+              "Action": ["sts:AssumeRole"]
+            }
+          ]
+        }
+      }
+    },
+    "lambdaexecutionpolicy": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+              "Resource": {
+                "Fn::Sub": [
+                  "arn:aws:logs:${region}:${account}:log-group:/aws/lambda/${lambda}:log-stream:*",
+                  {
+                    "region": {
+                      "Ref": "AWS::Region"
+                    },
+                    "account": {
+                      "Ref": "AWS::AccountId"
+                    },
+                    "lambda": {
+                      "Ref": "LambdaFunction"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": ["appsync:GraphQL"],
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:appsync:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":apis/",
+                      {
+                        "Ref": "apihotelsforheroesGraphQLAPIIdOutput"
+                      },
+                      "/types/Query/*"
+                    ]
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:appsync:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":apis/",
+                      {
+                        "Ref": "apihotelsforheroesGraphQLAPIIdOutput"
+                      },
+                      "/types/Mutation/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "LambdaTriggerPolicyGroup": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Group",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:GroupTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingGroup": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyGroup", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:GroupTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyAffiliation": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Affiliation",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:AffiliationTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingAffiliation": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyAffiliation", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:AffiliationTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyNote": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Note",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:NoteTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingNote": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyNote", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:NoteTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyServiceMember": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-ServiceMember",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:ServiceMemberTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingServiceMember": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyServiceMember", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:ServiceMemberTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyPatient": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Patient",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:PatientTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingPatient": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyPatient", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:PatientTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyHotelBrand": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-HotelBrand",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:HotelBrandTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingHotelBrand": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyHotelBrand", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:HotelBrandTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyHotelChain": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-HotelChain",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:HotelChainTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingHotelChain": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyHotelChain", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:HotelChainTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyGuest": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Guest",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:GuestTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingGuest": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyGuest", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:GuestTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyApplicant": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Applicant",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:ApplicantTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingApplicant": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyApplicant", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:ApplicantTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyUser": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-User",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:UserTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingUser": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyUser", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:UserTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyStay": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Stay",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:StayTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingStay": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyStay", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:StayTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    },
+    "LambdaTriggerPolicyApplication": {
+      "DependsOn": ["LambdaExecutionRole"],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy-Application",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:ListStreams"
+              ],
+              "Resource": {
+                "Fn::ImportValue": {
+                  "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:ApplicationTable:StreamArn"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "LambdaEventSourceMappingApplication": {
+      "Type": "AWS::Lambda::EventSourceMapping",
+      "DependsOn": ["LambdaTriggerPolicyApplication", "LambdaExecutionRole"],
+      "Properties": {
+        "BatchSize": 100,
+        "Enabled": true,
+        "EventSourceArn": {
+          "Fn::ImportValue": {
+            "Fn::Sub": "${apihotelsforheroesGraphQLAPIIdOutput}:GetAtt:ApplicationTable:StreamArn"
+          }
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["LambdaFunction", "Arn"]
+        },
+        "StartingPosition": "LATEST"
+      }
+    }
+  },
+  "Outputs": {
+    "Name": {
+      "Value": {
+        "Ref": "LambdaFunction"
+      }
+    },
+    "Arn": {
+      "Value": {
+        "Fn::GetAtt": ["LambdaFunction", "Arn"]
+      }
+    },
+    "Region": {
+      "Value": {
+        "Ref": "AWS::Region"
+      }
+    },
+    "LambdaExecutionRole": {
+      "Value": {
+        "Ref": "LambdaExecutionRole"
+      }
+    }
+  }
+}

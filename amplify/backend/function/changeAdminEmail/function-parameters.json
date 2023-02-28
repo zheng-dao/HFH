@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "api": {
+      "hotelsforheroes": ["Query"]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "redirecturl",
+      "environmentVariableName": "REDIRECTURL"
+    },
+    {
+      "cloudFormationParameterName": "mailchimpApiKey",
+      "environmentVariableName": "MAILCHIMP_API_KEY"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/{proxy+}": {
+      "lambdaFunction": "AdminQueries5cfc6a1b",
+      "permissions": {
+        "setting": "private",
+        "auth": ["create", "read", "update", "delete"]
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.user-messages.app-pane {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 35rem) {
+  .user-messages.app-pane {
+    margin-bottom: 2rem;
+  }
+}
+
+.user-message {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.4em;
+  margin-bottom: 1rem;
+  border-left: 0.6rem solid #004b8d;
+}
+.user-message.success {
+  border-color: #07a672;
+}
+.user-message.alert {
+  border-color: #F4C182;
+}
+.user-message.saved {
+  border-color: #a45ca0;
+}
+.user-message h4 {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+.user-message p {
+  font-size: 1em;
+  margin: 0 0 0.5em;
+}
+.user-message p:last-child {
+  margin: 0;
+}
+.user-message strong.field {
+  display: inline-block;
+  line-height: 1.5em;
+  background-color: #a45ca0;
+  color: #fff;
+  padding: 0 0.75em;
+  border-radius: 0.75em;
+  margin-right: 0.25em;
+}

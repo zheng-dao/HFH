@@ -1,0 +1,24 @@
+{
+  "trigger": true,
+  "modules": ["verification-link"],
+  "parentResource": "hotelsforheroes",
+  "functionName": "hotelsforheroesCustomMessage",
+  "resourceName": "hotelsforheroesCustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "/snapshot/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "hotelsforheroesCustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "https://hfh.fisherhouse.org/",
+  "EMAILSUBJECT": "Hotels for Heroes Email Verification",
+  "EMAILMESSAGE": "Welcome to the Hotels for Heroes application system! Please click the clink below to confirm your account's email address.",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}

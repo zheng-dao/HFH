@@ -1,0 +1,153 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.group-apps-list {
+
+	border: 3px solid $gray05;
+	border-bottom: none;
+	border-radius: 0;
+
+	.read-only & {
+		border-color: $gray45;
+		h2.current-app {
+			span.group-title {
+				border-color: $gray45;
+			}
+		}
+	}
+
+	.current-app {
+
+		color: $gray05;
+		font-weight: normal;
+		font-size: 1.2em;
+		display: flex;
+		flex-flow: row wrap;
+		padding: 0;
+		background-color: transparent;
+		border-radius: 1em;
+		margin-bottom: 0;
+		transition: background-color 0.2s ease;
+		position: relative;
+
+		span.group-title {
+			flex: 0 0 100%;
+			padding: .5rem 1rem;
+			border-bottom: 3px solid $gray05;
+		}
+
+		input.current-app-input {
+			flex: 0 0 calc(100% - 3rem);
+			background-color: transparent;
+			color: $gray05;
+			box-shadow: none;
+			margin: 0;
+			color: $light_blue;
+			font-weight: bold;
+			border-radius: 0 !important;
+			&:focus {
+				border: none;
+				outline: none;
+				background-color: $overlay;
+			}
+		}
+
+		span.select-control {
+			flex: 0 0 3rem;
+			margin: 0;
+			padding: 1rem;
+			text-align: center;
+			float: right;
+			cursor: pointer;
+			position: relative;
+
+			img {
+				width: .5em;
+				margin: auto;
+				transition: transform 0.2s ease;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%)rotate(90deg);
+			}
+
+		}
+
+		&.open {
+			input.current-app-input {
+				background-color: $light_overlay;
+			}
+			span.select-control {
+				background-color: $light_overlay;
+				img {
+					transform: translate(-50%,-50%)rotate(90deg)scaleX(-1);
+				}
+			}
+		}
+
+		@media #{$med} {
+
+			span.group-title { flex: 0 100 30%; padding: 1rem; }
+			input.current-app-input { flex: calc(70% - 3rem); }
+			span.select-control { flex: 0 0 3rem; }
+
+		}
+
+		@media #{$large} {
+			font-size: 1.4em;
+		}
+
+	}
+
+	ul {
+	
+		@include cleanlist;
+		margin: 0;
+		overflow: scroll;
+		height: 16.5em;
+		text-align: left;
+		border-top: 3px solid $gray10; 
+
+		li {
+			a, span {
+				display: block;
+				line-height: 2.5em;
+				padding: 0 1rem;
+				text-decoration: none;
+				color: $gray05;
+				border-top: 1px solid $gray10; 
+				&:hover {
+					background-color: $blue;
+				}
+				&.current {
+					background-color: $light_blue;
+					color: $gray85;
+				}
+			}
+			&:first-child a {
+				border-top: none;
+			}
+		}
+
+	}
+
+	button {
+		margin-bottom: 0;
+		background-color: $navy;
+		filter: none !important;
+	}
+
+	@media #{$med} {
+
+		.current-app {
+			span.group-title {
+				display: inline-block;
+				border-bottom: none;
+				border-right: 3px solid;
+			}
+		}
+
+	}
+ 
+}

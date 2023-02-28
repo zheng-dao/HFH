@@ -1,0 +1,93 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.row-controls-panel {
+
+	color: $gray05;
+	padding: .75rem 1rem 1rem;
+
+	h3 {
+		color: $gray05;
+	}
+
+	.input-combo {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	label {
+		color: $gray85;
+		background-color: lighten($light_blue, 20%);
+		font-weight: bold;
+	}
+
+	.selectbox {
+		background-color: $gray35;
+	}
+
+	label.unread-toggle {
+		font-size: 1em;
+		line-height: 2em;
+		padding: 0 1rem;
+		border-radius: 1rem;
+		background-color: $light_overlay;
+		color: $gray05;
+		display: block;
+		transition: background-color 0.2s ease;
+		&:hover {
+			background-color: $overlay;
+		}
+		&.unread {
+			background-color: $unread;
+			background-image: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.2) 100%);
+			box-shadow: inset 0 1px 2px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.25);
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25), 0 1px 0 rgba(255,255,255,.25);
+		}
+		input {
+			margin-right: .5rem;
+		}
+	}
+
+	&.admin { // admin-specific
+
+	}
+
+	&.liaison { // liaison specific
+
+	}
+
+	@media #{$small} {
+
+		display: flex;
+		align-items: center;
+
+		> * {
+			margin-right: 2rem;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.input-combo {
+			display: inline-block;
+			margin-bottom: 0;
+			&.liaison {
+				min-width: 50%;
+			}
+		}
+
+	}
+
+	@media #{$large} {
+
+		.input-combo {
+			&.liaison {
+				min-width: 25%;
+			}
+		}
+
+	}
+
+}

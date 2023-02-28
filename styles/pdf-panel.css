@@ -1,0 +1,258 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.app-pane .pdf-panel {
+  padding-top: 0.5rem;
+}
+.app-pane .pdf-panel::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.app-pane .pdf-panel h3 {
+  margin-bottom: 0.25em;
+}
+.app-pane .pdf-panel a {
+  text-decoration: none;
+}
+.app-pane .pdf-panel button.cancel {
+  background-color: gray;
+  float: left;
+}
+.app-pane .pdf-panel button.send-email {
+  float: right;
+  margin-right: 0;
+}
+.app-pane .pdf-panel .inner-pane button {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+.app-pane .pdf-panel .inner-pane hr {
+  clear: both;
+  margin-top: 1em;
+}
+.app-pane .pdf-panel .checkboxes label, .app-pane .pdf-panel .checkboxes a {
+  flex: 0 0 100%;
+  text-decoration: none;
+}
+.app-pane .pdf-panel .checkboxes label span, .app-pane .pdf-panel .checkboxes a span {
+  font-weight: normal;
+}
+.app-pane .pdf-panel .send-panel {
+  clear: both;
+}
+.app-pane .pdf-panel .send-panel.hidden {
+  display: none;
+}
+.app-pane .pdf-panel .send-panel h4 {
+  margin-bottom: 0.25em;
+}
+.app-pane .pdf-panel .send-panel p.ui-caption {
+  top: -0.25rem;
+}
+.app-pane .pdf-panel .send-panel .checkboxes {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.app-pane .pdf-panel .send-panel .checkboxes label, .app-pane .pdf-panel .send-panel .checkboxes a {
+  background-color: transparent;
+  color: #262626;
+  font-weight: bold;
+  text-transform: none;
+  font-size: 1em;
+  width: 100%;
+  color: #f2f2f2;
+}
+.app-pane .pdf-panel .send-panel .checkboxes label input[type=checkbox], .app-pane .pdf-panel .send-panel .checkboxes a input[type=checkbox] {
+  margin-right: 0.5rem !important;
+}
+
+.app-pane .files {
+  margin-bottom: 1em;
+  clear: both;
+  background-color: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5em;
+}
+.sidebar .app-pane .files {
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.sidebar .app-pane .files ul {
+  margin-bottom: 0;
+}
+.sidebar .app-pane .files ul li {
+  display: flex;
+  align-items: center;
+}
+.sidebar .app-pane .files ul li input[type=checkbox] {
+  flex: 0 0 1em;
+  margin: 0;
+}
+.sidebar .app-pane .files ul li a {
+  flex: 0 0 calc(100% - 1em);
+  display: block;
+}
+.sidebar .app-pane .files ul li a > button.delete {
+  margin-right: 0 !important;
+  opacity: 0;
+  font-size: 0.6em;
+  padding: 0 0.8em;
+  border-radius: 0.8em;
+  float: none;
+  top: 0;
+}
+.sidebar .app-pane .files ul li a:hover > button.delete {
+  opacity: 1;
+}
+.sidebar .app-pane .files ul li a, .sidebar .app-pane .files ul li label {
+  background-color: transparent;
+  color: #f2f2f2;
+}
+.sidebar .app-pane .files ul li a:before, .sidebar .app-pane .files ul li label:before {
+  background-size: auto 100%;
+}
+.sidebar .app-pane .files ul li a:hover, .sidebar .app-pane .files ul li label:hover {
+  background-color: #004b8d;
+}
+.app-pane .files::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.app-pane .files ul {
+  list-style: none;
+  padding-left: 0;
+  display: block;
+  width: 100%;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  margin: 0 0 1rem;
+}
+.app-pane .files ul li {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.app-pane .files ul li::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.app-pane .files ul li:last-child {
+  margin-bottom: 0;
+}
+.app-pane .files ul li.selected {
+  background-color: #004b8d !important;
+}
+.app-pane .files ul li.selected label, .app-pane .files ul li.selected a {
+  color: #262626 !important;
+}
+.app-pane .files ul li input[type=checkbox] {
+  margin-right: 0.25rem;
+}
+.app-pane .files ul li label, .app-pane .files ul li a {
+  background-color: transparent;
+  color: #262626;
+  font-weight: bold;
+  text-transform: none;
+  font-size: 1em;
+  border-radius: 0.5em;
+  min-width: calc(100% - 2rem);
+  padding: 0.25rem 0.65rem;
+  color: #f2f2f2;
+  background-color: #305680;
+  display: block !important;
+  text-decoration: none;
+}
+.app-pane .files ul li label > button.delete, .app-pane .files ul li a > button.delete {
+  opacity: 0;
+}
+.app-pane .files ul li label input[type=checkbox], .app-pane .files ul li a input[type=checkbox] {
+  margin-right: 0 !important;
+}
+.app-pane .files ul li label:hover, .app-pane .files ul li a:hover {
+  background-color: #1d344d !important;
+  color: #f2f2f2;
+}
+.app-pane .files ul li label:hover > button.delete, .app-pane .files ul li a:hover > button.delete {
+  opacity: 1;
+}
+.app-pane .files ul li label:before, .app-pane .files ul li a:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.1em;
+  height: 1em;
+  width: 1em;
+  background-image: url(../public/img/pdf.svg);
+  background-position: 50% 50%;
+  background-size: auto 85%;
+  background-repeat: no-repeat;
+  margin-right: 0.25em;
+}
+.app-pane .files ul img {
+  height: 1em;
+  width: auto;
+  margin: 0 0.5em 0 0.5em;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.1em;
+}
+.app-pane .files ul .delete {
+  font-size: 0.6em;
+  color: #fff !important;
+  text-transform: uppercase;
+  background-color: #333333 !important;
+  border-radius: 0.8em;
+  margin-left: 1em;
+  margin-right: 0;
+  position: relative;
+  top: 0.1em;
+  padding: 0 0.8em;
+  float: right;
+}
+.app-pane .files ul .delete:hover {
+  text-decoration: none;
+  background-color: #990000 !important;
+  color: #fff !important;
+}
+.app-pane .files ul p.upload-desc {
+  font-size: 0.8em !important;
+  background-color: #d9d9d9 !important;
+  padding: 1.2em !important;
+  margin: 0 !important;
+  border-radius: 0 0 0.5em 0.5em;
+}
+.app-pane .files input[type=file] {
+  max-width: 100%;
+}
+.app-pane .files .button.upload {
+  margin-bottom: 0 !important;
+  font-size: 0.8em;
+}
+
+.pdf-controls {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+}
+.pdf-controls button {
+  margin: 0 0.5rem 0 0;
+}
+.pdf-controls button:last-child {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 35rem) {
+  .pdf-controls {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .app-pane .pdf-panel {
+    padding-top: 1rem;
+  }
+
+  .pdf-controls {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}

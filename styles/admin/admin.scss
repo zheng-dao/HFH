@@ -1,0 +1,47 @@
+@import "../bourbon";
+@import "../_vars.scss";
+@import "../_helpers.scss";
+
+// Fix Media Manager Main Menu Layout Bugs
+#mm_menu li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+// Fix Media Manager Upload Screen Layout Bugs
+#jfu_upload_actions_btns, #pw-dropdown-toggle-jfu_upload_actions_btns {
+	margin-top: 1rem;
+}
+
+#jfu_drop_area_wrapper .InputfieldHeader.uk-form-label {
+	padding-left: 1rem !important;
+}
+
+.jfu-uploaded-files-list.uk-overflow-auto.uk-width-1-1 .InputfieldHeader.uk-form-label {
+	padding-left:  1rem !important;
+}
+
+// Improve Street Address Input Field Appearance
+#streetaddress_house_address {
+	transform: scale(1.3);
+	transform-origin: left;
+}
+
+.streetaddress_input_frame {
+	padding: 1em 0;
+}
+
+#selected_image_settings {
+	#resize_action,
+	#crop_action,
+	#max_action,
+	#min_action,
+	#description_action,
+	#wrap_link_original,
+	#show_when_rte,
+	#selected_image_checkboxes,
+	#selected_image_pixels {
+		display: none;
+		visibility: hidden;
+	}
+}

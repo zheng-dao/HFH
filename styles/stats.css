@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.stats {
+  padding: 1rem;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+.stats ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+.stats li {
+  display: block;
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+.stats li:last-child {
+  margin-bottom: 0;
+}
+.stats b {
+  line-height: 1em;
+  position: relative;
+  display: inline-block;
+}
+.stats em {
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+}
+.stats span {
+  line-height: 1em;
+  position: relative;
+  font-size: 0.8em;
+  display: block;
+  color: #fff;
+}
+.stats .houses {
+  color: #6699cc;
+}
+.stats .houses b {
+  font-size: 4em;
+}
+.stats .families {
+  color: #EE3124;
+}
+.stats .families b {
+  font-size: 4em;
+}
+.stats .savings {
+  color: #f1b03b;
+}
+.stats .savings b {
+  font-size: 3.5em;
+}
+.stats .savings em {
+  font-size: 2em;
+}
+.stats .days {
+  color: #6699cc;
+}
+.stats .days b {
+  font-size: 4em;
+}
+.stats .days em {
+  font-size: 2em;
+}
+
+@media screen and (min-width: 35rem) {
+  .stats {
+    padding: 2rem;
+    font-size: 1.3em;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .stats {
+    padding: 2rem;
+    font-size: 1.4em;
+  }
+  .stats ul {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -1rem;
+  }
+  .stats li {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  .stats em {
+    font-size: 1em;
+  }
+  .stats .houses {
+    flex: 1;
+  }
+  .stats .houses b {
+    font-size: 5em;
+  }
+  .stats .families {
+    flex: 3;
+  }
+  .stats .families b {
+    font-size: 5em;
+  }
+  .stats .savings {
+    flex: 3 0 45%;
+  }
+  .stats .savings b {
+    font-size: 3em;
+  }
+  .stats .savings em {
+    font-size: 1.5em;
+  }
+  .stats .days {
+    flex: 3 0 45%;
+  }
+  .stats .days b {
+    font-size: 3em;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .stats {
+    padding: 1rem;
+    font-size: 1em;
+  }
+  .stats.full-bleed {
+    margin-bottom: 1rem;
+    background-size: 100% auto;
+  }
+  .stats h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 0;
+  }
+  .stats h3:before, .stats h3:after {
+    content: "★";
+    margin: 0 2rem;
+  }
+  .stats ul {
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    margin-right: -1rem;
+  }
+  .stats li {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  .stats .houses {
+    flex: 2;
+  }
+  .stats .houses b {
+    font-size: 5em;
+  }
+  .stats .families {
+    flex: 4;
+  }
+  .stats .families b {
+    font-size: 5em;
+  }
+  .stats .savings {
+    flex: 3.2;
+  }
+  .stats .savings b {
+    font-size: 4em;
+  }
+  .stats .savings em {
+    font-size: 2em;
+    line-height: 0.5;
+  }
+  .stats .savings span {
+    padding-top: 1em;
+  }
+  .stats .days {
+    flex: 3.2;
+  }
+  .stats .days b {
+    font-size: 4em;
+  }
+  .stats .days em {
+    line-height: 0.5;
+  }
+  .stats .days span {
+    padding-top: 1em;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .stats {
+    padding: 1.5rem 2rem 2rem;
+  }
+  .stats.full-bleed {
+    margin-bottom: 2rem;
+  }
+  .stats ul {
+    margin-right: -2rem;
+  }
+  .stats ul li {
+    margin-right: 2rem;
+  }
+  .stats .houses b, .stats .families b, .stats .savings b, .stats .days b {
+    font-size: 5em;
+  }
+  .stats .houses span, .stats .families span, .stats .savings span, .stats .days span {
+    padding-top: 0;
+  }
+  .stats .houses {
+    flex: 1.5;
+  }
+  .stats .families {
+    flex: 4;
+  }
+  .stats .savings {
+    flex: 3.8;
+  }
+  .stats .days {
+    flex: 3.2;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .stats {
+    font-size: 1.25em;
+  }
+}

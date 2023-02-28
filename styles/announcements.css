@@ -1,0 +1,74 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.announcements {
+  color: #f2f2f2;
+  z-index: 1;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+}
+.announcements h2 {
+  color: #f2f2f2;
+  font-size: 1em;
+  font-weight: normal;
+}
+.announcements h2 button {
+  font-size: 0.7em;
+  margin-left: 1em;
+  display: inline-block;
+  position: relative;
+  top: -0.2em;
+  border-radius: 1em;
+  padding: 0 1em;
+}
+.announcements h2 button:active {
+  top: -0.1em !important;
+}
+.announcements ul {
+  list-style: none;
+  padding-left: 0;
+}
+.announcements ul::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.announcements li {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.announcements li.secondary {
+  margin-top: 0.2em;
+  border-top: 1px solid #cccccc;
+  padding-top: 0.4em;
+  font-size: 1em;
+  font-weight: normal;
+}
+.announcements li label {
+  display: inline-block;
+  clear: left !important;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  padding: 0.3em 1em;
+  color: #fff;
+  background-color: #1d344d;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+@media screen and (min-width: 35rem) {
+  .announcements {
+    border-radius: 0.6rem;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .announcements {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .announcements {
+    padding: 2rem;
+  }
+}

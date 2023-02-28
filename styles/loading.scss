@@ -1,0 +1,129 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.loading	{
+
+	h1, h2, h3, h4, h5, h6, p, li, input, button, textarea, label, select, strong, em, span, fieldset, .selectbox, .displaybox {
+		color: transparent !important;
+		text-shadow: none !important;
+		box-shadow: none !important;
+		border: none !important;
+		background-color: rgba(0,0,0,.15);
+		background-image: none !important;
+		animation: darkfade 2s ease-in-out infinite;
+		transition: all 0.2s ease !important;
+		span {
+			opacity: 0 !important;
+		}
+	}
+
+	.PhoneInput {
+		background-color: transparent !important;
+		border-radius: .3em !important;
+		.PhoneInputCountry {
+			display: none;
+		}
+		.PhoneInputCountrySelectArrow {
+			display: none !important;
+		}
+		input[type=tel] {
+			border-bottom-left-radius: 0 !important;
+		}
+	}
+
+	label {
+		opacity: 0 !important;
+	}
+
+	#{$all-text-inputs}, .selectbox, .displaybox {
+		border-radius: .3em;
+	}
+
+	h1, h2, h3 {
+		border-radius: .4rem;
+	}
+
+	button:before {
+		opacity: 0;
+	}
+
+	@keyframes darkfade {
+		0%{
+			background-color: rgba(0,0,0,0);
+		}
+		50% {
+			background-color: rgba(0,0,0,.15);
+		}
+		100%{
+			background-color: rgba(0,0,0,0);
+		}
+	}
+
+}
+
+.sidebar > .loading, .content-header.loading	{
+
+	h1, h2, h3, h4, h5, h6, p, li, input, button, textarea, label, select, strong, em, span, fieldset, .selectbox, .displaybox {
+		background-color: rgba(255,255,255,0);
+		animation: lightfade 2s ease-in-out infinite;
+		transition: all 0.2s ease !important;
+		span {
+			background: transparent !important;
+		}
+	}
+
+	@keyframes lightfade {
+		0%{
+			background-color: rgba(255,255,255,0);
+			filter: blur(.5rem);
+		}
+		33% {
+			filter: blur(0);
+		}
+		50% {
+			background-color: rgba(255,255,255,.25);
+		}
+		66% {
+			filter: blur(0);
+		}
+		100%{
+			background-color: rgba(255,255,255,0);
+			filter: blur(.5rem);
+		}
+	}
+
+}
+
+.content-header.loading {
+
+	h3	{
+		width: 20% !important;
+		margin-bottom: .25rem;
+		border-radius: 1rem;
+	}
+
+	h1 {
+		width: 60% !important;
+		border-radius: .75rem;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

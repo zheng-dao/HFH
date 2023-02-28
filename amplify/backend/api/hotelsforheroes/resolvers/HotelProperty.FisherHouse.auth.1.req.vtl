@@ -1,0 +1,28 @@
+## [Start] Authorization Steps. **
+$util.qr($ctx.stash.put("hasAuth", true))
+#set( $isAuthorized = false )
+#if( $util.authType() == "API Key Authorization" )
+
+#end
+#if( $util.authType() == "IAM Authorization" )
+  #set( $adminRoles = ["us-east-1_w7NrfonkZ_Full-access/CognitoIdentityCredentials","us-east-1_w7NrfonkZ_Manage-only/CognitoIdentityCredentials","AdminQueries5cfc6a1b-dev","deactiveExpiredProfiles-dev","hotelsforheroesd502aea1-dev","liaisonCheckoutWarning-dev","notifyNewAnnouncement-dev","getLiaisons-dev","changeLiaisonEmail-dev","listAdmins-dev","changeAdminEmail-dev","emailApplicationFiles-dev"] )
+  #foreach( $adminRole in $adminRoles )
+    #if( $ctx.identity.userArn.contains($adminRole) && $ctx.identity.userArn != $ctx.stash.authRole && $ctx.identity.userArn != $ctx.stash.unauthRole )
+      #return($util.toJson({}))
+    #end
+  #end
+  #if( !$isAuthorized )
+    #if( ($ctx.identity.userArn == $ctx.stash.authRole) || ($ctx.identity.cognitoIdentityPoolId == "us-east-1:ead21b55-8315-4cfa-a6b3-21fc180f6007" && $ctx.identity.cognitoIdentityAuthType == "authenticated") )
+      #set( $isAuthorized = true )
+    #end
+  #end
+#end
+#if( $util.authType() == "User Pool Authorization" )
+  ## All users authenticated via User Pool Authorization are allowed to read.
+  #set( $isAuthorized = true )
+#end
+#if( !$isAuthorized && $util.isNull($ctx.stash.authFilter) )
+$util.unauthorized()
+#end
+$util.toJson({"version":"2018-05-29","payload":{}})
+## [End] Authorization Steps. **

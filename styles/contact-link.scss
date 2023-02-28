@@ -1,0 +1,48 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.contact-link {
+
+	display: block;
+	background-color: $light_blue;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 1rem;
+	margin: 0 1rem 1rem;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		height: 1.2em;
+		width: 1.2em;
+		margin-right: .5em;
+		margin-bottom: -.25em;
+		background-image: url(../public/img/email.svg);
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: contain;
+	}
+
+	&:hover {
+		background-color: $blue;
+	}
+
+}
+
+@media #{$small} {
+
+	.contact-link {
+		margin: 1rem 0;
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.contact-link {
+		margin: 2rem 0;
+	}
+
+}

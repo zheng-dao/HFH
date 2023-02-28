@@ -1,0 +1,80 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.title-only-feature {
+  padding: 0;
+  margin: 0 1rem 1rem;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+}
+.title-only-feature:hover {
+  background-color: #004b8d;
+}
+.title-only-feature.rounded {
+  border-bottom: none;
+  border-radius: 0.6em;
+  overflow: hidden;
+}
+.title-only-feature.rounded:hover {
+  border-bottom: none;
+}
+.title-only-feature.rounded img {
+  border-radius: 0.6em 0.6em 0 0;
+}
+.title-only-feature.rounded .title-only-feature-info {
+  border-radius: 0 0 0.6em 0.6em;
+}
+.title-only-feature img {
+  width: 100%;
+  height: auto;
+}
+.title-only-feature .title-only-feature-info {
+  padding: 0;
+  background-color: transparent;
+}
+.title-only-feature .title-only-feature-info h2 {
+  font-size: 1.4em;
+  color: #fff;
+  margin: 0;
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+}
+.six-col .title-only-feature .title-only-feature-info h2, .reading-block .title-only-feature .title-only-feature-info h2 {
+  font-size: 1em;
+}
+
+.reading-block a.title-only-feature {
+  border-bottom: none;
+  margin: 0 0 1rem;
+}
+.reading-block a.title-only-feature .title-only-feature-info h2 {
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 35rem) {
+  .title-only-feature {
+    margin: 0 0 1rem;
+  }
+
+  .reading-block a.title-only-feature .title-only-feature-info h2 {
+    padding: 0.5rem 1rem;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .sidebar .title-only-feature {
+    margin-bottom: 2rem;
+  }
+  .title-only-feature .title-only-feature-info h2 {
+    padding: 1rem 2rem;
+  }
+  .reading-block .title-only-feature .title-only-feature-info h2 {
+    padding: 1rem;
+  }
+  .title-only-feature .title-only-feature-info p {
+    padding: 2rem;
+  }
+
+  .matrix-block.four-col .title-only-feature-info p, .matrix-block.four-col .title-only-feature-info h2, .matrix-block.six-col .title-only-feature-info p, .matrix-block.six-col .title-only-feature-info h2 {
+    padding: 1rem;
+  }
+}

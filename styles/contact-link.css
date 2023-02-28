@@ -1,0 +1,37 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.contact-link {
+  display: block;
+  background-color: #6699cc;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 1rem;
+  margin: 0 1rem 1rem;
+}
+.contact-link:before {
+  content: "";
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  margin-right: 0.5em;
+  margin-bottom: -0.25em;
+  background-image: url(../public/img/email.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+.contact-link:hover {
+  background-color: #004b8d;
+}
+
+@media screen and (min-width: 35rem) {
+  .contact-link {
+    margin: 1rem 0;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .contact-link {
+    margin: 2rem 0;
+  }
+}

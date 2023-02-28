@@ -1,0 +1,314 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.stats	{
+
+	padding: 1rem;
+	color: #fff;
+	position: relative;
+	z-index: 10;
+	text-align: left;
+	background-color: rgba(0,0,0,0.3);
+	margin-bottom: 1rem;
+
+	ul	{
+		@include cleanlist;
+		margin: 0;
+		z-index: 2;
+		position: relative;
+	}
+	
+	li {
+		display: block;
+		position: relative;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	b {
+		line-height: 1em;
+		position: relative;
+		display: inline-block;
+	}
+
+	em {
+		font-style: normal;
+		font-weight: bold;
+		display: inline-block;
+	}
+	
+	span	{
+		line-height: 1em;
+		position: relative;
+		font-size: .8em;
+		display: block;
+		color: #fff;
+	}
+	
+	.houses {
+
+		color: $light_blue;
+		
+		b	{
+			font-size: 4em;
+		}
+		
+		span	{
+		}
+		
+	}
+	
+	.families {
+
+		color: $red;
+		
+		b	{
+			font-size: 4em;
+		}
+		
+		span	{
+		}
+		
+	}
+	
+	.savings {
+
+		color: $donate;
+	
+		b	{
+			font-size: 3.5em;
+		}
+		
+		em	{
+			font-size: 2em;
+		}
+		
+	}
+	
+	.days {
+
+		color: $light_blue;
+	
+		b	{
+			font-size: 4em;
+		}
+		
+		em	{
+			font-size: 2em;
+		}
+		
+	}
+
+}
+
+@media #{$small} {
+
+	.stats {
+
+		padding: 2rem;
+		font-size: 1.3em;
+
+	}
+
+}
+
+@media #{$med} {
+
+	.stats {
+
+		padding: 2rem;
+		font-size: 1.4em;
+		
+		ul {
+			display: flex;
+			flex-flow: row wrap;
+			margin-right: -1rem;
+		}
+
+		li {
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		em {
+			font-size: 1em;
+		}
+
+		.houses {
+			flex: 1;
+			b {
+				font-size: 5em;
+			}
+		}
+
+		.families {
+			flex: 3;
+			b {
+				font-size: 5em;
+			}
+		}
+
+		.savings {
+			flex: 3 0 45%;
+			b {
+				font-size: 3em;
+			}
+			em {
+				font-size: 1.5em;
+			}
+		}
+
+		.days {
+			flex: 3 0 45%;
+			b {
+				font-size: 3em;
+			}
+		}
+
+	}
+
+}
+
+@media #{$large} {
+
+	.stats {
+
+		padding: 1rem;
+		font-size: 1em;
+
+		&.full-bleed {
+			margin-bottom: 1rem;
+			background-size: 100% auto;
+		}
+
+		h3 {
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 2em;
+			margin: 0;
+			&:before, &:after {
+				content: "\2605";
+				margin: 0 2rem;
+			}
+		}
+		
+		ul {
+			display: flex;
+			flex-flow: row;
+			align-items: flex-start;
+			margin-right: -1rem;
+		}
+
+		li {
+			margin-right: 1rem;
+			margin-bottom: 0;
+		}
+
+		.houses {
+			flex: 2;
+			b {
+				font-size: 5em;
+			}
+		}
+
+		.families {
+			flex: 4;
+			b {
+				font-size: 5em;
+			}
+		}
+
+		.savings {
+			flex: 3.2;
+			b {
+				font-size: 4em;
+			}
+			em {
+				font-size: 2em;
+				line-height: .5;
+			}
+			span {
+				padding-top: 1em;
+			}
+		}
+
+		.days {
+			flex: 3.2;
+			b {
+				font-size: 4em;
+			}
+			em {
+				line-height: .5;
+			}
+			span {
+				padding-top: 1em;
+			}
+		}
+
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.stats {
+		padding: 1.5rem 2rem 2rem;
+		&.full-bleed {
+			margin-bottom: 2rem;
+		}
+
+		ul {
+			margin-right: -2rem;
+			li {
+				margin-right: 2rem;
+			}
+		}
+
+		.houses, .families, .savings, .days {
+			b {
+				font-size: 5em;
+			}
+			span {
+				padding-top: 0;
+			}
+		}
+
+		.houses { flex: 1.5; }
+		.families { flex: 4; }
+		.savings { flex: 3.8; }
+		.days { flex: 3.2; }
+
+	}
+
+}
+
+@media #{$xxxlarge} {
+
+	.stats {
+		font-size: 1.25em;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

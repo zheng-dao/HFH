@@ -1,0 +1,90 @@
+{
+  "Records": [
+    {
+      "eventID": "386c16f5e22b5139874ea7c8e3dac418",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1644784830,
+        "Keys": {
+          "id": {
+            "S": "fb37ee19-1c4c-4f59-8120-1119d072c6a4"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "S": "2022-02-13T03:11:59.920Z"
+          },
+          "applicationServiceMemberId": {
+            "S": "ce196edf-b10a-4f3f-8b1b-5980ddec8e0c"
+          },
+          "__typename": {
+            "S": "Application"
+          },
+          "liaison_terms_of_use_agreement": {
+            "BOOL": true
+          },
+          "applicationApplicantId": {
+            "S": "d18cd155-bee3-4d4e-94cd-1a3094e9f6c4"
+          },
+          "applicationUserId": {
+            "S": "2ec7a78a-172f-4277-bec7-805bedc0c5a3"
+          },
+          "id": {
+            "S": "fb37ee19-1c4c-4f59-8120-1119d072c6a4"
+          },
+          "applicationPatientId": {
+            "S": "de65cb1b-f5ba-4f95-ae28-b58813632948"
+          },
+          "liaison_read": {
+            "S": "UNREAD"
+          },
+          "status": {
+            "S": "DRAFT"
+          },
+          "updatedAt": {
+            "S": "2022-02-13T20:40:30.035Z"
+          }
+        },
+        "OldImage": {
+          "createdAt": {
+            "S": "2022-02-13T03:11:59.920Z"
+          },
+          "applicationServiceMemberId": {
+            "S": "ce196edf-b10a-4f3f-8b1b-5980ddec8e0c"
+          },
+          "__typename": {
+            "S": "Application"
+          },
+          "applicationApplicantId": {
+            "S": "d18cd155-bee3-4d4e-94cd-1a3094e9f6c4"
+          },
+          "applicationUserId": {
+            "S": "2ec7a78a-172f-4277-bec7-805bedc0c5a3"
+          },
+          "id": {
+            "S": "fb37ee19-1c4c-4f59-8120-1119d072c6a4"
+          },
+          "applicationPatientId": {
+            "S": "de65cb1b-f5ba-4f95-ae28-b58813632948"
+          },
+          "liaison_read": {
+            "S": "UNREAD"
+          },
+          "status": {
+            "S": "DRAFT"
+          },
+          "updatedAt": {
+            "S": "2022-02-13T03:11:59.920Z"
+          }
+        },
+        "SequenceNumber": "756564900000000062870146466",
+        "SizeBytes": 835,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:744473394486:table/Application-zut3f36znfb47djrbwpoqgnkwm-dev/stream/2021-09-07T19:58:17.647"
+    }
+  ]
+}

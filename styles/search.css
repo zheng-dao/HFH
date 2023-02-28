@@ -1,0 +1,330 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.main-search .text-search {
+  margin-bottom: 0;
+  position: relative;
+}
+.main-search .text-search input[type=search].no-label {
+  line-height: 2.5rem;
+  width: 100%;
+  padding: 0 4rem 0 1em;
+  border-radius: 0.8rem !important;
+}
+.main-search .text-search input[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 2.5em;
+  border-radius: 0.6rem;
+  margin: 0.25rem 0.25rem 0 0;
+}
+.main-search label {
+  display: inline-block;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #1d344d;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.main-search label.required:after {
+  content: "";
+  display: inline-block;
+  background-color: #fff;
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  margin-left: 0.8em;
+  position: relative;
+  top: -0.1em;
+}
+.main-search label.check {
+  display: block;
+  background-color: transparent;
+  color: #333333;
+  text-transform: none;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+.main-search li label {
+  text-transform: none !important;
+}
+.main-search [type=color], .main-search [type=date], .main-search [type=datetime], .main-search [type=datetime-local], .main-search [type=email], .main-search [type=month], .main-search [type=number], .main-search [type=password], .main-search [type=search], .main-search [type=tel], .main-search [type=text], .main-search [type=time], .main-search [type=url], .main-search [type=week], .main-search input:not([type]), .main-search textarea, .main-search textarea {
+  border-radius: 0 0.3em 0.3em 0.3em;
+}
+.main-search [type=color].nolabel, .main-search [type=color].mainsearch, .main-search [type=date].nolabel, .main-search [type=date].mainsearch, .main-search [type=datetime].nolabel, .main-search [type=datetime].mainsearch, .main-search [type=datetime-local].nolabel, .main-search [type=datetime-local].mainsearch, .main-search [type=email].nolabel, .main-search [type=email].mainsearch, .main-search [type=month].nolabel, .main-search [type=month].mainsearch, .main-search [type=number].nolabel, .main-search [type=number].mainsearch, .main-search [type=password].nolabel, .main-search [type=password].mainsearch, .main-search [type=search].nolabel, .main-search [type=search].mainsearch, .main-search [type=tel].nolabel, .main-search [type=tel].mainsearch, .main-search [type=text].nolabel, .main-search [type=text].mainsearch, .main-search [type=time].nolabel, .main-search [type=time].mainsearch, .main-search [type=url].nolabel, .main-search [type=url].mainsearch, .main-search [type=week].nolabel, .main-search [type=week].mainsearch, .main-search input:not([type]).nolabel, .main-search input:not([type]).mainsearch, .main-search textarea.nolabel, .main-search textarea.mainsearch, .main-search textarea.nolabel, .main-search textarea.mainsearch {
+  border-radius: 0.3em;
+}
+.main-search .selectbox, .main-search .displaybox {
+  display: block;
+  background-color: #d9d9d9;
+  border-radius: 0 0.3em 0.3em 0.3em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.main-search .selectbox select, .main-search .displaybox select {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+.main-search .selectbox label, .main-search .displaybox label {
+  background-color: transparent;
+  text-transform: none;
+  color: #333333;
+  font-size: 1em;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  position: relative;
+  top: -0.1em;
+}
+.main-search .checkboxes, .main-search .radios {
+  padding: 0;
+  background-color: transparent;
+  margin-bottom: 0.75rem;
+  font-size: 1em;
+  font-weight: normal;
+  width: 100%;
+  display: block;
+}
+.main-search .checkboxes h4, .main-search .radios h4 {
+  margin: 0 1rem 0 0;
+  width: auto;
+}
+@media screen and (min-width: 35rem) {
+  .main-search .checkboxes h4, .main-search .radios h4 {
+    display: inline-block;
+  }
+}
+.main-search .checkboxes label, .main-search .radios label {
+  background-color: transparent;
+  color: #262626;
+  font-weight: bold;
+  text-transform: none;
+  font-size: 1em;
+  flex: 1;
+  width: auto !important;
+  margin-right: 1rem;
+  padding: 0;
+  color: #f2f2f2;
+}
+.main-search .checkboxes label:last-child, .main-search .radios label:last-child {
+  margin-right: 0;
+}
+
+.search-clear {
+  display: block;
+  float: none;
+  clear: both;
+  top: 0;
+}
+.search-clear p {
+  display: inline-block;
+  margin: 0 1em 1em 0;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  color: #333333;
+}
+.search-clear button {
+  font-size: 0.7em;
+  background-color: #333333;
+  padding: 0.4em 0.8em;
+  border-radius: 0.5em;
+  display: inline-block !important;
+  width: auto !important;
+  position: relative;
+  top: -0.2em;
+}
+@media screen and (min-width: 25rem) {
+  .search-clear {
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: 1.75em;
+  }
+  .search-clear.advanced {
+    top: 0.5em;
+  }
+}
+
+#main-search a.advanced-link, .main-search a.advanced-link {
+  margin-top: 0;
+  color: #f2f2f2;
+  font-size: 0.8em;
+  display: inline-block;
+}
+#main-search a.advanced-link:hover, .main-search a.advanced-link:hover {
+  text-decoration: underline;
+}
+#main-search .filters, .main-search .filters {
+  color: #f2f2f2;
+  margin-bottom: 1rem;
+}
+#main-search .filters.disabled, .main-search .filters.disabled {
+  visibility: hidden;
+}
+#main-search .filters ul, .main-search .filters ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 !important;
+}
+#main-search .filters li, .main-search .filters li {
+  display: inline-block;
+  font-size: 0.8em;
+}
+#main-search .filters li.adv-search, .main-search .filters li.adv-search {
+  display: none;
+}
+#main-search .filters li.group-break, .main-search .filters li.group-break {
+  margin-right: 2rem;
+}
+#main-search .filters.advanced-search-open li.adv-search, .main-search .filters.advanced-search-open li.adv-search {
+  display: inline-block;
+}
+#main-search .filters select, .main-search .filters select {
+  display: inline;
+  width: auto !important;
+  margin-right: 1em;
+}
+#main-search .filters label, .main-search .filters label {
+  display: inline-block !important;
+  font-size: inherit;
+  font-weight: bold;
+  color: #fff;
+  padding: 0.2em 0.7em;
+  line-height: 2em;
+  margin: 0 0.5rem 0.5rem 0;
+  border-radius: 0.5em;
+  width: auto;
+  transition: background-color, color, 0.2s ease;
+}
+#main-search .filters label.status-incomplete, #main-search .filters label.status-draft, .main-search .filters label.status-incomplete, .main-search .filters label.status-draft {
+  background-color: #d9d9d9;
+  border: 0.2em solid #bfbfbf;
+  color: #595959;
+  padding: 0 0.7em;
+}
+#main-search .filters label.status-pending, #main-search .filters label.status-unreconciled, .main-search .filters label.status-pending, .main-search .filters label.status-unreconciled {
+  background-color: orange;
+  color: #262626;
+}
+#main-search .filters label.status-returned, .main-search .filters label.status-returned {
+  background-color: #a45ca0;
+}
+#main-search .filters label.status-completed, #main-search .filters label.status-complete, .main-search .filters label.status-completed, .main-search .filters label.status-complete {
+  background-color: #004b8d;
+}
+#main-search .filters label.status-expired, .main-search .filters label.status-expired {
+  background-color: #666666;
+  color: #262626;
+}
+#main-search .filters label.status-requested, .main-search .filters label.status-requested {
+  background-color: orange;
+  color: #262626;
+}
+#main-search .filters label.status-exception, .main-search .filters label.status-exception {
+  background-color: #ff8cd4;
+  color: #262626;
+}
+#main-search .filters label.status-deleted, #main-search .filters label.status-declined, .main-search .filters label.status-deleted, .main-search .filters label.status-declined {
+  background-color: #990000;
+}
+#main-search .filters label.status-approved, #main-search .filters label.status-reconciled, #main-search .filters label.status-active, .main-search .filters label.status-approved, .main-search .filters label.status-reconciled, .main-search .filters label.status-active {
+  background-color: #07a672;
+}
+#main-search .filters label.status-reviewed, .main-search .filters label.status-reviewed {
+  background-color: #104c19;
+}
+#main-search .filters label.status-closed, .main-search .filters label.status-closed {
+  background-color: #0d0d0d;
+}
+#main-search .filters label.status-blacklisted, .main-search .filters label.status-blacklisted {
+  background-color: #000;
+}
+#main-search .filters label.status-unread, #main-search .filters label.status-read, #main-search .filters label.status-admin, #main-search .filters label.status-liaison, .main-search .filters label.status-unread, .main-search .filters label.status-read, .main-search .filters label.status-admin, .main-search .filters label.status-liaison {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0.1em solid #6699cc;
+  color: #e6e6e6;
+  padding: 0.1em 0.7em;
+}
+#main-search .filters label.status-archived, #main-search .filters label.status-inactive, .main-search .filters label.status-archived, .main-search .filters label.status-inactive {
+  background-color: gray;
+}
+#main-search .filters label:hover, #main-search .filters label.active, .main-search .filters label:hover, .main-search .filters label.active {
+  background-color: #404040 !important;
+  color: #fff !important;
+  border-color: #404040;
+}
+#main-search .filters label input[type=checkbox], .main-search .filters label input[type=checkbox] {
+  margin-right: 0.25em;
+}
+#main-search .filters label, .main-search .filters label {
+  font-size: 1em;
+}
+#main-search .filters input[type=checkbox], .main-search .filters input[type=checkbox] {
+  top: 0.2em;
+}
+#main-search .filters li select, .main-search .filters li select {
+  font-size: 1.2em;
+  height: 2em !important;
+  border-radius: 0.4rem;
+}
+@media screen and (min-width: 35rem) {
+  #main-search .filters, .main-search .filters {
+    padding: 1rem 1rem 0;
+    border-radius: 0.6rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+  }
+  #main-search .filters.advanced-search-open, .main-search .filters.advanced-search-open {
+    margin-bottom: 1rem;
+  }
+  #main-search .filters label, .main-search .filters label {
+    margin-bottom: 1rem !important;
+  }
+}
+@media screen and (min-width: 65rem) {
+  #main-search .filters label, .main-search .filters label {
+    font-size: 1.2em;
+  }
+  #main-search .filters input[type=checkbox], .main-search .filters input[type=checkbox] {
+    top: 0.1em;
+  }
+}
+
+.text-search.multi {
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+.text-search.multi .input-combo label {
+  background-color: #6699cc;
+  color: #262626;
+  font-weight: bold;
+}
+@media screen and (min-width: 45rem) {
+  .text-search.multi {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  .text-search.multi .input-combo {
+    flex: 0 0 calc(33.3333% - 0.3333rem);
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+  }
+  .text-search.multi .input-combo:last-of-type {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .text-search.multi {
+    padding: 0.75rem 1rem 1rem;
+  }
+  .text-search.multi .input-combo {
+    flex: 0 0 calc(33.3333% - 0.6666rem);
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+  .text-search.multi .input-combo:last-of-type {
+    margin-right: 0;
+  }
+}

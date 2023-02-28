@@ -1,0 +1,59 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.article-search-widget {
+
+	background-color: $light_blue;
+	padding: 1rem;
+
+	.classic & {
+		background-color: $gold;
+	}
+
+	form {
+		position: relative;
+	}
+
+	input[type=search]	{
+		display: inline-block;
+		line-height: 2.6em;
+		height: 2.6em;
+		padding: 0 2.6em 0 1em;
+		width: 100%;
+		margin: 0;
+	}
+	
+	input[type=submit]	{
+		display: inline-block;
+		background-color: $navy;
+		color: #fff;
+		border: none;
+		border-radius: .3em;
+		padding: 0 .4em;
+		text-indent: .1em;
+		height: 2.6em;
+		font-size: .8em;
+		font-weight: bold;
+		text-transform: uppercase;
+		line-height: 0;
+		position: absolute;
+		top: .3375em;
+		right: .325em;
+		transition: background-color 0.2s ease-in-out;
+		&:hover	{
+			background-color: $light_blue;
+		}
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.article-search-widget {
+
+		padding: 1.5rem 2rem;
+
+	}
+
+}

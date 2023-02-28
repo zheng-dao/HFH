@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.breadcrumbs {
+  list-style: none;
+  padding-left: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
+  height: auto;
+}
+.intro-block .breadcrumbs {
+  border-radius: 0;
+  display: block;
+  padding-bottom: 0;
+}
+.breadcrumbs li {
+  display: inline;
+}
+.breadcrumbs li:after {
+  content: " / ";
+}
+.breadcrumbs a {
+  color: #6699cc;
+}
+.breadcrumbs a:hover {
+  color: #004b8d;
+}
+
+.breadcrumbs {
+  list-style: none;
+  padding-left: 0;
+  display: inline-block;
+  padding: 0.25em 1em;
+  margin: 0;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 2em;
+  flex: none;
+}
+.breadcrumbs.rounded-box {
+  border-radius: 0.5em;
+}
+.breadcrumbs li {
+  display: inline;
+}
+.breadcrumbs li:after {
+  content: "›";
+  color: #fff;
+  margin: 0 0.25em 0 0.45em;
+}
+.breadcrumbs li:last-child:after {
+  margin-right: 0;
+}
+.breadcrumbs a {
+  color: #fff;
+}
+.breadcrumbs a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 45rem) {
+  .breadcrumbs {
+    flex: none;
+  }
+  .intro-block .breadcrumbs {
+    border-radius: 2em;
+    display: inline-block;
+    padding-bottom: 0.25em;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+}

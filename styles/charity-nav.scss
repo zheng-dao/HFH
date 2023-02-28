@@ -1,0 +1,113 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.charity-nav-block	{
+
+	margin: 0 1rem 1rem;
+
+	a {
+
+		display: block;
+		background-color: $donate;
+
+		img {
+			margin: 0;
+			padding: 0;
+			border: none;
+			width: auto;
+
+		}
+
+		p {
+			color: $gray95;
+			font-family: $serif;
+			font-style: italic;
+			font-size: .9em;
+			line-height: 1.2;
+			margin: 0;
+			padding: 1rem;
+			text-decoration: none;
+		}
+
+	}
+
+}
+
+@media #{$small} {
+
+	.charity-nav-block {
+
+		margin: 0 0 1rem;
+
+		a {
+
+			@include clearfix;
+
+			img {
+				float: left;
+				width: 30%;
+				margin-right: 1rem;
+			}
+
+		}
+
+	}
+
+}
+
+@media #{$med} {
+
+	.charity-nav-block {
+
+		a {
+
+			img {
+				float: none;
+				width: 100%;
+			}
+
+		}
+
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.charity-nav-block {
+
+		margin-bottom: 2rem;
+
+	}
+
+}
+
+@media #{$xxxlarge} {
+
+	.charity-nav-block {
+
+		a {
+
+			@include clearfix;
+
+			img {
+				float: left;
+				width: 50%;
+				margin-right: 1rem;
+			}
+
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+

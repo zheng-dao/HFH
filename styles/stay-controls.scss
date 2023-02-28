@@ -1,0 +1,117 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+
+
+.stay-controls {
+	padding-top: 1rem;
+	flex: 0 0 100%;
+	@include clearfix;
+	.detail-block & {
+		padding-top: 0;
+	}
+	button, input[type=submit] {
+		float: right;
+		margin-bottom: 0;
+		margin-right: 0;
+		font-size: .8em;
+		&.smaller {
+			font-size: .6em;
+			&.green {
+				background-color: $green;
+			}
+		}
+		&.request, &.submit, &.save {
+			background-color: $green;
+			float: right;
+			&.as-exception {
+				&:before {
+					content: "";
+					display: inline-block;
+					position: relative;
+					top: .15em;
+					height: 1em;
+					width: 1.2em;
+					background-image: url(../public/img/caution.svg);
+					background-size: auto 100%;
+					background-repeat: no-repeat;
+					margin-right: .5em;
+				}
+			}
+		}
+		&.approve {
+			background-color: $green;
+			&:hover {
+				background-color: shade($green, 20%);
+			}
+		}
+		&.return {
+			background-color: $purple;
+			margin-right: 1em;
+			&.final { margin-right: 0; }
+			&:hover {
+				background-color: shade($purple, 20%);
+			}
+		}
+		&.decline, &.delete {
+			background-color: $dark_red;
+			float: left;
+			&.final {
+				float: right !important;
+			}
+			&:hover {
+				background-color: shade($dark_red, 20%);
+			}
+		}
+		&.reopen, &.reconsider {
+			background-color: $purple;
+			float: left;
+			&:hover {
+				background-color: shade($purple, 20%);
+			}
+		}
+		&.close {
+			background-color: $gray90;
+		}
+		&.complete {
+			background-color: $blue;
+			&:hover {
+				background-color: shade($blue, 20%);
+			}
+		}
+		&.reviewed {
+			background-color: $dark_green;
+			&:hover {
+				background-color: shade($dark_green, 20%);
+			}
+		}
+		&.inactive	{
+			background-color: $gray30;
+			color: $gray10;
+			cursor: default;
+			&:hover {
+				background-color: $gray30;
+				color: $gray10;
+			}
+		}
+		&.cancel {
+			float: left;
+			background-color: $gray60;
+			&:hover {
+				background-color: $gray70;
+			}
+		}
+	}
+}
+
+@media #{$xlarge} {
+
+	.stay-controls {
+		padding-top: 1rem;
+		button, input[type=submit] {
+			font-size: .9em;
+		}
+	}
+
+}

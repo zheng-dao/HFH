@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "noEmit": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "module": "esnext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "next-test-utils": ["test/lib/next-test-utils"],
+      "amp-test-utils": ["test/lib/amp-test-utils"],
+      "next-webdriver": ["test/lib/next-webdriver"],
+      "@components/*": ["src/components/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hocs/*": ["src/hocs/*"],
+      "@public/*": ["public/*"],
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@src/*": ["src/*"],
+      "@root/*": ["./*"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "test/**/*.test.ts",
+    "test/**/*.test.tsx",
+    "test/**/test/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/*.ts",
+    "src/*.tsx"
+  ],
+  "exclude": ["node_modules", "src/models"]
+}

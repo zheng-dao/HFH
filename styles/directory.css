@@ -1,0 +1,169 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.directory {
+  position: relative;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #cccccc;
+  border-bottom: none;
+}
+.directory p {
+  color: #cccccc;
+}
+.directory .locations a {
+  color: #f2f2f2;
+}
+.directory .locations a:hover {
+  color: #6699cc;
+}
+.classic .directory {
+  border-bottom: 0.6em solid #F4C182;
+}
+.classic .directory p {
+  color: #595959;
+}
+.classic .directory .locations a {
+  color: #262626;
+}
+.directory header {
+  padding: 1rem;
+}
+.directory .title-icon {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 1.2em;
+  margin: 0.2em 0.25em 0.2em 0;
+  position: relative;
+  top: -0.1em;
+}
+.directory .title-icon img {
+  width: 100%;
+}
+.directory h1 {
+  margin: 0;
+  font-size: 2.4em;
+  line-height: 1.1;
+}
+.directory h3 {
+  background-color: #6699cc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+.directory h3:before {
+  display: inline-block;
+  content: " ";
+  margin-right: 0.5em;
+  height: 1em;
+  width: 1em;
+  position: relative;
+  top: 0.15em;
+  background-size: 1em auto;
+  background-image: url(../public/img/location.svg);
+}
+.directory .locations {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.directory .locations li {
+  padding: 1rem;
+  margin: 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+.directory .locations li:last-child {
+  border-bottom: none;
+}
+.directory .locations li h4 {
+  font-size: 1.2em;
+  margin: 0;
+}
+.directory .locations li h4 a {
+  color: #cccccc;
+  transition: color 0.2s ease;
+}
+.directory .locations li h4 a:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: 0.25em;
+  height: 1em;
+  width: 1em;
+  margin-left: 0.5em;
+  background-image: url(../public/img/gold-rsaquo.svg);
+  background-size: auto 0.8em;
+  background-repeat: no-repeat;
+}
+.directory .locations li h4 a:hover {
+  color: #6699cc;
+}
+.directory .locations li p {
+  margin: 0;
+}
+.directory .locations li label {
+  display: inline-block;
+  color: #6699cc;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+}
+.directory .locations li span > a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.directory p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  font-family: "ff-tisa-web-pro", "Georgia", "Times", serif;
+}
+.directory p strong {
+  color: #f2f2f2;
+}
+.directory p a {
+  border-bottom: 0.1em solid #cccccc;
+  transition: all 0.2s ease;
+}
+.directory p a:hover, .directory p a:focus {
+  color: #6699cc;
+  border-color: #F4C182;
+  text-decoration: none;
+}
+
+.sidebar .directory {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 45rem) {
+  .sidebar .directory {
+    margin-bottom: 1rem;
+  }
+  .sidebar .directory p:last-child, .sidebar .directory ul:last-child, .sidebar .directory img:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .directory {
+    font-size: 1.25em;
+  }
+  .directory header {
+    padding: 2rem 2rem 0;
+  }
+  .directory .section-nav {
+    margin: 0.2rem 0 0;
+  }
+  .directory .section-nav ul li a {
+    padding: 0.5rem 2rem;
+    background-position: calc(100% - 2rem);
+  }
+  .directory h3 {
+    padding: 0.5rem 2rem;
+  }
+  .directory .locations li {
+    padding: 1.5rem 2rem;
+  }
+
+  .sidebar .directory {
+    margin-bottom: 2rem;
+  }
+}

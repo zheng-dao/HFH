@@ -1,0 +1,48 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.selectbox.hotel-filters {
+
+	padding: .8em;
+
+	select {
+		margin-bottom: 1rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.hotel-selector {
+	input:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media #{$large} {
+
+	.selectbox.hotel-filters {
+
+		display: flex;
+		flex-flow: row wrap;
+		padding: .5em .8em;
+
+		.select-state, .select-city {
+			flex: 0 0 calc(50% - .5rem);
+			margin-bottom: 1rem;
+		}
+
+		.select-state {
+			margin-right: 1rem;
+		}
+
+		.select-hotel-chain, .select-hotel-brand {
+			flex: 0 0 100%;
+			margin-bottom: 1rem;
+		}
+		
+	}
+
+}

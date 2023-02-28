@@ -1,0 +1,395 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.omnibar	{
+
+	filter: drop-shadow(0px 0px .1rem #000) drop-shadow(0px 0px .05rem #000);
+
+	&.admin-extras {
+
+		li {
+			width: 20%;
+		}
+
+	}
+
+	padding: 0;
+	display: block;
+	position: relative;
+
+	ul.app-tabs {
+
+		@include cleanlist;
+		margin: 0 1rem;
+		display: flex;
+		border: 3px solid $gray10;
+		border-radius: .6rem;
+		overflow: hidden;
+
+		li {
+
+			flex: 1;
+			display: block;
+			margin: 0;
+			border-right: 3px solid $gray10;
+			&:last-child { border-right: none; }
+			&.solo {
+				width: 100%;
+			}
+
+			a {
+
+				display: block;
+				padding: 1em 0;
+				font-size: 1em;
+				text-align: center;
+				font-size: .8em;
+				font-weight: bold;
+				color: #fff;
+				transition: all 0.2s ease-in-out;
+				&.final {
+					background-color: $gray20;
+					.number {
+						background-color: transparent;
+						&.indicator {
+							background-color: $orange !important;
+						}
+					}
+				}
+				&:hover, &.current {
+					background-color: $light_blue;
+					.number {
+						background-color: $navy;
+						border-color: $navy;
+						&.indicator {
+							background-color: $orange !important;
+							border-color: $orange !important;
+							&.complete:hover {
+								color: $orange !important;
+							}
+						}
+					}
+				}
+				&.current {
+					cursor: default;
+					&:hover {
+						cursor: default;
+					}
+				}
+				&.complete, &.current.complete	{
+					.number, .number:hover	{
+						background-color: $green;
+						color: $green;
+						border-color: $green;
+						position: relative;
+						&:before {
+							content: "\2713";
+							display: block;
+							position: absolute;
+							z-index: 10001;
+							top: 0;
+							left: -.05em;
+							height: 1.75em;
+							width: 1.75em;
+							line-height: 1.75em;
+							color: #fff;
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+	.step {
+		display: none;
+	}
+
+	.number	{
+		background-color: transparent;
+		color: #fff;
+		display: inline-block;
+		font-size: 1.2em;
+		height: 1.75em;
+		width: 1.75em;
+		border-radius: 1em;
+		line-height: 1.75em;
+		text-align: center;
+		transition: all 0.2s ease-in-out;
+		border: 2px solid $gold;
+		&.ring {
+			height: 2em;
+			width: 2em;
+			border: .25em solid $orange;
+		}
+		&.indicator {
+			background-color: $orange !important;
+			border-color: $orange !important;
+			color: $gray85;
+			&.complete:hover {
+				color: $orange !important;
+			}
+		}
+	}
+	&.group .number {
+		line-height: 1.6em;
+	}
+
+	.badge {
+		position: relative;
+		top: -.1em;
+		margin-right: 1em;
+		display: inline-block;
+		text-align: center;
+		background-color: $light_blue;
+		color: #fff;
+		font-size: .3em;
+		font-weight: bold;
+		height: 1em;
+		width: 1em;
+		border-radius: 1em;
+		&.pending {
+			background-color: $orange;
+		}
+		&.approved {
+			background-color: $green;
+		}
+	}
+
+	&.read-only {
+		ul.app-tabs {
+			border-color: $gray45;
+			li {
+				border-color: $gray45;
+			}
+		}
+		a.current {
+			background-color: $gray45;
+			.number {
+				background-color: $gray75;
+				border-color: $gray75;
+			}
+		}
+		.number {
+			border-color: $gray50;
+			color: $gray25;
+		}
+		.step {
+			color: $gray20;
+		}
+	}
+	
+	&.group {
+		
+		display: flex;
+		margin-bottom: 2rem;
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.group-contents {
+			flex: 0 0 calc(100% - 4rem);
+		}
+
+		ul.app-tabs {
+			margin: 0;
+			border-radius: 0;
+		}
+
+		.prev, .next {
+			flex: 0 0 2rem;
+			text-align: center;
+			border: 3px solid $gray05;
+			display: block;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			transition: background-color 0.2s ease;
+			&:hover {
+				background-color: $light_blue;
+			}
+			img {
+				width: 40%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				filter: drop-shadow(0px 0px .1rem rgba(0,0,0,.75));
+			}
+		}
+
+		.prev {
+			border-right: none;
+			border-radius: .6rem 0 0 .6rem;
+		}
+
+		.next {
+			border-left: none;
+			border-radius: 0 .6rem .6rem 0;
+		}
+
+		&.read-only {
+			.prev, .next {
+				border-color: $gray45;
+			}
+		}
+
+		@media #{$med} {
+			.number, .step {
+				font-size: .7em;
+			}
+		}
+		@media #{$large} {
+			.group-contents {
+				flex: 0 0 calc(100% - 6rem);
+			}
+			.prev, .next {
+				flex: 0 0 3rem;
+			}
+			.number, .step {
+				font-size: .8em;
+			}
+		}
+		@media #{$xxlarge} {
+			.prev a {
+				text-align: left;
+				img {
+					margin-left: 0;
+				}
+			}
+			.next a {
+				text-align: right;
+				img {
+					margin-right: 0;
+				}
+			}
+			.number, .step {
+				font-size: 1em;
+			}
+		}
+
+	}
+
+}
+
+@media #{$small} {
+
+	.omnibar {
+
+		ul.app-tabs {
+			margin: 0 0 2rem;
+		}
+
+		ul {
+			li {
+				a {
+					padding: 1em;
+				}
+			}
+		}
+
+		.number	{
+			margin-right: .25em;
+			font-size: 1em;
+		}
+
+	}
+
+}
+
+@media #{$med} {
+
+	.omnibar {
+
+		ul.app-tabs {
+			border-radius: 1rem;
+			li {
+				a {
+					text-align: left;
+					font-size: 1em;
+					padding: 1em;
+				}
+			}
+		}
+
+		.step, .number {
+			display: inline-block;
+			font-size: .8em;
+		}
+
+		a.current, a:hover {
+			.step {
+				color: $gray85;
+			}
+		}
+
+	}
+
+}
+
+@media #{$large} {
+
+	.omnibar {
+
+		.step, .number {
+			font-size: 1em;
+		}
+
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.omnibar {
+
+		ul.app-tabs {
+			li {
+				a {
+					font-size: 1.2em;
+					padding: 1.5em 1em;
+				}
+			}
+		}
+
+		.number, .step {
+			font-size: 1em;
+		}
+
+	}
+
+}
+
+@media #{$xxlarge} {
+
+	.omnibar {
+	
+	}
+
+}
+
+@media #{$xxxxlarge} {
+
+	.omnibar {
+	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

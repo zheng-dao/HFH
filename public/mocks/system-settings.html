@@ -1,0 +1,235 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="//use.typekit.net/yta3jvz.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- object-specific stylesheets -->
+  <link rel="stylesheet" href="./css/featured-slides.css">
+  <link rel="stylesheet" href="./css/intro-banner.css">
+  <link rel="stylesheet" href="./css/full-bleed-banner.css">
+  <link rel="stylesheet" href="./css/reading-block.css">
+  <link rel="stylesheet" href="./css/app-pane.css">
+  <link rel="stylesheet" href="./css/AppControls.module.css">
+  <link rel="stylesheet" href="./css/DetailBlock.module.css">
+  <link rel="stylesheet" href="./css/stay-controls.css">
+  <link rel="stylesheet" href="./css/Omnibar.module.css">
+  <link rel="stylesheet" href="./css/system-menu.css">
+  <link rel="stylesheet" href="./css/section-nav.css">
+  <link rel="stylesheet" href="./css/small-feature.css">
+  <link rel="stylesheet" href="./css/video-block.css">
+  <link rel="stylesheet" href="./css/ContentHeader.module.css">
+  <link rel="stylesheet" href="./css/announcement.css">
+  <link rel="stylesheet" href="./css/utility-banner.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="./css/carousel.css">
+
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <div class="page-container">
+
+    <header class="main-header full-bleed logged-in">
+
+      <div class="flag">&nbsp;</div>
+
+      <div class="container">
+
+        <h1>Hotels for Heroes</h1>
+
+        <div class="logo-nav">
+
+          <a class="hotels-logo" href="index.html" title="">
+
+            <img src="../img/hfh_logo.svg" alt="Hotels for Heroes Logo" />
+
+          </a><!-- end .hotels-logo -->
+
+        </div><!-- end .logo-nav -->
+
+        <nav class="main-nav" role="navigation">
+
+          <ul class="site-menu">
+            <li><a href="#" title="">Home<span class="pending badge">20</span></a></li>
+            <li><a href="#" title="">App<span class="abbrv">lication</span>s</a></li>
+            <li><a href="#" title="">Users<span class="pending badge">20</span></a></li>
+            <li><a href="#" title="">Reconcile</a></li>
+            <li><a class="current" href="#" title="">System</a></li>
+            <li><a href="#" title="">Log Out</a></li>
+          </ul>
+
+        </nav>
+
+      </div><!-- end .container -->
+
+    </header><!-- end .main-header -->
+
+    <div class="intro-block">
+
+    </div><!-- end .intro-block -->
+
+    <section class="main-content">
+
+      <div class="container">
+
+        <header class="content-header">
+            <h1><span>System /</span> Settings</h1>
+        </header>
+
+        <div class="content-columns">
+
+          <div class="sidebar">
+
+            <div class="system-menu app-pane">
+
+              <ul>
+                <li class="expanded">
+                  Entities
+                  <ul>
+                    <li><a href="/hotel-chains">Hotel Chains</a></li>
+                    <li><a href="/hotel-brands">Hotel Brands</a></li>
+                    <li><a href="/hotel-chain-details">Hotel Properties</a></li>
+                    <li><a href="/medcenters">Medical Centers</a></li>
+                    <li><a href="/bases">Military Bases</a></li>
+                    <li><a href="/fisher-houses">Fisher Houses</a></li>
+                    <li><a href="/organizations">Organizations <span class="pending badge">1</span></a></li>
+                    <li><a href="/payment-types">Payment Types</a></li>
+                    <li><a href="/credit-cards">Credit Cards</a></li>
+                    <li><a href="/groups">Groups</a></li>
+                  </ul>
+                </li>
+                <li><a href="/admin/user-instructions-management">User Instructions Management</a></li>
+                <li><a class="current" href="/admin/settings">Settings</a></li>
+              </ul>
+
+            </div><!-- end .app-pane -->
+
+            <div class="user-messages">
+
+            </div><!-- end .user-messages -->
+
+          </div><!-- end .sidebar -->
+
+          <div class="main-column">
+
+            <section class="primary app-pane">
+
+              <form id="system-pane" action="#">
+
+                <h4>System Email Address</h4>
+                <div class="detail-block">
+                
+                  <p>This is the email address that the system will send emails from.</p>
+
+                  <label for="advanced_setting_system_from_email">System Email Address</label>
+                  <input title="Email is required." x-moz-errormessage="Email is required." class="string email required form-control" required="required" aria-required="true" type="email" value="hh-dev-system-2@gladcraft.com" name="advanced_setting[system_from_email]" id="advanced_setting_system_from_email" />
+
+                </div><!-- end this .detail-block -->
+
+                <h4>BCC Email Address(es)</h4>
+                <div class="detail-block">
+
+                  <p>Send carbon copies of all system emails. Separate email addresses with commas.</p>
+                  
+                  <label class="email optional control-label" for="advanced_setting_bcc_email">BCC EMAIL ADDRESS(ES)</label><input multiple="multiple" class="string email optional form-control" type="email" value="dt-hh-dev-system@gladcraft.com,dhanu_thomas@yahoo.com" name="advanced_setting[bcc_email][]" id="advanced_setting_bcc_email" />
+
+                </div><!-- end this .detail-block -->
+
+                <h4>Reply-to Email Address</h4>
+                <div class="detail-block">
+
+                  <p>This is the reply-to email address that the system will send along with all emails.</p>
+                  
+                  <label class="email optional control-label" for="advanced_setting_reply_to_email">REPLY-TO EMAIL ADDRESS</label><input class="string email optional form-control" type="email" value="hh-dev-system@gladcraft.com" name="advanced_setting[reply_to_email]" id="advanced_setting_reply_to_email" />
+
+                </div><!-- end this .detail-block -->
+
+                <h4>Number of Open Applications on Home Screens</h4>
+                <div class="detail-block">
+                
+                  <p>This sets the number of Open Applications displayed on the home screens of both Liaisons and Administrators.</p>
+                  
+                  <label class="integer optional control-label" for="advanced_setting_no_of_applications">Number of Open Applications on Home Screens</label><input class="numeric integer optional form-control" type="number" step="1" value="10" name="advanced_setting[no_of_applications]" id="advanced_setting_no_of_applications" />
+
+                </div><!-- end this .detail-block -->
+
+                <h4>Number of Records for Applications Paging</h4>
+                <div class="detail-block">
+
+                  <p>The number of records per page on the Applications results area.</p>
+                  
+                  <label class="integer optional control-label" for="advanced_setting_applications_count">Number of Records for Applications Paging</label><input class="numeric integer optional form-control" type="number" step="1" value="50" name="advanced_setting[applications_count]" id="advanced_setting_applications_count" />
+
+                </div><!-- end this .detail-block -->
+
+                <h4>Days in Advance of Check In to Alert Admin</h4>
+                <div class="detail-block">
+
+                  <p>This sets the number of days before check in that the system will alert the Administrator to take action.</p>
+                  
+                  <label class="integer optional control-label" for="advanced_setting_days_checkin_admin">DAYS IN ADVANCE OF CHECK IN TO ALERT ADMIN</label><input class="numeric integer optional form-control" type="number" step="1" value="10" name="advanced_setting[days_checkin_admin]" id="advanced_setting_days_checkin_admin" />
+
+                </div><!-- end this .detail-block -->
+
+                <h4>Days After Check Out to Alert Liaison</h4>
+                <div class="detail-block">
+
+                  <p>This sets the number of days after check out that the system will alert the Liaison to take action.</p>
+                  
+                  <label class="integer optional control-label" for="advanced_setting_days_checkout_liaison">Days After Check Out to Alert Liaison</label><input class="numeric integer optional form-control" type="number" step="1" value="5" name="advanced_setting[days_checkout_liaison]" id="advanced_setting_days_checkout_liaison" />
+
+                </div><!-- end this .detail-block -->
+
+              </form><!-- end #system-pane -->
+
+            </section><!-- end .app-pane -->
+
+            <div class="app-controls">
+              
+                <input class="save" type="submit" value="Save" />
+
+            </div><!-- end app-controls -->
+
+          </div><!-- end .main-column -->
+
+        </div><!-- end .content-columns -->
+
+      </div><!-- end .container -->
+
+    </section><!-- end .main-content -->
+
+    <footer class="main-footer">
+
+    </footer><!-- end .main-footer -->
+
+  </div><!-- end .page-container -->
+
+
+  <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="../js/plugins.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="../js/main-min.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

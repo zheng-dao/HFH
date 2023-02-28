@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["ses:SendBulkTemplatedEmail"],
+    "Resource": ["arn:aws:ses:*:744473394486:template/*", "arn:aws:ses:*:744473394486:identity/*"]
+  }
+]

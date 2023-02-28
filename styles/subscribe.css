@@ -1,0 +1,527 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.subscribe {
+  padding: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  background-color: #fff;
+}
+.subscribe .patriot-cover {
+  display: block;
+  overflow: hidden;
+  position: static;
+}
+.subscribe .patriot-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.subscribe h2 {
+  color: #262626;
+  margin-bottom: 1em;
+}
+.subscribe h3 {
+  margin-bottom: 0;
+}
+.subscribe p {
+  color: #595959;
+  font-family: "ff-tisa-web-pro", "Georgia", "Times", serif;
+}
+.subscribe p strong {
+  color: #262626;
+}
+.subscribe .magazine {
+  padding: 0;
+  position: static;
+}
+.subscribe .magazine .instructions {
+  padding: 1em;
+}
+.subscribe .newsletter {
+  color: #fff;
+  padding: 1em;
+}
+.subscribe .newsletter h3 {
+  color: #262626;
+}
+.subscribe .newsletter p {
+  color: #595959;
+  font-size: 0.9em;
+}
+.subscribe .signup-selector {
+  background-color: #F4C182;
+  position: static;
+}
+.subscribe .signup-selector h3 {
+  font-size: 1.4em;
+  padding: 0.7em;
+  margin: 0;
+  color: #262626;
+}
+.subscribe .signup-selector ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.subscribe .signup-selector ul li {
+  display: inline;
+}
+.subscribe .signup-selector ul li a {
+  display: block;
+  position: relative;
+  padding: 0.5em 1em;
+  background-color: #142436;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+.subscribe .signup-selector ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.65em;
+  right: 0.5em;
+  height: 1em;
+  width: 1em;
+  background-image: url(../public/img/next.svg);
+  background-size: 1em 1em;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: -webkit-transform 0.2s ease, transform 0.2s ease;
+}
+.subscribe .signup-selector ul li a:hover {
+  background-color: #6699cc;
+}
+.subscribe .signup-selector ul li a.current {
+  background-color: #6699cc;
+}
+.subscribe .signup-selector ul li a.current:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.subscribe .signup-selector ul li:last-child a {
+  border-bottom: none;
+}
+.subscribe .forms {
+  clear: left;
+  background-color: #d9d9d9;
+  display: none;
+}
+.subscribe .forms.open {
+  display: block !important;
+}
+.subscribe .forms h3 {
+  font-size: 1.4em;
+  padding: 1rem 1rem 0;
+}
+.subscribe .forms .thank-you {
+  background-color: #fff;
+  margin: 0;
+  padding: 1em;
+}
+.subscribe .forms .thank-you h2 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5em;
+}
+.subscribe .forms .thank-you p {
+  margin: 0 !important;
+}
+.subscribe .forms form {
+  font-size: 1em;
+  padding: 1rem;
+}
+.subscribe .forms form.open {
+  display: flex;
+}
+.subscribe .forms form label {
+  display: inline-block;
+  clear: left !important;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  padding: 0.3em 1em;
+  color: #fff;
+  background-color: #1d344d;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.subscribe .forms form label.required:after {
+  content: "";
+  display: inline-block;
+  background-color: #fff;
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  margin-left: 0.8em;
+  position: relative;
+  top: -0.1em;
+}
+.subscribe .forms form .errMsg {
+  position: relative;
+  top: -1.25em;
+  text-align: right;
+  padding-right: 1em;
+}
+.subscribe .forms form .errMsg span {
+  background-color: #EE3124;
+  display: inline-block;
+  border-radius: 0 0 0.5em 0.5em;
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  padding: 0.3em 1em;
+  color: #fff;
+}
+.subscribe .forms form [type=color], .subscribe .forms form [type=date], .subscribe .forms form [type=datetime], .subscribe .forms form [type=datetime-local], .subscribe .forms form [type=email], .subscribe .forms form [type=month], .subscribe .forms form [type=number], .subscribe .forms form [type=password], .subscribe .forms form [type=search], .subscribe .forms form [type=tel], .subscribe .forms form [type=text], .subscribe .forms form [type=time], .subscribe .forms form [type=url], .subscribe .forms form [type=week], .subscribe .forms form input:not([type]), .subscribe .forms form textarea, .subscribe .forms form textarea {
+  border-radius: 0 0.3em 0.3em 0.3em;
+}
+.subscribe .forms form [type=color].nolabel, .subscribe .forms form [type=date].nolabel, .subscribe .forms form [type=datetime].nolabel, .subscribe .forms form [type=datetime-local].nolabel, .subscribe .forms form [type=email].nolabel, .subscribe .forms form [type=month].nolabel, .subscribe .forms form [type=number].nolabel, .subscribe .forms form [type=password].nolabel, .subscribe .forms form [type=search].nolabel, .subscribe .forms form [type=tel].nolabel, .subscribe .forms form [type=text].nolabel, .subscribe .forms form [type=time].nolabel, .subscribe .forms form [type=url].nolabel, .subscribe .forms form [type=week].nolabel, .subscribe .forms form input:not([type]).nolabel, .subscribe .forms form textarea.nolabel, .subscribe .forms form textarea.nolabel {
+  border-radius: 0.3em;
+}
+.subscribe .forms form .selectbox, .subscribe .forms form .displaybox {
+  display: block;
+  padding: 0.7em 0.8em 0.5em 0.8em;
+  background-color: #bfbfbf;
+  border-radius: 0 0.3em 0.3em 0.3em;
+  margin-bottom: 1em;
+}
+.subscribe .forms form .selectbox select, .subscribe .forms form .displaybox select {
+  margin: 0 0 0.15em 0;
+  width: 100%;
+}
+.subscribe .forms form .selectbox label, .subscribe .forms form .displaybox label {
+  background-color: transparent;
+  text-transform: none;
+  color: #333333;
+  font-size: 1em;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  position: relative;
+  top: -0.1em;
+}
+.subscribe .forms form .displaybox {
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  background-color: #e6e6e6;
+}
+.subscribe .forms form .button {
+  background-color: #1d344d;
+}
+.subscribe .forms form .button:hover {
+  background-color: #6699cc;
+}
+.subscribe .forms form .error-contact-msg {
+  clear: both;
+  background-color: #1d344d;
+  color: #fff;
+  padding: 1em 2em 1em 1em;
+  border-left: 1em solid #EE3124;
+  border-radius: 0.4em;
+  margin: 0 0 2em 0;
+}
+.subscribe .forms form .error-contact-msg p {
+  font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.subscribe .forms form .error-contact-msg p a {
+  color: #F4C182;
+  text-decoration: none;
+  font-weight: bold;
+}
+.subscribe .forms form .error-contact-msg p a:hover {
+  border-bottom: 2px solid #fff;
+}
+.reading-block .subscribe {
+  background-color: transparent;
+}
+.reading-block .subscribe .forms {
+  background-color: transparent;
+}
+.reading-block .subscribe .forms form {
+  padding: 0;
+}
+.reading-block .subscribe .forms label {
+  background-color: #004b8d;
+}
+.reading-block .subscribe .forms .button {
+  background-color: #004b8d;
+}
+.reading-block .subscribe .forms .button:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.subscribe .email-subscription {
+  width: 100%;
+}
+.subscribe .email-subscription .selectbox > div::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.subscribe .email-subscription .selectbox > div label {
+  display: inline;
+  float: none;
+}
+.subscribe .email-subscription .selectbox > div.yes {
+  margin-bottom: 1em;
+}
+.subscribe .email-subscription input[type=radio] {
+  height: 0.8em;
+  width: 0.8em;
+  float: left;
+  margin-right: 1em;
+}
+.subscribe .email-yes {
+  width: 100%;
+  display: none;
+}
+.subscribe .email-yes.yes {
+  display: block;
+}
+@media screen and (min-width: 35rem) {
+  .subscribe {
+    border-radius: 0.6rem;
+    overflow: hidden;
+  }
+  .subscribe .patriot-cover {
+    display: block;
+    overflow-x: hidden;
+  }
+  .subscribe .magazine {
+    overflow: hidden;
+  }
+  .subscribe .magazine .instructions {
+    padding: 1rem;
+    border-bottom: 0;
+  }
+  .subscribe .magazine .instructions h2 {
+    margin-top: 0;
+  }
+  .subscribe .name-set {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .subscribe .name-set .labeled-input {
+    margin-right: 1rem;
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+  .subscribe .name-set .labeled-input:last-child {
+    margin-right: 0;
+  }
+  .subscribe .street-address-set {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .subscribe .street-address-set .labeled-input {
+    margin-right: 1rem;
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+  .subscribe .street-address-set .labeled-input:last-child {
+    margin-right: 0;
+  }
+  .subscribe .street-address-set .street-address, .subscribe .street-address-set .city {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .subscribe .subscribe {
+    overflow: hidden;
+    border-radius: 0.6rem;
+    border: 1px solid red;
+  }
+  .subscribe .magazine {
+    display: flex;
+    border-radius: 0;
+  }
+  .subscribe .magazine .patriot-cover {
+    flex: 2;
+    overflow-x: hidden;
+    text-align: right;
+    position: relative;
+  }
+  .subscribe .magazine .patriot-cover img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  .subscribe .magazine .instructions {
+    flex: 4;
+  }
+  .subscribe .magazine .instructions h2 {
+    margin-bottom: 0.6em;
+  }
+  .subscribe .magazine .instructions p {
+    margin-top: 0;
+  }
+  .subscribe .magazine .instructions p:last-child {
+    margin-bottom: 0;
+  }
+  .subscribe .newsletter h3 {
+    margin-bottom: 0.8em;
+  }
+  .subscribe .signup-selector ul li {
+    margin-top: 0.8em;
+  }
+  .subscribe .signup-selector {
+    display: flex;
+  }
+  .subscribe .signup-selector ul {
+    display: flex;
+    flex: 1;
+  }
+  .subscribe .signup-selector ul li {
+    margin-right: 1rem;
+    flex: 1;
+  }
+  .subscribe .signup-selector ul li a {
+    border-bottom: 0;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    padding: 0.5em 3em 0.5em 1em;
+    font-size: 0.85em;
+  }
+  .subscribe .forms .button {
+    margin-left: auto;
+  }
+  .subscribe .forms form {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .subscribe .forms form .name-set {
+    flex: 0 0 calc(66.666666% - 0.5rem);
+    margin-right: 1rem;
+  }
+  .subscribe .forms form .labeled-input.email-address {
+    flex: 0 0 calc(33.333333% - 0.5rem);
+  }
+  .subscribe .forms form .street-address-set {
+    flex: 0 0 100%;
+  }
+  .subscribe .forms form .street-address-set .street-address {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+  .subscribe .forms form .street-address-set .city {
+    flex: 0 0 calc(40% - 1rem);
+    margin-right: 1rem;
+  }
+  .subscribe .forms form .street-address-set .state {
+    flex: 0 0 calc(40% - 1rem);
+    margin-right: 1rem;
+  }
+  .subscribe .forms form .street-address-set .zip {
+    flex: 0 0 20%;
+    margin-right: 0;
+  }
+  .subscribe .forms form .button {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .subscribe .magazine .instructions h2 {
+    margin-bottom: 0.6em;
+    font-size: 2em;
+  }
+  .subscribe .magazine .instructions p {
+    margin-top: 0;
+    font-size: 1.2em;
+  }
+  .subscribe .signup-selector {
+    display: flex;
+  }
+  .subscribe .signup-selector ul {
+    display: flex;
+    flex: 1;
+  }
+  .subscribe .signup-selector ul li {
+    margin-right: 1rem;
+    flex: 1;
+  }
+  .subscribe .signup-selector ul li a {
+    border-bottom: 0;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    padding: 0.5em 3em 0.5em 1em;
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .subscribe {
+    margin-bottom: 2rem;
+  }
+  .subscribe.overhang {
+    margin-top: -4rem;
+    z-index: 11;
+    position: relative;
+  }
+  .subscribe .magazine .instructions {
+    padding: 1.6rem 2rem 2rem;
+  }
+  .subscribe .magazine p {
+    line-height: 1.6em;
+  }
+  .subscribe .newsletter {
+    padding-top: 1.25em;
+  }
+  .subscribe .signup-selector h3 {
+    font-size: 1.4em;
+    padding: 0.7em;
+  }
+  .reading-block .subscribe {
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .subscribe .magazine .patriot-cover {
+    flex: 5;
+  }
+  .subscribe .magazine .instructions {
+    flex: 10;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .subscribe .magazine .patriot-cover {
+    flex: 5;
+  }
+  .subscribe .magazine .patriot-cover img {
+    width: auto;
+    height: 100%;
+  }
+  .subscribe .magazine .instructions {
+    flex: 10;
+    font-size: 1.25em;
+  }
+  .subscribe .signup-selector, .subscribe .forms {
+    font-size: 1.25em;
+  }
+  .reading-block .subscribe {
+    padding: 0 3rem 2rem;
+  }
+  .reading-block .subscribe .forms {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 102rem) {
+  .subscribe .magazine .patriot-cover {
+    flex: 5;
+  }
+  .subscribe .magazine .patriot-cover img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#print-only.open, #email-only.open, #both.open, .thankyou.open {
+  display: block !important;
+}
+
+#print-only.closed, #email-only.closed, #both.closed, .thankyou.closed {
+  display: none !important;
+}

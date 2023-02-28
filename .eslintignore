@@ -1,0 +1,5 @@
+src/models
+node_modules
+dist
+amplify
+public

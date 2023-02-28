@@ -1,0 +1,89 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.loading h1, .loading h2, .loading h3, .loading h4, .loading h5, .loading h6, .loading p, .loading li, .loading input, .loading button, .loading textarea, .loading label, .loading select, .loading strong, .loading em, .loading span, .loading fieldset, .loading .selectbox, .loading .displaybox {
+  color: transparent !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background-color: rgba(0, 0, 0, 0.15);
+  background-image: none !important;
+  animation: darkfade 2s ease-in-out infinite;
+  transition: all 0.2s ease !important;
+}
+.loading h1 span, .loading h2 span, .loading h3 span, .loading h4 span, .loading h5 span, .loading h6 span, .loading p span, .loading li span, .loading input span, .loading button span, .loading textarea span, .loading label span, .loading select span, .loading strong span, .loading em span, .loading span span, .loading fieldset span, .loading .selectbox span, .loading .displaybox span {
+  opacity: 0 !important;
+}
+.loading .PhoneInput {
+  background-color: transparent !important;
+  border-radius: 0.3em !important;
+}
+.loading .PhoneInput .PhoneInputCountry {
+  display: none;
+}
+.loading .PhoneInput .PhoneInputCountrySelectArrow {
+  display: none !important;
+}
+.loading .PhoneInput input[type=tel] {
+  border-bottom-left-radius: 0 !important;
+}
+.loading label {
+  opacity: 0 !important;
+}
+.loading [type=color], .loading [type=date], .loading [type=datetime], .loading [type=datetime-local], .loading [type=email], .loading [type=month], .loading [type=number], .loading [type=password], .loading [type=search], .loading [type=tel], .loading [type=text], .loading [type=time], .loading [type=url], .loading [type=week], .loading input:not([type]), .loading textarea, .loading .selectbox, .loading .displaybox {
+  border-radius: 0.3em;
+}
+.loading h1, .loading h2, .loading h3 {
+  border-radius: 0.4rem;
+}
+.loading button:before {
+  opacity: 0;
+}
+@keyframes darkfade {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.sidebar > .loading h1, .sidebar > .loading h2, .sidebar > .loading h3, .sidebar > .loading h4, .sidebar > .loading h5, .sidebar > .loading h6, .sidebar > .loading p, .sidebar > .loading li, .sidebar > .loading input, .sidebar > .loading button, .sidebar > .loading textarea, .sidebar > .loading label, .sidebar > .loading select, .sidebar > .loading strong, .sidebar > .loading em, .sidebar > .loading span, .sidebar > .loading fieldset, .sidebar > .loading .selectbox, .sidebar > .loading .displaybox, .content-header.loading h1, .content-header.loading h2, .content-header.loading h3, .content-header.loading h4, .content-header.loading h5, .content-header.loading h6, .content-header.loading p, .content-header.loading li, .content-header.loading input, .content-header.loading button, .content-header.loading textarea, .content-header.loading label, .content-header.loading select, .content-header.loading strong, .content-header.loading em, .content-header.loading span, .content-header.loading fieldset, .content-header.loading .selectbox, .content-header.loading .displaybox {
+  background-color: rgba(255, 255, 255, 0);
+  animation: lightfade 2s ease-in-out infinite;
+  transition: all 0.2s ease !important;
+}
+.sidebar > .loading h1 span, .sidebar > .loading h2 span, .sidebar > .loading h3 span, .sidebar > .loading h4 span, .sidebar > .loading h5 span, .sidebar > .loading h6 span, .sidebar > .loading p span, .sidebar > .loading li span, .sidebar > .loading input span, .sidebar > .loading button span, .sidebar > .loading textarea span, .sidebar > .loading label span, .sidebar > .loading select span, .sidebar > .loading strong span, .sidebar > .loading em span, .sidebar > .loading span span, .sidebar > .loading fieldset span, .sidebar > .loading .selectbox span, .sidebar > .loading .displaybox span, .content-header.loading h1 span, .content-header.loading h2 span, .content-header.loading h3 span, .content-header.loading h4 span, .content-header.loading h5 span, .content-header.loading h6 span, .content-header.loading p span, .content-header.loading li span, .content-header.loading input span, .content-header.loading button span, .content-header.loading textarea span, .content-header.loading label span, .content-header.loading select span, .content-header.loading strong span, .content-header.loading em span, .content-header.loading span span, .content-header.loading fieldset span, .content-header.loading .selectbox span, .content-header.loading .displaybox span {
+  background: transparent !important;
+}
+@keyframes lightfade {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+    filter: blur(0.5rem);
+  }
+  33% {
+    filter: blur(0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  66% {
+    filter: blur(0);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+    filter: blur(0.5rem);
+  }
+}
+
+.content-header.loading h3 {
+  width: 20% !important;
+  margin-bottom: 0.25rem;
+  border-radius: 1rem;
+}
+.content-header.loading h1 {
+  width: 60% !important;
+  border-radius: 0.75rem;
+}

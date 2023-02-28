@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["dynamodb:Scan"],
+    "Resource": ["arn:aws:dynamodb:*:*:table/User-*-${env}"]
+  }
+]

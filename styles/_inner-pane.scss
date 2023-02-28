@@ -1,0 +1,176 @@
+.inner-pane {
+	background-color: rgba(0,0,0,0.075);
+	border-radius: .4rem;
+	padding: 1rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+	box-shadow: 0 0 0 rgba(0,0,0,0.0);
+	transition: padding-top, transform, background-color, box-shadow, 0.4s ease;
+	&:after {
+		font-size: 1em;
+		text-transform: uppercase;
+		position: absolute;
+		top: .75rem;
+		right: .75rem;
+		padding: .25rem .5rem;
+		border-radius: .3em;
+		color: #fff;
+		font-weight: bold;
+	}
+	&.requested {
+		&:after {
+			content: "Requested";
+			background-color: $light_blue;
+			color: $gray85;
+		}
+	}
+	&.exception {
+		&:after {
+			content: "Exception";
+			background-color: $pink;
+			color: $gray85;
+		}
+	}
+	&.pending {
+		&:after {
+			content: "Pending";
+			background-color: $yellow;
+			color: $gray85;
+			border: 2px solid $gray85;
+		}
+	}
+	&.active {
+		overflow: hidden;
+		&:after {
+			content: "Active";
+			background-color: $green;
+		}
+	}
+	&.remove {
+		transform: scale(1.05);
+		box-shadow: 0 10px 10px rgba(0,0,0,.35);
+		@media #{$large-and-under} {
+			padding-top: 2rem;
+		}
+		label {
+			background-color: $gray70;
+		}
+		#{$all-text-inputs}, textarea {
+			background-color: $gray05;
+		}
+	}
+	&.removed {
+		transform: scale(0);
+	}
+	button.remove {
+		background-color: $red;
+		background-image: url(../public/img/close.svg);
+		background-position: 50% 50%;
+		background-size: 50% auto;
+		background-repeat: no-repeat;
+		font-size: .4em;
+		padding: 0;
+		height: 1.5rem;
+		width: 1.5rem;
+		margin: 0;
+		overflow: hidden;
+		border-radius: 50%;
+		text-indent: 200px;
+		position: absolute;
+		right: .75rem;
+		top: -.75rem;
+		transition: padding, height, width, border-radius, background-color 0.2s ease;
+		&:before {
+			content: "";
+			display: none;
+		}
+		&:hover {
+			background-color: $dark_red;
+		}
+		&:active {
+			top: -.65rem !important;
+		}
+		&.clicked {
+			background-color: $dark_red;
+			overflow: visible;
+			text-indent: 0;
+			width: auto;
+			height: auto;
+			border-radius: .6em;
+			padding: 0 1em;
+			font-size: .8em;
+			background-position: -150% 50%;
+			&:hover {
+				background-color: shade($dark_red, 20%);
+			}
+		}
+	}
+	button.confirm {
+		background-color: $navy;
+		display: block;
+		position: absolute;
+		width: auto;
+		height: auto;
+		border-radius: .6em;
+		padding: .5em 1em;
+		font-size: .8em;
+		position: absolute;
+		top: -.75rem;
+		right: .75rem;
+		&:hover {
+			background-color: $gray85;
+		}
+	}
+	> div:last-child .input-combo:last-child {
+		margin-bottom: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	.detail-block {
+		background-color: $gray05;
+	}
+	&.admin-extras {
+
+		&.suggestion {
+			background-color: $gray40;
+		}
+
+		background-color: $gray20;
+
+		h3 {
+			margin-bottom: 1em;
+		}
+
+		.reveal {
+			display: inline-block;
+			position: relative;
+			top: -.4em;
+			padding: .2em .8em;
+			border-radius: .5em;
+			text-transform: uppercase;
+			font-size: .5em;
+			color: #fff;
+			background-color: $navy;
+			transition: background-color, 0.2s ease;
+			&:hover {
+				cursor: pointer;
+				background-color: $light_blue;
+			}
+		}
+
+		h4 .reveal {
+			float: right;
+			top: 0.2em;
+		}
+
+		.details-container, .detail-contents {
+			display: none;
+			&.open {
+				display: block;
+			}
+		}
+
+		
+	}
+}

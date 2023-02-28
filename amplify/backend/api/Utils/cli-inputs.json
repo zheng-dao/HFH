@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "paths": {
+    "/utils/ip": {
+      "permissions": {
+        "setting": "protected",
+        "groups": {
+          "Liaisons": ["read"],
+          "Administrators": ["read"]
+        }
+      },
+      "lambdaFunction": "getIpAddress"
+    },
+    "/utils/timestamp": {
+      "permissions": {
+        "setting": "protected",
+        "groups": {
+          "Liaisons": ["read"],
+          "Administrators": ["read"]
+        }
+      },
+      "lambdaFunction": "getCurrentTimestamp"
+    },
+    "/utils/country": {
+      "name": "/utils/country",
+      "lambdaFunction": "getCountry",
+      "permissions": {
+        "setting": "private",
+        "auth": ["read"],
+        "groups": {
+          "Liaisons": ["read"],
+          "Administrators": ["read"]
+        }
+      }
+    },
+    "/utils/notify-announcement": {
+      "name": "/utils/notify-announcement",
+      "lambdaFunction": "notifyNewAnnouncement",
+      "permissions": {
+        "groups": {
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/getLiaisons": {
+      "name": "/utils/getLiaisons",
+      "lambdaFunction": "getLiaisons",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["read"],
+          "Administrators": ["read"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/liaison/change": {
+      "name": "/utils/liaison/change",
+      "lambdaFunction": "changeLiaisonEmail",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/admins": {
+      "name": "/utils/admins",
+      "lambdaFunction": "listAdmins",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["read"],
+          "Administrators": ["read"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/admin/change": {
+      "name": "/utils/admin/change",
+      "lambdaFunction": "changeAdminEmail",
+      "permissions": {
+        "groups": {
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/email-files": {
+      "name": "/utils/email-files",
+      "lambdaFunction": "emailApplicationFiles",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/approval": {
+      "name": "/utils/notify/approval",
+      "lambdaFunction": "notifyOwnerAccountApproval",
+      "permissions": {
+        "groups": {
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/requested": {
+      "name": "/utils/notify/application/requested",
+      "lambdaFunction": "notifyNewApplicationRequested",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/completed": {
+      "name": "/utils/notify/application/completed",
+      "lambdaFunction": "notifyApplicationCompleted",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/note": {
+      "name": "/utils/notify/application/note",
+      "lambdaFunction": "notifyApplicationNote",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/exception": {
+      "name": "/utils/notify/application/exception",
+      "lambdaFunction": "notifyApplicationException",
+      "permissions": {
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/approved": {
+      "name": "/utils/notify/application/approved",
+      "lambdaFunction": "notifyApplicationApproved",
+      "permissions": {
+        "groups": {
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/returned": {
+      "name": "/utils/notify/application/returned",
+      "lambdaFunction": "notifyApplicationReturned",
+      "permissions": {
+        "groups": {
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/utils/notify/application/declined": {
+      "name": "/utils/notify/application/declined",
+      "lambdaFunction": "notifyApplicationDeclined",
+      "permissions": {
+        "groups": {
+          "Administrators": ["create"]
+        },
+        "setting": "private"
+      }
+    },
+    "/user/email/confirm": {
+      "name": "/user/email/confirm",
+      "lambdaFunction": "confirmNewUserEmail",
+      "permissions": {
+        "setting": "private",
+        "auth": ["create"],
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        }
+      }
+    },
+    "/utils/notify/registration": {
+      "name": "/utils/notify/registration",
+      "lambdaFunction": "notifyAdminsNewAccount",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/utils/application/download": {
+      "name": "/utils/application/download",
+      "lambdaFunction": "downloadPdf",
+      "permissions": {
+        "setting": "private",
+        "auth": ["read"],
+        "groups": {
+          "Liaisons": ["read"],
+          "Administrators": ["read"]
+        }
+      }
+    },
+    "/utils/csv/export": {
+      "name": "/utils/csv/export",
+      "lambdaFunction": "exportCsvTrigger",
+      "permissions": {
+        "setting": "private",
+        "auth": ["create"],
+        "groups": {
+          "Liaisons": ["create"],
+          "Administrators": ["create"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.small-feature {
+  padding: 0;
+  margin: 0 1rem 1rem;
+  display: block;
+  background-color: #142436;
+  border-bottom: 0.6em solid #325a85;
+  transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  text-align: left;
+  transform: scale(1);
+  transform-origin: bottom;
+  box-shadow: none;
+}
+.small-feature:hover {
+  border-bottom: 0.6em solid #F4C182;
+}
+.small-feature.rounded {
+  border-bottom: none;
+  border-radius: 0.6em;
+  overflow: hidden;
+}
+.small-feature.rounded:hover {
+  border-bottom: none;
+  background-color: #e6e6e6;
+}
+.small-feature.rounded img {
+  border-radius: 0.6em 0.6em 0 0;
+}
+.small-feature.rounded .small-feature-info {
+  border-radius: 0 0 0.6em 0.6em;
+}
+.small-feature img {
+  width: 100%;
+  height: auto;
+}
+.small-feature .small-feature-info {
+  padding: 1rem;
+}
+.small-feature .small-feature-info h2 {
+  font-size: 1.2em;
+  color: #f2f2f2;
+  margin-bottom: 0.8rem;
+}
+.small-feature .small-feature-info p {
+  font-size: 1em;
+  color: #d9d9d9;
+  margin: 0;
+  font-family: "ff-tisa-web-pro", "Georgia", "Times", serif;
+}
+.small-feature:hover {
+  background-color: #fff;
+}
+.small-feature:hover .small-feature-info h2 {
+  color: #333333;
+}
+.small-feature:hover .small-feature-info p {
+  color: #595959;
+}
+
+@media screen and (min-width: 35rem) {
+  .small-feature {
+    margin: 0 0 1rem;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .sidebar .small-feature {
+    margin-bottom: 2rem;
+  }
+  .small-feature .small-feature-info {
+    padding: 1rem 2rem 2rem;
+  }
+
+  .matrix-block.four-col .small-feature-info, .matrix-block.six-col .small-feature-info {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .small-feature-info {
+    font-size: 1.25em;
+  }
+}

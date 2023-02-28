@@ -1,0 +1,482 @@
+enum NOTEACTION {
+  NEW_APPLICATION
+  REQUEST_INITIAL_STAY
+  REQUEST_EXCEPTION
+  REQUEST_EXTENDED_STAY
+  COMPLETE_INITIAL_STAY
+  COMPLETE_EXTENDED_STAY
+  CHANGE_MANAGER
+  ADD_NOTE
+  REQUEST
+  RETURN
+  DECLINE
+  APPROVE
+  COMPLETE
+  REVIEWED
+  UNREVIEWED
+  CLOSE
+  CHANGE_ADMIN
+  CHANGE_DATA
+  REGRESS
+}
+
+enum ROOMFEATURES {
+  HEARINGACCESSIBLE
+  ROLLINSHOWER
+  NEARANELEVATOR
+  MOBILITYACCESSIBLE
+  LOWERFLOOR
+}
+
+enum AFFILIATIONSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+}
+
+enum AFFILIATIONTYPE {
+  FISHERHOUSE
+  MEDICALCENTER
+  BASE
+  ORGANIZATION
+}
+
+"""
+Affiliations are what group users together. Affiliations are one of 4 types (Fisher House, Medical Center, Base, or Organization).
+
+Affiliations can be created or read by any logged in user but only Administrators can update or delete.
+"""
+type Affiliation
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Administrators"] }
+      { allow: private, operations: [create, read] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  type: AFFILIATIONTYPE!
+  status: AFFILIATIONSTATUS!
+  display_name: String
+  address: String
+  address_2: String
+  city: String
+  state: String
+  zip: String
+  branch: BRANCHESOFSERVICE
+  AssociatedAffiliation: Affiliation @connection
+}
+
+enum APPLICATIONSTATUS {
+  REQUESTED
+  EXCEPTION
+  APPROVED
+  COMPLETED
+  DRAFT
+  RETURNED
+  DECLINED
+}
+
+enum READSTATUS {
+  READ
+  UNREAD
+}
+
+"""
+Notes are messages left on an Application about actions that happen or other comments from parties.
+"""
+type Note @model @auth(rules: [{ allow: private, operations: [create, read] }]) {
+  id: ID!
+  message: String!
+  timestamp: AWSDateTime!
+  remote_address: AWSIPAddress!
+  Application: Application! @connection
+  User: User! @connection
+  action: NOTEACTION
+}
+
+enum STAYSTATUS {
+  DRAFT
+  RETURNED
+  REQUESTED
+  EXCEPTION
+  APPROVED
+  DECLINED
+  COMPLETED
+}
+
+enum GUESTTYPE {
+  PRIMARY
+  ADDITIONAL
+}
+
+enum ROOMTYPE {
+  KING1
+  QUEEN2
+  DOUBLE2
+  OTHER
+}
+
+enum SERVICEMEMBERSTATUS {
+  ACTIVEDUTY
+  RESERVE
+  NATIONALGUARD
+  VETERAN
+}
+
+enum BRANCHESOFSERVICE {
+  AIRFORCE
+  COASTGUARD
+  NAVY
+  ARMY
+  MARINES
+}
+
+type ServiceMember @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  first_name: String
+  middle_initial: String
+  last_name: String
+  email: String
+  telephone: String
+  extension: String
+  branch_of_service: BRANCHESOFSERVICE
+  current_status: SERVICEMEMBERSTATUS
+  on_military_travel_orders: Boolean
+  other_patient: Boolean
+  lodging_explanation: String
+  unidentified_explanation: String
+  BaseAssignedTo: Affiliation @connection
+  TreatmentFacility: Affiliation @connection
+}
+
+enum RELATIONSHIPTOSERVICEMEMBER {
+  AUNT
+  BOYFRIEND
+  BROTHER
+  BROTHERINLAW
+  CAREGIVER
+  COUSIN
+  DAUGHTER
+  DAUGHTERINLAW
+  EXHUSBAND
+  EXWIFE
+  FATHER
+  FATHERINLAW
+  FIANCE
+  FIANCEE
+  FRIEND
+  GIRLFRIEND
+  GRANDCHILD
+  GRANDFATHER
+  GRANDMOTHER
+  HUSBAND
+  MOTHER
+  MOTHERINLAW
+  NEPHEW
+  NIECE
+  NONMEDICALASSISTANT
+  SELF
+  SISTER
+  SISTERINLAW
+  SON
+  STEPDAUGHTER
+  STEPSON
+  UNCLE
+  WIFE
+}
+
+type Patient @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  first_name: String
+  middle_initial: String
+  last_name: String
+  relationship: RELATIONSHIPTOSERVICEMEMBER
+}
+
+type ConfigurationSetting
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  value: String
+}
+
+enum HOTELPROPERTYSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+  BLACKLISTED
+}
+
+type HotelProperty
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  address: String
+  address_2: String
+  city: String
+  state: String
+  zip: String
+  contact_name: String
+  contact_position: String
+  telephone: String
+  email: String
+  is_blacklist: Boolean
+  status: HOTELPROPERTYSTATUS
+  extension: String
+  FisherHouseID: ID
+  HotelChainID: ID
+  HotelBrandID: ID
+  FisherHouse: Affiliation @connection(fields: ["FisherHouseID"])
+  HotelChain: HotelChain @connection(fields: ["HotelChainID"])
+  HotelBrand: HotelBrand @connection(fields: ["HotelBrandID"])
+}
+
+enum HOTELBRANDSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+}
+
+type HotelBrand
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  status: HOTELBRANDSTATUS
+  HotelChain: HotelChain @connection
+  logo: String
+}
+
+enum HOTELCHAINSTATUS {
+  DRAFT
+  PENDING
+  ACTIVE
+  ARCHIVED
+}
+
+type HotelChain
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  status: HOTELCHAINSTATUS
+}
+
+enum CARDTYPE {
+  AMEX
+  MASTERCARD
+  VISA
+}
+
+enum CARDSTATUS {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+type Card
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  number: String
+  status: CARDSTATUS
+  type: CARDTYPE
+}
+
+enum PAYMENTTYPESTATUS {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+type PaymentType
+  @model
+  @auth(
+    rules: [{ allow: groups, groups: ["Administrators"] }, { allow: private, operations: [read] }]
+  ) {
+  id: ID!
+  name: String
+  description: String
+  status: PAYMENTTYPESTATUS
+}
+
+type Guest
+  @model
+  @key(name: "byApplication", fields: ["applicationID"])
+  @auth(rules: [{ allow: private }]) {
+  id: ID!
+  first_name: String
+  relationship: String
+  middle_initial: String
+  last_name: String
+  email: String
+  telephone: String
+  extension: String
+  applicationID: ID
+  type: GUESTTYPE
+  under_age_three: Boolean
+}
+
+type Applicant @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  first_name: String
+  last_name: String
+  email: String
+  telephone: String
+  signature: String
+  job: String
+  branch_of_service: String
+  current_status: String
+  base_assigned_to: String
+  relation_to_service_member: String
+  referrer_date: AWSDate
+  user_type: String
+  middle_initial: String
+  patient_type: String
+  extension: String
+  family_lodge: String
+  location_name: String
+  location_address: String
+  lodging_explanation: String
+  Affiliation: Affiliation @connection
+  affiliation_type: AFFILIATIONTYPE
+  collected_outside_fisherhouse: Boolean
+}
+
+enum USERSTATUS {
+  PENDING
+  REVIEW
+  ACTIVE
+  ARCHIVED
+}
+
+enum TIMEZONE {
+  EASTERN
+  CENTRAL
+  MOUNTAIN
+  PACIFIC
+}
+
+type User
+  @model
+  @auth(
+    rules: [
+      { allow: owner, operations: [create, read, update] }
+      { allow: groups, groups: ["Administrators"] }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [create] }
+    ]
+  ) {
+  id: ID!
+  username: String
+  first_name: String
+  last_name: String
+  middle_initial: String
+  telephone: String
+  signature: String
+  job: String
+  admin_approval: Boolean
+  expiration_date: AWSDateTime
+  extension: String
+  affiliation: String
+  timezone: TIMEZONE
+  observes_dst: String
+  receive_emails: Boolean
+  status: USERSTATUS
+  AffiliationID: ID
+  Affiliation: Affiliation @connection(fields: ["AffiliationID"])
+  affiliation_type: AFFILIATIONTYPE
+}
+
+enum STAYTYPE {
+  INITIAL
+  EXTENDED
+}
+
+type Stay
+  @model
+  @key(name: "byApplication", fields: ["applicationID"])
+  @auth(rules: [{ allow: private }]) {
+  id: ID!
+  applicationID: ID
+  type: STAYTYPE
+  state: String
+  reservation_number: String
+  payment_type: String
+  payment_points_used: String
+  payment_cost_of_reservation: String
+  checkout_points_used: String
+  checkout_cost_of_reservation: String
+  requested_check_in: AWSDate
+  requested_check_out: AWSDate
+  status: STAYSTATUS
+  actual_check_in: AWSDate
+  actual_check_out: AWSDate
+  guest_stayed_at_hotel: Boolean
+  reason_guest_did_not_stay: String
+  payment_incidental_cost: String
+  charge_type: String
+  card: String
+  note: String
+  reconciled: Boolean
+  ready_for_final_reconcile: Boolean
+  comment: String
+  comparable_cost: String
+  certificate_number: String
+  confirmation_number: String
+  card_used_for_incidentals: Boolean
+  room_type_requests: ROOMTYPE
+  room_feature_requests: [ROOMFEATURES]
+  room_type_actual: ROOMTYPE
+  room_feature_actual: [ROOMFEATURES]
+  room_description: String
+  reason_decline: String
+  reason_return: String
+  charge_reconcile: Boolean
+  hotel_reconcile: Boolean
+  points_reconcile: Boolean
+  giftcard_reconcile: Boolean
+  batch_no: String
+  city: String
+  HotelPropertyID: ID
+  HotelBooked: HotelProperty @connection(fields: ["HotelPropertyID"])
+  Application: Application @connection
+  FisherHouse: Affiliation @connection
+  narrative: String
+  special_requests: String
+}
+
+type Application @model @auth(rules: [{ allow: private }]) {
+  id: ID!
+  StaysInApplication: [Stay] @connection(keyName: "byApplication", fields: ["id"])
+  status: APPLICATIONSTATUS
+  User: User @connection
+  AssignedTo: User @connection
+  liaison_read: READSTATUS
+  admin_read: READSTATUS
+  Patient: Patient @connection
+  ServiceMember: ServiceMember @connection
+  exception_narrative: String
+  Guests: [Guest] @connection(keyName: "byApplication", fields: ["id"])
+  liaison_terms_of_use_agreement: Boolean
+  sm_terms_of_use_agreement: Boolean
+  Applicant: Applicant @connection
+}

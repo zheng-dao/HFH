@@ -1,0 +1,64 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.charity-nav-block {
+  margin: 0 1rem 1rem;
+}
+.charity-nav-block a {
+  display: block;
+  background-color: #f1b03b;
+}
+.charity-nav-block a img {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: auto;
+}
+.charity-nav-block a p {
+  color: #0d0d0d;
+  font-family: "ff-tisa-web-pro", "Georgia", "Times", serif;
+  font-style: italic;
+  font-size: 0.9em;
+  line-height: 1.2;
+  margin: 0;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 35rem) {
+  .charity-nav-block {
+    margin: 0 0 1rem;
+  }
+  .charity-nav-block a::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .charity-nav-block a img {
+    float: left;
+    width: 30%;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .charity-nav-block a img {
+    float: none;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .charity-nav-block {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 85rem) {
+  .charity-nav-block a::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .charity-nav-block a img {
+    float: left;
+    width: 50%;
+    margin-right: 1rem;
+  }
+}

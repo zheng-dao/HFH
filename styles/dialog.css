@@ -1,0 +1,324 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+#regress-stay.dialog {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 0.5rem 1rem #000);
+  top: 0;
+}
+@media screen and (max-width: 45rem) {
+  #regress-stay.dialog .dialog-box {
+    border: 1rem solid rgba(0, 0, 0, 0.9);
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-width: 50%;
+    max-height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    color: #f2f2f2;
+    background-color: #1d344d;
+    text-align: left;
+  }
+}
+@media (min-width: 45rem) and (max-width: 65rem) {
+  #regress-stay.dialog .dialog-box {
+    border: 1rem solid rgba(0, 0, 0, 0.9);
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    max-width: 50%;
+    max-height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    color: #f2f2f2;
+    background-color: #1d344d;
+    text-align: left;
+  }
+}
+@media (min-width: 65rem) and (max-width: 85rem) {
+  #regress-stay.dialog .dialog-box {
+    border: 1rem solid rgba(0, 0, 0, 0.9);
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    max-width: 50%;
+    max-height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    color: #f2f2f2;
+    background-color: #1d344d;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 85rem) {
+  #regress-stay.dialog .dialog-box {
+    border: 1rem solid rgba(0, 0, 0, 0.9);
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-width: 50%;
+    max-height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    color: #f2f2f2;
+    background-color: #1d344d;
+    text-align: left;
+  }
+}
+#regress-stay.dialog button.close {
+  background-color: #EE3124;
+  background-image: url(../public/img/close.svg);
+  background-position: 50% 50%;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  font-size: 0.4em;
+  padding: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  text-indent: 200px;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  transform: translate(0%, -85%);
+  transition: padding, height, width, border-radius, background-color 0.2s ease;
+  z-index: 1002;
+}
+#regress-stay.dialog button.close:before {
+  content: "";
+  display: none;
+}
+#regress-stay.dialog button.close:hover {
+  background-color: #990000;
+}
+#regress-stay.dialog button.close.clicked {
+  background-color: #990000;
+  overflow: visible;
+  text-indent: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0.6em;
+  padding: 0 1em;
+  font-size: 0.8em;
+  background-position: -150% 50%;
+}
+#regress-stay.dialog button.close.clicked:hover {
+  background-color: #7a0000;
+}
+#regress-stay.dialog .presets {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+#regress-stay.dialog .presets h4 {
+  display: inline;
+  margin-right: 1em;
+}
+#regress-stay.dialog .presets button {
+  line-height: 1.6em;
+}
+#regress-stay.dialog .presets * {
+  margin-bottom: 0;
+}
+
+.dialog {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 0.5rem 1rem #000);
+  top: 0;
+}
+.dialog .dialog-box {
+  border: 1rem solid rgba(0, 0, 0, 0.9);
+  border-radius: 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-width: 50%;
+  max-height: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  color: #f2f2f2;
+  background-color: #1d344d;
+  text-align: left;
+}
+.dialog button.close {
+  background-color: #EE3124;
+  background-image: url(../public/img/close.svg);
+  background-position: 50% 50%;
+  background-size: 50% auto;
+  background-repeat: no-repeat;
+  font-size: 0.4em;
+  padding: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  text-indent: 200px;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  transform: translate(0%, -85%);
+  transition: padding, height, width, border-radius, background-color 0.2s ease;
+  z-index: 1002;
+}
+.dialog button.close:before {
+  content: "";
+  display: none;
+}
+.dialog button.close:hover {
+  background-color: #990000;
+}
+.dialog button.close.clicked {
+  background-color: #990000;
+  overflow: visible;
+  text-indent: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0.6em;
+  padding: 0 1em;
+  font-size: 0.8em;
+  background-position: -150% 50%;
+}
+.dialog button.close.clicked:hover {
+  background-color: #7a0000;
+}
+.dialog .presets {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+.dialog .presets h4 {
+  display: inline;
+  margin-right: 1em;
+}
+.dialog .presets button {
+  line-height: 1.6em;
+}
+.dialog .presets * {
+  margin-bottom: 0;
+}
+
+.dialog-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-height: 70vh;
+  padding: 1rem;
+  overflow: auto;
+}
+.dialog-content.scrollable {
+  overflow: scroll;
+}
+.dialog-content.scrollable ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  -webkit-overflow-scrolling: auto;
+}
+.dialog-content.scrollable ::-webkit-scrollbar:vertical {
+  width: 12px;
+  -webkit-overflow-scrolling: auto;
+}
+.dialog-content.scrollable ::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  -webkit-overflow-scrolling: auto;
+}
+.dialog-content.scrollable ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-overflow-scrolling: auto;
+}
+.dialog-content label {
+  background-color: #6699cc;
+  color: #262626;
+  font-weight: bold;
+}
+.dialog-content .selectbox {
+  background-color: #d9d9d9;
+  color: #262626;
+}
+.dialog-content fieldset.checkboxes label,
+.dialog-content fieldset.radios label {
+  color: #d9d9d9;
+}
+.dialog-content .history-and-notes {
+  padding: 1rem;
+  width: 35rem;
+  height: 85vh;
+  overflow: scroll;
+}
+.dialog-content .history-and-notes .detail-block {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.dialog-content .history-and-notes .detail-block strong {
+  color: #f2f2f2;
+}
+.dialog-content form *:first-child {
+  margin-top: 0;
+}
+.dialog-content form *:last-child {
+  margin-bottom: 0;
+}
+.dialog-content .dialog-controls::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.dialog-content .dialog-controls .delete {
+  background-color: #990000;
+}
+.dialog-content .dialog-controls .delete:hover {
+  background-color: #7a0000;
+}
+.dialog-content .dialog-controls .cancel {
+  background-color: #404040;
+  float: left;
+  margin-bottom: 0;
+}
+.dialog-content .dialog-controls .ok {
+  float: right;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.dialog-content .dialog-controls .progress-cancel {
+  float: right;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 45rem) {
+  .dialog-content {
+    min-width: 40%;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .dialog .dialog-box {
+    max-width: 90% !important;
+    min-width: 30% !important;
+  }
+}
+@media screen and (max-width: 55rem) {
+  .dialog .dialog-box {
+    max-width: 90% !important;
+    min-width: 90% !important;
+  }
+}
+.custom-export {
+  margin-bottom: 1rem;
+}

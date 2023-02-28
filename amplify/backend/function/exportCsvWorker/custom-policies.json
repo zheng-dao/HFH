@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:GetQueueAttributes"],
+    "Resource": ["arn:aws:sqs:us-east-1:744473394486:export-csv-${env}"]
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "authSelections": "identityPoolAndUserPool",
+    "requiredAttributes": ["email", "middle_name", "given_name", "family_name"],
+    "resourceName": "hotelsforheroes",
+    "serviceName": "Cognito",
+    "useDefault": "manual",
+    "userpoolClientReadAttributes": [],
+    "userpoolClientWriteAttributes": [],
+    "aliasAttributes": [],
+    "resourceNameTruncated": "hotelsfd68c288",
+    "sharedId": "fd68c288",
+    "userPoolGroupList": ["Liaisons", "Administrators"],
+    "userPoolGroups": false,
+    "userPoolName": "hotelsforheroes",
+    "usernameAttributes": ["email"],
+    "usernameCaseSensitive": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientSetAttributes": false,
+    "verificationBucketName": "hotelsforheroesverificationbucket",
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientLambdaRole": "hotelsfd68c288_userpoolclient_lambda_role",
+    "passwordPolicyCharacters": [
+      "Requires Lowercase",
+      "Requires Numbers",
+      "Requires Symbols",
+      "Requires Uppercase"
+    ],
+    "passwordPolicyMinLength": 8,
+    "adminQueries": false,
+    "mfaConfiguration": "OFF",
+    "mfaTypes": ["SMS Text Message"],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "autoVerifiedAttributes": ["email"],
+    "hostedUI": false,
+    "thirdPartyAuth": false,
+    "identityPoolName": "testAuthIdentityPool",
+    "allowUnauthenticatedIdentities": false,
+    "authProviders": [],
+    "triggers": {
+      "CustomMessage": ["verification-link"]
+    }
+  }
+}

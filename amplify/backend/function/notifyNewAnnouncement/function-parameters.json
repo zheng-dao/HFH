@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "api": {
+      "hotelsforheroes": ["Query"]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "emailRewriteEnabled",
+      "environmentVariableName": "EMAIL_REWRITE_ENABLED"
+    }
+  ]
+}

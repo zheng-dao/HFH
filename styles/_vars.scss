@@ -1,0 +1,91 @@
+// Breakpoints
+$base: "screen and (min-width: 0)"; // 0px
+$tiny: "screen and (min-width: 25rem)"; // 
+$small: "screen and (min-width: 35rem)"; // 560px
+$med: "screen and (min-width: 45rem)"; // 720px
+$large: "screen and (min-width: 55rem)"; // 880px
+$xlarge: "screen and (min-width: 65rem)"; // 1040px
+$xxlarge: "screen and (min-width: 75rem)"; // 1200px
+$xxxlarge: "screen and (min-width: 85rem)"; // 1360px
+$xxxxlarge: "screen and (min-width: 102rem)";
+$hd: "screen and (min-width: 1919px)"; // 1919px
+
+// Max-width Overrides (Weird, right?)
+$med-and-under: "screen and (max-width: 55rem)"; // 720px
+$large-and-under: "screen and (max-width: 65rem)"; // 1040px
+
+// Type
+$sans: "proxima-nova", "Helvetica", "Arial", sans-serif;
+$serif: "ff-tisa-web-pro", "Georgia", "Times", serif;
+
+// Colors
+$old_navy: lighten(#223D5B, 10);
+$navy: shade(#223D5B, 15);
+$blue: #004b8d;
+$gold: #F4C182;
+$beige: #F9DCBA;
+$red: #EE3124;
+$prime_red: #990000;
+$light_blue: #6699cc;
+$donate: #f1b03b;
+$donatemiles: #08b87f;
+$overlay: rgba(0,0,0,0.25);
+$light_overlay: rgba(0,0,0,0.1);
+$heavy_overlay: rgba(0,0,0,0.65);
+
+// Colors
+$dark_red: #990000;
+$light_blue: #6699cc;
+$faint_blue: #e7f0f7;
+$purple: #a45ca0;
+$green: shade(#08b87f, 10%);
+$dark_green: #104c19;
+$faint_red: #ffcbc4;
+$fainter_red: #ffd8d3;
+$faint_green: #b6e3bb;
+$yellow: #F4C182;
+$orange: orange;
+$highlight: #fcffbf;
+$pink: #ff8cd4;
+$anthracite: #161e26;
+
+$unread: $light_blue;
+
+// Grays
+$gray05: shade(white, 5%);
+$gray10: shade(white, 10%);
+$gray15: shade(white, 15%);
+$gray20: shade(white, 20%);
+$gray25: shade(white, 25%);
+$gray30: shade(white, 30%);
+$gray35: shade(white, 35%);
+$gray40: shade(white, 40%);
+$gray45: shade(white, 45%);
+$gray50: shade(white, 50%);
+$gray55: shade(white, 55%);
+$gray60: shade(white, 60%);
+$gray65: shade(white, 65%);
+$gray70: shade(white, 70%);
+$gray75: shade(white, 75%);
+$gray80: shade(white, 80%);
+$gray85: shade(white, 85%);
+$gray90: shade(white, 90%);
+$gray95: shade(white, 95%);
+
+// Background Patterns
+@mixin skygrad	{
+
+	background: $navy;
+	background: -moz-linear-gradient(top, $navy 0%, shade($navy, 30) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, $navy), color-stop(100%, shade($navy, 30)));
+	background: -webkit-linear-gradient(top, $navy 0%, shade($navy, 30) 100%);
+	background: -o-linear-gradient(top, $navy 0%, shade($navy, 30) 100%);
+	background: -ms-linear-gradient(top, $navy 0%, shade($navy, 30) 100%);
+	background: linear-gradient(to bottom, $navy 0%, shade($navy, 30) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$navy', endColorstr='shade($navy, 30)', GradientType=0 );
+
+	.lt-ie9 &	{
+		background: $navy;
+		filter: none;
+	}
+}

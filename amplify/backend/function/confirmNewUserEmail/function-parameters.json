@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "auth": {
+      "hotelsforheroes": ["read", "update"]
+    },
+    "api": {
+      "hotelsforheroes": ["Query", "Mutation"]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "minidev"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.omnibar {
+  filter: drop-shadow(0px 0px 0.1rem #000) drop-shadow(0px 0px 0.05rem #000);
+  padding: 0;
+  display: block;
+  position: relative;
+}
+.omnibar.admin-extras li {
+  width: 20%;
+}
+.omnibar ul.app-tabs {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 1rem;
+  display: flex;
+  border: 3px solid #e6e6e6;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+.omnibar ul.app-tabs li {
+  flex: 1;
+  display: block;
+  margin: 0;
+  border-right: 3px solid #e6e6e6;
+}
+.omnibar ul.app-tabs li:last-child {
+  border-right: none;
+}
+.omnibar ul.app-tabs li.solo {
+  width: 100%;
+}
+.omnibar ul.app-tabs li a {
+  display: block;
+  padding: 1em 0;
+  font-size: 1em;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.omnibar ul.app-tabs li a.final {
+  background-color: #cccccc;
+}
+.omnibar ul.app-tabs li a.final .number {
+  background-color: transparent;
+}
+.omnibar ul.app-tabs li a.final .number.indicator {
+  background-color: orange !important;
+}
+.omnibar ul.app-tabs li a:hover, .omnibar ul.app-tabs li a.current {
+  background-color: #6699cc;
+}
+.omnibar ul.app-tabs li a:hover .number, .omnibar ul.app-tabs li a.current .number {
+  background-color: #1d344d;
+  border-color: #1d344d;
+}
+.omnibar ul.app-tabs li a:hover .number.indicator, .omnibar ul.app-tabs li a.current .number.indicator {
+  background-color: orange !important;
+  border-color: orange !important;
+}
+.omnibar ul.app-tabs li a:hover .number.indicator.complete:hover, .omnibar ul.app-tabs li a.current .number.indicator.complete:hover {
+  color: orange !important;
+}
+.omnibar ul.app-tabs li a.current {
+  cursor: default;
+}
+.omnibar ul.app-tabs li a.current:hover {
+  cursor: default;
+}
+.omnibar ul.app-tabs li a.complete .number, .omnibar ul.app-tabs li a.complete .number:hover, .omnibar ul.app-tabs li a.current.complete .number, .omnibar ul.app-tabs li a.current.complete .number:hover {
+  background-color: #07a672;
+  color: #07a672;
+  border-color: #07a672;
+  position: relative;
+}
+.omnibar ul.app-tabs li a.complete .number:before, .omnibar ul.app-tabs li a.complete .number:hover:before, .omnibar ul.app-tabs li a.current.complete .number:before, .omnibar ul.app-tabs li a.current.complete .number:hover:before {
+  content: "✓";
+  display: block;
+  position: absolute;
+  z-index: 10001;
+  top: 0;
+  left: -0.05em;
+  height: 1.75em;
+  width: 1.75em;
+  line-height: 1.75em;
+  color: #fff;
+}
+.omnibar .step {
+  display: none;
+}
+.omnibar .number {
+  background-color: transparent;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2em;
+  height: 1.75em;
+  width: 1.75em;
+  border-radius: 1em;
+  line-height: 1.75em;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #F4C182;
+}
+.omnibar .number.ring {
+  height: 2em;
+  width: 2em;
+  border: 0.25em solid orange;
+}
+.omnibar .number.indicator {
+  background-color: orange !important;
+  border-color: orange !important;
+  color: #262626;
+}
+.omnibar .number.indicator.complete:hover {
+  color: orange !important;
+}
+.omnibar.group .number {
+  line-height: 1.6em;
+}
+.omnibar .badge {
+  position: relative;
+  top: -0.1em;
+  margin-right: 1em;
+  display: inline-block;
+  text-align: center;
+  background-color: #6699cc;
+  color: #fff;
+  font-size: 0.3em;
+  font-weight: bold;
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+}
+.omnibar .badge.pending {
+  background-color: orange;
+}
+.omnibar .badge.approved {
+  background-color: #07a672;
+}
+.omnibar.read-only ul.app-tabs {
+  border-color: #8c8c8c;
+}
+.omnibar.read-only ul.app-tabs li {
+  border-color: #8c8c8c;
+}
+.omnibar.read-only a.current {
+  background-color: #8c8c8c;
+}
+.omnibar.read-only a.current .number {
+  background-color: #404040;
+  border-color: #404040;
+}
+.omnibar.read-only .number {
+  border-color: gray;
+  color: #bfbfbf;
+}
+.omnibar.read-only .step {
+  color: #cccccc;
+}
+.omnibar.group {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.omnibar.group * {
+  box-sizing: border-box;
+}
+.omnibar.group .group-contents {
+  flex: 0 0 calc(100% - 4rem);
+}
+.omnibar.group ul.app-tabs {
+  margin: 0;
+  border-radius: 0;
+}
+.omnibar.group .prev, .omnibar.group .next {
+  flex: 0 0 2rem;
+  text-align: center;
+  border: 3px solid #f2f2f2;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+.omnibar.group .prev:hover, .omnibar.group .next:hover {
+  background-color: #6699cc;
+}
+.omnibar.group .prev img, .omnibar.group .next img {
+  width: 40%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0px 0px 0.1rem rgba(0, 0, 0, 0.75));
+}
+.omnibar.group .prev {
+  border-right: none;
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+.omnibar.group .next {
+  border-left: none;
+  border-radius: 0 0.6rem 0.6rem 0;
+}
+.omnibar.group.read-only .prev, .omnibar.group.read-only .next {
+  border-color: #8c8c8c;
+}
+@media screen and (min-width: 45rem) {
+  .omnibar.group .number, .omnibar.group .step {
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .omnibar.group .group-contents {
+    flex: 0 0 calc(100% - 6rem);
+  }
+  .omnibar.group .prev, .omnibar.group .next {
+    flex: 0 0 3rem;
+  }
+  .omnibar.group .number, .omnibar.group .step {
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .omnibar.group .prev a {
+    text-align: left;
+  }
+  .omnibar.group .prev a img {
+    margin-left: 0;
+  }
+  .omnibar.group .next a {
+    text-align: right;
+  }
+  .omnibar.group .next a img {
+    margin-right: 0;
+  }
+  .omnibar.group .number, .omnibar.group .step {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 35rem) {
+  .omnibar ul.app-tabs {
+    margin: 0 0 2rem;
+  }
+  .omnibar ul li a {
+    padding: 1em;
+  }
+  .omnibar .number {
+    margin-right: 0.25em;
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .omnibar ul.app-tabs {
+    border-radius: 1rem;
+  }
+  .omnibar ul.app-tabs li a {
+    text-align: left;
+    font-size: 1em;
+    padding: 1em;
+  }
+  .omnibar .step, .omnibar .number {
+    display: inline-block;
+    font-size: 0.8em;
+  }
+  .omnibar a.current .step, .omnibar a:hover .step {
+    color: #262626;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .omnibar .step, .omnibar .number {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .omnibar ul.app-tabs li a {
+    font-size: 1.2em;
+    padding: 1.5em 1em;
+  }
+  .omnibar .number, .omnibar .step {
+    font-size: 1em;
+  }
+}

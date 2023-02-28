@@ -1,0 +1,150 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.table-controls {
+  padding: 1rem;
+  text-align: right;
+}
+.table-controls a.show-table-controls {
+  display: inline-block;
+  position: relative;
+  top: -0.25em;
+  margin-left: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #595959;
+  font-weight: bold;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 0 0.75em;
+  text-shadow: none;
+  border-radius: 0.6em;
+  transition: background-color 0.2s ease;
+}
+.table-controls a.show-table-controls:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+}
+
+.table-controls-panel {
+  color: #f2f2f2;
+  text-align: left;
+}
+.table-controls-panel h3 {
+  color: #f2f2f2;
+}
+.table-controls-panel button {
+  margin-right: 0;
+}
+.table-controls-panel button.delete {
+  background-color: #990000;
+}
+.table-controls-panel button.delete:hover {
+  background-color: #7a0000;
+}
+.table-controls-panel .input-combo:last-child {
+  margin-bottom: 0;
+}
+.table-controls-panel .input-combo button {
+  margin-right: 0;
+}
+.table-controls-panel .input-combo button.delete {
+  background-color: #990000;
+}
+.table-controls-panel .input-combo button.delete:hover {
+  background-color: #7a0000;
+}
+.table-controls-panel label {
+  font-weight: bold;
+}
+.table-controls-panel .selectbox {
+  background-color: #a6a6a6;
+}
+.table-controls-panel .batch-select {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.4em;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+.table-controls-panel label.unread-toggle {
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #f2f2f2;
+  display: block;
+  transition: background-color 0.2s ease;
+}
+.table-controls-panel label.unread-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.table-controls-panel label.unread-toggle.unread {
+  background-color: gray;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.2) 100%);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.table-controls-panel label.unread-toggle input {
+  margin-right: 0.5rem;
+}
+.table-controls-panel button {
+  font-size: 0.75em;
+  margin-bottom: 0.75rem;
+}
+@media screen and (min-width: 35rem) {
+  .table-controls-panel > *:last-child {
+    margin-right: 0;
+  }
+  .table-controls-panel .input-combo {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .table-controls-panel .input-combo.liaison {
+    min-width: 50%;
+  }
+  .table-controls-panel .input-combo.admin {
+    min-width: 33%;
+  }
+  .table-controls-panel .input-combo.group-note {
+    min-width: 33%;
+  }
+  .table-controls-panel .buttons {
+    text-align: right;
+  }
+  .table-controls-panel .buttons button {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    width: auto;
+  }
+  .table-controls-panel .buttons button.delete {
+    float: left;
+  }
+  .table-controls-panel .buttons button:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 45rem) {
+  .table-controls-panel .read-unread {
+    margin-right: 1rem;
+  }
+  .table-controls-panel label.unread-toggle {
+    margin-bottom: 0;
+  }
+  .table-controls-panel .batch-select {
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+    width: auto;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .table-controls-panel .input-combo.liaison, .table-controls-panel .input-combo.admin {
+    min-width: 25%;
+  }
+  .table-controls-panel .buttons button {
+    font-size: 1em !important;
+  }
+}

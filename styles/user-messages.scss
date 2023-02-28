@@ -1,0 +1,50 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.user-messages.app-pane {
+	margin-bottom: 0;
+	@media #{$small} {
+		margin-bottom: 2rem;
+	}
+}
+
+.user-message {
+	
+	padding: 1em;
+	background-color: $overlay;
+	border-radius: .4em;
+	margin-bottom: 1rem;
+	border-left: .6rem solid $blue;
+	&.success {
+		border-color: $green;
+	}
+	&.alert {
+		border-color: $yellow;
+	}
+	&.saved {
+		border-color: $purple;
+	}
+
+	h4 {
+		margin-bottom: 0;
+		font-size: 1em;
+	}
+
+	p {
+		font-size: 1em;
+		margin: 0 0 .5em;
+		&:last-child { margin: 0; }
+	}
+
+	strong.field {
+		display: inline-block;
+		line-height: 1.5em;
+		background-color: $purple;
+		color: #fff;
+		padding: 0 .75em;
+		border-radius: .75em;
+		margin-right: .25em;
+	}
+
+}

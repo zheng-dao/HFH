@@ -1,0 +1,203 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.group-controls {
+
+	display: flex;
+	align-items: stretch;
+	color: $gray10;
+	margin: 1rem -1rem;
+
+	button {
+		margin: 0 !important;
+		text-indent: 500%;
+		overflow: hidden;
+		line-height: 1rem;
+		flex: 1;
+		position: relative;
+		z-index: 1;
+		@include emboss;
+		&:before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			height: 2em;
+			width: 2em;
+			background-position: 50% 50%;
+			background-size: auto 80%;
+			background-repeat: no-repeat;
+			z-index: 9;
+		}
+		&.prev {
+			border-radius: 1rem 0 0 1rem;
+			&:before { 
+				content: url(../public/img/prev.svg);
+			}
+		}
+		&.next {
+			border-radius: 0 1rem 1rem 0;
+			&:before { 
+				content: url(../public/img/next.svg);
+			}
+		}
+		&:hover {
+			background-color: $navy;
+		}
+	}
+
+	.viewer {
+		flex: 25;
+		background-color: transparent;
+		padding: .5rem;
+	}
+
+	.applications {
+		@include cleanlist;
+		margin: 0;
+		position: relative;
+		text-align: center;
+		display: flex;
+		border-radius: .5rem;
+		background-color: rgba(0,0,0,.65);
+		li {
+			flex: 1;
+			color: rgba(255,255,255,.5);
+			margin: 0;
+			padding: 0;
+			line-height: 2rem;
+			&.previous, &.next {
+				display: none;
+			}
+			&.current {
+				color: $gray05;
+			}
+		}
+	}
+
+}
+
+@media #{$small} {
+
+	.group-controls {
+
+		filter: drop-shadow(0px 0px .1rem #000);
+		border-radius: .6rem;
+		margin: .25rem 0 1.5rem;
+
+		button {
+			margin: 0 !important;
+			text-indent: 500%;
+			overflow: hidden;
+			line-height: 1rem;
+			flex: 1;
+			@include emboss;
+			&:before {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				height: 2em;
+				width: 2em;
+				background-position: 50% 50%;
+				background-size: auto 80%;
+				background-repeat: no-repeat;
+			}
+			&.prev {
+				border-radius: 1rem 0 0 1rem;
+				&:before { 
+					content: url(../public/img/prev.svg);
+				}
+			}
+			&.next {
+				border-radius: 0 1rem 1rem 0;
+				&:before { 
+					content: url(../public/img/next.svg);
+				}
+			}
+			&:hover {
+				background-color: shade($blue, 20%);
+			}
+		}
+
+		.viewer {
+			flex: 10;
+			background-color: $blue;
+			padding: .5rem;
+			@include emboss;
+		}
+
+		.applications {
+			@include cleanlist;
+			margin: 0;
+			position: relative;
+			text-align: center;
+			display: flex;
+			border-radius: .5rem;
+			background-color: rgba(0,0,0,.65);
+			li {
+				flex: 1;
+				color: rgba(255,255,255,.5);
+				margin: 0;
+				padding: 0;
+				line-height: 2rem;
+				&.previous, &.next {
+					display: none;
+				}
+				&.current {
+					color: $gray05;
+				}
+			}
+		}
+
+	}
+
+}
+
+@media #{$med}	{
+
+	.group-controls {
+		margin: 0;
+	}
+
+}
+
+@media #{$large}	{
+
+	.group-controls {
+		.applications {
+			padding: 0 1rem;
+			li {
+				&.previous, &.next {
+					display: block;
+				}
+				&.previous {
+					text-align: left;
+				}
+				&.next {
+					text-align: right;
+				}
+			}
+		}
+	}
+
+}
+
+@media #{$xxlarge} {
+
+	.group-controls {
+		margin: 0 0 2rem;
+	}
+
+}
+
+@media #{$xxxlarge} {
+
+	.group-controls {
+
+
+
+	}
+
+}

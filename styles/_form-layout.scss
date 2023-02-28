@@ -1,0 +1,524 @@
+// Base Components
+
+.input-combo { // Container for label + associated input
+	display: block;
+	*:last-child {
+		margin-bottom: 0;
+	}
+	margin-bottom: 1rem;
+	@media #{$small} {
+		margin-bottom: 1.5rem;
+	}
+
+	&.error {
+		margin-bottom: 0;
+	}
+}
+
+// Common Groups
+
+.name-block {
+
+	display: flex;
+	flex-wrap: wrap;
+
+	.first-name {
+		flex: 8;
+		margin-right: 1rem;
+	}
+
+	.mi {
+		flex: 2;
+	}
+
+	.last-name {
+		flex: 0 0 100%;
+	}
+
+	@media #{$small} {
+
+		.first-name {
+			flex: 4;
+			margin-right: 1rem;
+		}
+
+		.mi {
+			flex: 1;
+			margin-right: 1rem;
+		}
+
+		.last-name {
+			flex: 4;
+		}
+
+	}
+
+}
+
+.tel-block {
+
+	display: flex;
+
+	.telephone {
+		flex: 0 0 calc(70% - .5rem) !important;
+		margin-right: .5rem !important;
+	}
+
+	.extension {
+		flex: 0 0 30% !important;
+		margin-right: 0;
+	}
+
+	.blur {
+		filter: blur(0.25rem);
+	}
+
+}
+
+.street-address-block {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		.input-combo {
+			&.street-address {
+				flex: 0 0 100%;
+				input:first-of-type {
+					margin-bottom: 1rem;
+				}
+				input:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+			&.city, &.state {
+				flex: 0 0 calc(40% - 1rem);
+				margin-right: 1rem;
+			}
+			&.zip {
+				flex: 0 0 20%;
+				margin-right: 0;
+			}
+		}
+
+	}
+
+}
+
+.contact-details {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		.job-title {
+			flex: 0 0 calc(100%);
+		} 
+
+		.email {
+			flex: 0 0 calc(50% - .5rem);
+			margin-right: 1rem;
+		}
+
+		.tel-block {
+			flex: 0 0 calc(50% - .5rem);
+		}
+
+		.time-zone {
+			flex: 0 0 calc(30% - .5rem);
+			margin-right: .5rem;
+		}
+
+		.daylightsaving {
+			flex: 0 0 70%;
+			margin-top: 1.4em;
+		}
+
+	}
+
+}
+
+.relationship-info {
+
+	@media #{$large} {
+
+		display: flex;
+
+		.relationship {
+			flex: 65%;
+			margin-right: 1rem;
+			margin-bottom: 0;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.age {
+			flex: calc(35% - 1rem);
+		}
+
+	}
+
+}
+
+.user-affiliation, .stay-dates {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		&.requested {
+			margin-bottom: 1rem;
+		}
+
+		.input-combo {
+			flex: 0 0 calc(50% - .5rem);
+			margin-right: 1rem;
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+			&.add-new-active {
+				flex: 0 0 100%;
+				margin-right: 0;
+			}
+		}
+
+		.detail-block & {
+			&:last-child {
+				.input-combo {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	}
+
+	@media #{$med} {
+
+		&.requested {
+			margin-bottom: 0;
+		}
+
+	}
+
+	@media #{$xlarge} {
+
+		&.requested {
+			margin-bottom:1rem;
+		}
+		
+	}
+
+}
+
+.credit-card-details {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: row wrap;
+
+		.input-combo {
+			flex: 0 0 calc(65% - .5rem);
+			margin-bottom: 0;
+			margin-right: 1rem;
+			&:last-child {
+				margin-right: 0;
+				flex: 0 0 calc(35% - .5rem);
+			}
+		}
+
+	}
+
+	@media #{$xlarge} {}
+
+}
+
+.payment-details {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		.input-combo {
+			flex: 0 0 calc(50% - .5rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&:first-child {
+				flex: 0 0 100%;
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+			&:nth-child(3) {
+				margin-right: 0;
+			}
+		}
+
+		.credit-card-used {
+			flex: 0 0 100%;
+		}
+
+	}
+
+}
+
+.add-new-hotel-brand {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		.input-combo {
+			flex: 0 0 calc(50% - .5rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&.hotel-brand_hotel-chain {
+				margin-right: 0;
+			}
+			&.hotel-brand-logo, &.hotel-brand-logo-upload {
+				flex: 0 0 100%;
+				margin-right: 0;
+			}
+		}
+
+	}
+
+}
+
+.add-new-hotel-property {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		.input-combo {
+			flex: 0 0 calc(50% - .5rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&.hotel-property_hotel-brand {
+				margin-right: 0;
+			}
+			&.hotel-property-name {
+				flex: 0 0 100%;
+				margin-right: 0;
+			}
+			&.hotel-property-contact-position {
+				margin-right: 0;
+			}
+		}
+
+		.detail-block {
+			flex: 0 0 100%;
+		}
+
+		.street-address-block {
+			flex: 0 0 100%;
+			margin-right: 0;
+		}
+
+		.tel-block {
+			margin-right: 0;
+			flex: 0 0 calc(50% - .5rem);
+		}
+
+		.hotel-property-blacklist {
+			flex: 0 0 100%;
+		}
+
+	}
+
+}
+
+.add-new-medicalcenter {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		h4 {
+			flex: 0 0 100%;
+		}
+
+		.input-combo {
+			flex: 0 0 calc(50% - .6666rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&.medicalcenter-name {
+				flex: 0 0 100%;
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+			&.medicalcenter-state {
+				margin-right: 0;
+			}
+		}
+
+		.street-address-block {
+			flex: 0 0 100%;
+			margin-right: 0;
+		}
+
+		&.inner-pane {
+			.input-combo {
+				&.medcenter-city {
+					margin-bottom: 0;
+				}
+				&.medcenter-state {
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	}
+
+}
+
+.add-new-fisherhouse {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		.input-combo {
+			flex: 0 0 calc(50% - .6666rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&.fisherhouse-name {
+				flex: 0 0 100%;
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+			&.fisherhouse-medcenter {
+				margin-right: 0;
+			}
+		}
+
+		.street-address-block {
+			flex: 0 0 100%;
+			margin-right: 0;
+		}
+
+		&.inner-pane {
+			.input-combo {
+				&.fisherhouse-city {
+					margin-bottom: 0;
+				}
+				&.fisherhouse-state {
+					margin-right: 0;
+				}
+			}
+		}
+
+	}
+
+}
+
+.add-new-organization {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		h4 {
+			flex: 0 0 100%;
+		}
+
+		.input-combo {
+			flex: 0 0 calc(50% - .6666rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&.organization-name, &.display-name {
+				flex: 0 0 100%;
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+			&.organization-city {
+				// margin-bottom: 0;
+			}
+			&.organization-state {
+				margin-right: 0;
+				margin-bottom: 0;
+			}
+		}
+
+		.stay-controls {
+			flex: 0 0 100%;
+		}
+
+	}
+
+}
+
+.add-new-base {
+
+	@media #{$small} {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		h4 {
+			flex: 0 0 100%;
+		}
+
+		.input-combo {
+			flex: 0 0 calc(50% - .6666rem);
+			margin-right: 1rem;
+			margin-bottom: 1rem;
+			&.base-name, &.display-name {
+				flex: 0 0 100%;
+				margin-right: 0;
+				margin-bottom: 1rem;
+			}
+			&.base-branch {
+				margin-bottom: 0;
+			}
+			&.base-city {
+				// margin-bottom: 0;
+			}
+			&.base-state {
+				margin-right: 0;
+				margin-bottom: 0;
+			}
+		}
+
+		.stay-controls {
+			flex: 0 0 100%;
+		}
+
+		&.inner-pane {
+			.input-combo {
+				flex: 0 0 calc(50% - .5rem);
+				margin-right: 1rem;
+				margin-bottom: 1rem;
+				&.base-name, &.display-name {
+					flex: 0 0 100%;
+					margin-right: 0;
+					margin-bottom: 1rem;
+				}
+				&.base-branch {
+					margin-bottom: 0;
+				}
+				&.base-city {
+					margin-bottom: 0;
+				}
+				&.base-state {
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	}
+
+}
+

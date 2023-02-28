@@ -1,0 +1,690 @@
+{
+  "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn", "Name"],
+          "category": "function",
+          "resourceName": "AdminQueries5cfc6a1b"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "Utils": {
+      "dependsOn": [
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "getIpAddress"
+        },
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["LiaisonsGroupRole"],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        },
+        {
+          "attributes": ["AdministratorsGroupRole"],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "getCurrentTimestamp"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "getCountry"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyNewAnnouncement"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "getLiaisons"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "changeLiaisonEmail"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "listAdmins"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "changeAdminEmail"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "emailApplicationFiles"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyOwnerAccountApproval"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyNewApplicationRequested"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyApplicationCompleted"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyApplicationNote"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyApplicationException"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyApplicationApproved"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyApplicationReturned"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyApplicationDeclined"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "confirmNewUserEmail"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "notifyAdminsNewAccount"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "downloadPdf"
+        },
+        {
+          "attributes": ["Name", "Arn"],
+          "category": "function",
+          "resourceName": "exportCsvTrigger"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "hotelsforheroes": {
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 30,
+                "description": "api key description"
+              },
+              "authenticationType": "API_KEY"
+            },
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authhotelsforheroes"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "hotelsforheroes": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": ["Arn", "Name"],
+          "category": "function",
+          "resourceName": "hotelsforheroesCustomMessage",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "loginMechanisms": [],
+        "mfaConfiguration": "OFF",
+        "mfaTypes": ["SMS"],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": ["EMAIL", "MIDDLE_NAME", "GIVEN_NAME", "FAMILY_NAME"]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "hotelsforheroes",
+          "attributes": ["UserPoolId", "AppClientIDWeb", "AppClientID", "IdentityPoolId"]
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "custom": {
+    "announcementEmailSESTemplate": {
+      "providerPlugin": "awscloudformation",
+      "service": "customCDK"
+    },
+    "exportCsvQueue": {
+      "dependsOn": [
+        {
+          "attributes": ["Name", "Arn", "Region", "LambdaExecutionRole"],
+          "category": "function",
+          "resourceName": "exportCsvTrigger"
+        },
+        {
+          "attributes": ["Name", "Arn", "Region", "LambdaExecutionRole"],
+          "category": "function",
+          "resourceName": "exportCsvWorker"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "customCDK"
+    }
+  },
+  "function": {
+    "AdminQueries5cfc6a1b": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "changeAdminEmail": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "changeLiaisonEmail": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "cleanupOldUsers": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "cognitoCleanupTrigger": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "confirmNewUserEmail": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "deactiveExpiredProfiles": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "downloadPdf": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesgeneratePdf"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "emailApplicationFiles": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "exportCsvTrigger": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "exportCsvWorker": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroessendMailMessage"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getCountry": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getCurrentTimestamp": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getIpAddress": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getLiaisons": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "hotelsforheroesCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "hotelsforheroesd502aea1": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "hotelsforheroesgeneratePdf": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "hotelsforheroesmakeAuthenticatedGraphqlRequest": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "hotelsforheroessendMailMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "liaisonCheckoutWarning": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "listAdmins": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyAdminsNewAccount": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        },
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationAction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationApproved": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationCompleted": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationDeclined": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationException": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationNote": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyApplicationReturned": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyNewAnnouncement": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyNewApplicationRequested": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "notifyOwnerAccountApproval": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": ["GraphQLAPIIdOutput", "GraphQLAPIEndpointOutput", "GraphQLAPIKeyOutput"],
+          "category": "api",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["Arn"],
+          "category": "function",
+          "resourceName": "hotelsforheroesmakeAuthenticatedGraphqlRequest"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "storage": {
+    "HFHFiles": {
+      "dependsOn": [
+        {
+          "attributes": ["UserPoolId"],
+          "category": "auth",
+          "resourceName": "hotelsforheroes"
+        },
+        {
+          "attributes": ["AdministratorsGroupRole"],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

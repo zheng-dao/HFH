@@ -1,0 +1,34 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.selectbox.hotel-filters {
+  padding: 0.8em;
+}
+.selectbox.hotel-filters select {
+  margin-bottom: 1rem;
+}
+.selectbox.hotel-filters select:last-child {
+  margin-bottom: 0;
+}
+
+.hotel-selector input:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 55rem) {
+  .selectbox.hotel-filters {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0.5em 0.8em;
+  }
+  .selectbox.hotel-filters .select-state, .selectbox.hotel-filters .select-city {
+    flex: 0 0 calc(50% - 0.5rem);
+    margin-bottom: 1rem;
+  }
+  .selectbox.hotel-filters .select-state {
+    margin-right: 1rem;
+  }
+  .selectbox.hotel-filters .select-hotel-chain, .selectbox.hotel-filters .select-hotel-brand {
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+}

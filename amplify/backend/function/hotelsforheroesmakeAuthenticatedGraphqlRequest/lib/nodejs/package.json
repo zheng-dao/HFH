@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "makeRequest.js",
+  "dependencies": {
+    "aws-sdk": "^2.1153.0",
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {}
+}

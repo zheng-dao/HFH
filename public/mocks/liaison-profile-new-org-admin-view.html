@@ -1,0 +1,301 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="//use.typekit.net/yta3jvz.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- object-specific stylesheets -->
+  <link rel="stylesheet" href="./css/featured-slides.css">
+  <link rel="stylesheet" href="./css/intro-banner.css">
+  <link rel="stylesheet" href="./css/full-bleed-banner.css">
+  <link rel="stylesheet" href="./css/reading-block.css">
+  <link rel="stylesheet" href="./css/app-pane.css">
+  <link rel="stylesheet" href="./css/AppControls.module.css">
+  <link rel="stylesheet" href="./css/DetailBlock.module.css">
+  <link rel="stylesheet" href="./css/stay-controls.css">
+  <link rel="stylesheet" href="./css/Omnibar.module.css">
+  <link rel="stylesheet" href="./css/breadcrumbs.css">
+  <link rel="stylesheet" href="./css/section-nav.css">
+  <link rel="stylesheet" href="./css/small-feature.css">
+  <link rel="stylesheet" href="./css/video-block.css">
+  <link rel="stylesheet" href="./css/ContentHeader.module.css">
+  <link rel="stylesheet" href="./css/announcement.css">
+  <link rel="stylesheet" href="./css/utility-banner.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="./css/carousel.css">
+
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <div class="page-container">
+
+    <header class="main-header full-bleed logged-in">
+
+      <div class="flag">&nbsp;</div>
+
+      <div class="container">
+
+        <h1>Hotels for Heroes</h1>
+
+        <div class="logo-nav">
+
+          <a class="hotels-logo" href="index.html" title="">
+
+            <img src="../img/hfh_logo.svg" alt="Hotels for Heroes Logo" />
+
+          </a><!-- end .hotels-logo -->
+
+        </div><!-- end .logo-nav -->
+
+        <nav class="main-nav" role="navigation">
+
+          <ul class="site-menu">
+            <li><a href="#" title="">Home<span class="pending badge">20</span></a></li>
+            <li><a href="#" title="">App<span class="abbrv">lication</span>s</a></li>
+            <li><a class="current" href="#" title="">Users<span class="pending badge">20</span></a></li>
+            <li><a href="#" title="">Reconcile</a></li>
+            <li><a href="#" title="">System</a></li>
+            <li><a href="#" title="">Log Out</a></li>
+          </ul>
+
+        </nav>
+
+      </div><!-- end .container -->
+
+    </header><!-- end .main-header -->
+
+    <div class="intro-block">
+
+    </div><!-- end .intro-block -->
+
+    <section class="main-content">
+
+      <div class="container">
+
+        <header class="content-header">
+            <h1>Liaison Profile</h1>
+        </header>
+
+        <div class="content-columns">
+
+          <div class="sidebar">
+
+            <div class="app-pane">
+
+              <h3>User Settings</h3>
+
+              <form id="#" action="#" role="form">
+
+                <label for="user-role">Role</label>
+                <div class="selectbox">
+                  <select id="user-role">
+                    <option>Admin</option>
+                    <option>Liaison</option>
+                  </select>
+                </div>
+
+                <label>Account Expiration Date</label>
+                <input type="date" />
+
+                <p><a href="#" title="">Delete Account</a></p>
+
+              </form>
+
+            </div><!-- end .app-pane -->
+
+            <div class="user-messages">
+
+            </div><!-- end .user-messages -->
+
+          </div><!-- end .sidebar -->
+
+          <div class="main-column">
+
+            <section class="primary app-pane">
+
+              <form id="user-profile" action="#">
+
+                <h3 class="user-profile">Personal Info <span class="app-status status-pending">Pending</span></h3>
+
+                <div class="name-block">
+
+                    <div class="input-combo first-name">
+
+                        <label>First Name</label>
+                        <input type="text" />
+
+                    </div>
+
+                    <div class="input-combo mi">
+
+                        <label>MI</label>
+                        <input type="text" />
+
+                    </div>
+
+                    <div class="input-combo last-name">
+
+                      <label>Last Name</label>
+                      <input type="text" />
+
+                    </div>
+
+                </div><!-- end .name-combo -->
+
+                <div class="contact-details">
+
+                  <div class="input-combo job-title">
+
+                    <label>Job Title</label>
+                    <input type="text" />
+
+                  </div>
+
+                  <div class="input-combo email">
+
+                      <label>Email</label>
+                      <input type="email" />
+
+                  </div>
+
+                  <div class="tel-block">
+
+                    <div class="input-combo telephone">
+
+                        <label>Telephone</label>
+                        <input type="tel" />
+
+                    </div>
+
+                    <div class="input-combo extension">
+
+                        <label>Ext</label>
+                        <input type="tel" />
+
+                    </div>
+
+                  </div><!-- end .tel-block -->
+
+                  <div class="input-combo time-zone">
+
+                    <label>Time Zone</label>
+                    <div class="selectbox">
+                        <select>
+                            <option>Select&hellip;</option>
+                        </select>
+                    </div>
+
+                  </div>
+
+                  <fieldset class="checkboxes single daylightsaving">
+                    <label for="user_daylightsaving"><input type="checkbox" value="1" name="user[daylightsaving]" id="user_daylightsaving"> My region does not observe daylight savings time. </label>
+                  </fieldset>
+
+                </div><!-- end .contact-details -->
+
+                <h3>Affiliation</h3>
+
+                  <div class="add-new-organization inner-pane">
+
+                    <h4>New Organization Submitted</h4>
+
+                    <div class="input-combo organization-name">
+
+                      <label>Organization Name</label>
+                      <input type="text" name="" value="Value Editable by Admin" />
+
+                    </div>
+
+                    <div class="input-combo display-name">
+
+                      <label>Display Name</label>
+                      <input type="text" name="" value="" />
+
+                    </div>
+
+                    <div class="input-combo organization-city">
+
+                      <label>City</label>
+                      <input type="text" name="" value="Value Editable by Admin" />
+
+                    </div>
+
+                    <div class="input-combo organization-state">
+
+                      <label>State</label>
+                      <span class="selectbox">
+                          <select>
+                              <option>Select&hellip;</option>
+                          </select>
+                      </span>
+
+                    </div>
+
+                    <div class="stay-controls">
+                      <button class="delete">Delete</button>
+                      <button class="approve">Approve</button>
+                    </div>
+
+                  </div><!-- end .add-new -->
+
+                <h3>Recieve Email Notifications?</h3>
+
+                <fieldset class="radios">
+                    <label><input type="radio" checked /> Yes</label>
+                    <label><input type="radio" /> No</label>
+                </fieldset>
+
+              </form><!-- end #user-profile -->
+
+            </section><!-- end .app-pane -->
+
+            <div class="app-controls">
+
+                <input class="save" type="submit" value="Save" />
+                <input class="approve" type="submit" value="Approve" />
+
+            </div><!-- end app-controls -->
+
+          </div><!-- end .main-column -->
+
+        </div><!-- end .content-columns -->
+
+      </div><!-- end .container -->
+
+    </section><!-- end .main-content -->
+
+    <footer class="main-footer">
+
+    </footer><!-- end .main-footer -->
+
+  </div><!-- end .page-container -->
+
+
+  <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="../js/plugins.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="../js/main-min.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

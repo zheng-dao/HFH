@@ -1,0 +1,245 @@
+.main-header {
+
+	.logo-nav {
+		padding: 0;
+	}
+
+	a.hotels-logo, a.hm-logo {
+
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 1rem;
+		filter: drop-shadow(0px 0px .2rem #000) drop-shadow(0px 0px .4rem #000);
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	.fh-logo {
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 0 1rem;
+
+		a {
+			display: block;
+			flex: 0 0 15%;
+			margin-right: 1rem;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		p {
+			flex: 0 0 calc(75% - 2rem);
+			color: #fff;
+			font-size: .8em;
+		}
+
+	}
+
+	&.logged-in {
+
+		.logo-nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1rem;
+		}
+
+		a.hotels-logo, a.hm-logo {
+			flex: 0 0 80%;
+			padding: 0;
+		}
+
+		span.toggle {
+			position: static;
+			margin: 0;
+			padding: 0;
+			flex: 0 0 20%;
+			text-align: right;
+			img {
+				width: 40%;
+				height: auto;
+				margin: 12.5% 0 0 auto;
+			}
+		}
+
+	}
+
+	.site-menu.open {
+		margin-bottom: 1.5rem;
+	}
+
+}
+
+@media #{$tiny} {
+
+	.main-header {
+
+		a.hotels-logo, a.hm-logo {
+			img {
+				width: 100%;
+			}
+		}
+
+		.fh-logo {
+			a {
+				flex: 0 0 15%;
+			}
+			p {
+				flex: 0 0 60%;
+				font-size: .9em;
+			}
+		}
+
+		&.logged-in {
+
+			a.hotels-logo, a.hm-logo {
+
+				img {
+					width: 100%;
+				}
+
+			}
+
+			span.toggle {
+				img {
+					margin-top: 15%;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+@media #{$small} {
+
+	.main-header {
+
+		a.hotels-logo, a.hm-logo {
+		}
+
+		.fh-logo {
+			justify-content: center;
+			padding: 0 0 1rem;
+			a {
+				flex: 0 0 12%;
+			}
+			p {
+				flex: 0 0 60%;
+				font-size: 1em;
+			}
+		}
+
+		&.logged-in {
+
+			.logo-nav {
+				padding: 1rem 0;
+			}
+
+			a.hotels-logo, a.hm-logo {
+				flex: 0 0 87.5%;
+				img {
+					width: 80%;
+				}
+			}
+
+			span.toggle {
+				flex: 0 0 12.5%;
+				img {
+					margin-top: 25%;
+					width: 50%;
+				}
+			}
+
+		}
+
+	}
+
+}
+
+@media #{$med} {
+
+	.main-header, .main-header.logged-in {
+
+		.container { height: 11rem; }
+		display: block;
+
+		.logo-nav {
+			position: relative;
+			top: .75rem;
+			padding: 0;
+		}
+
+		a.hotels-logo, a.hm-logo {
+			flex: 0 0 40%;
+			padding-left: 0;
+			max-width: 40%;
+		}
+
+		.fh-logo {
+			height: 4rem;
+			padding: 0;
+			width: 40%;
+			float: right;
+			position: relative;
+			top: 2rem;
+			justify-content: flex-end;
+			a {
+				flex: 0 0 20%;
+			}
+			p {
+				margin: 0;
+				font-size: .8em;
+				text-shadow: 0 1px 1px #000;
+			}
+		}
+
+		.main-nav .site-menu li {
+			margin-left: 0;
+			top: .75rem;
+		}
+
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.main-header, .main-header.logged-in {
+
+		.container {
+			height: 12rem;
+		}
+
+		a.hotels-logo, a.hm-logo {
+			flex: 0 0 35%;
+			img {
+				width: 100%;
+			}
+		}
+
+	}
+
+}
+
+@media #{$xxlarge} {
+
+	.main-header, .main-header.logged-in {
+
+		a.hotels-logo, a.hm-logo {
+			flex: 0 0 30%;
+		}
+
+	}
+
+}

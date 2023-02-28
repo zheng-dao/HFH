@@ -1,0 +1,1254 @@
+<!doctype html>
+  <html class="no-js" lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="//use.typekit.net/yta3jvz.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- object-specific stylesheets -->
+    <link rel="stylesheet" href="./css/featured-slides.css">
+    <link rel="stylesheet" href="./css/intro-banner.css">
+    <link rel="stylesheet" href="./css/full-bleed-banner.css">
+    <link rel="stylesheet" href="./css/reading-block.css">
+    <link rel="stylesheet" href="./css/announcements.css">
+    <link rel="stylesheet" href="./css/app-pane.css">
+    <link rel="stylesheet" href="./css/AppControls.module.css">
+    <link rel="stylesheet" href="./css/admin-table.css">
+    <link rel="stylesheet" href="./css/table-controls-panel.css">
+    <link rel="stylesheet" href="./css/row-controls-panel.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/adv-search.css">
+    <link rel="stylesheet" href="./css/list-header.css">
+    <link rel="stylesheet" href="./css/dialog.css">
+
+  </head>
+
+  <body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <div id="dialog" class="dialog hidden">
+
+      <div class="dialog-box">
+
+        <button class="close">Close</button>
+
+        <div class="dialog-content scrollable">
+
+          <form>
+
+            <h2>Select Fields to Export</h2>
+
+            <div class="presets">
+
+              <h4>Select:</h4>
+
+              <button class="select-all">All</button>
+              <button class="select-none">None</button>
+              <button>Default</button>
+
+            </div>
+
+            <div class="custom-export">
+
+              <h3>Sub Heading</h3>
+
+              <fieldset class="checkboxes">
+
+                <label for="input-6fd1b251d4df4e64237b87b9debfc118" class=""><input type="checkbox" id="input-6fd1b251d4df4e64237b87b9debfc118" value="stay|id"> Stay ID </label><label for="input-8c1616d3b7bf4241ee7c9099febb7674" class=""><input type="checkbox" id="input-8c1616d3b7bf4241ee7c9099febb7674" value="stay|status"> Status </label><label for="input-997f31252e4a588a104d95a6069bcbba" class=""><input type="checkbox" id="input-997f31252e4a588a104d95a6069bcbba" value="stay|requested_check_in"> Requested Check In </label><label for="input-e1db91e9b91f367370e229f7500c45c3" class=""><input type="checkbox" id="input-e1db91e9b91f367370e229f7500c45c3" value="stay|requested_check_out"> Requested Check Out </label><label for="input-9745e33ba8761159d6889ffaa9c35be9" class=""><input type="checkbox" id="input-9745e33ba8761159d6889ffaa9c35be9" value="stay|narrative"> Stay Narrative </label><label for="input-00552db10bf745238c6cdcb93171494d" class=""><input type="checkbox" id="input-00552db10bf745238c6cdcb93171494d" value="stay|special_requests"> Special Requests </label><label for="input-75fd38c36521e805fd7d60ca1d4a9e9c" class=""><input type="checkbox" id="input-75fd38c36521e805fd7d60ca1d4a9e9c" value="stay|reservation_number"> Reservation Number </label><label for="input-351a2cce2bb7eda4adf86dd8e3751d17" class=""><input type="checkbox" id="input-351a2cce2bb7eda4adf86dd8e3751d17" value="stay|actual_check_in"> Actual Check In </label><label for="input-c5091174888297aee9a77889976bbdb4" class=""><input type="checkbox" id="input-c5091174888297aee9a77889976bbdb4" value="stay|actual_check_out"> Actual Check Out </label><label for="input-12b11b48bb92d06d6456088ca454c8f6" class=""><input type="checkbox" id="input-12b11b48bb92d06d6456088ca454c8f6" value="stay|change_reason"> Dates Change Reason </label><label for="input-7cdd7c2d512bf8226be6f19e942eed25" class=""><input type="checkbox" id="input-7cdd7c2d512bf8226be6f19e942eed25" value="stay|room_type"> Room Type </label><label for="input-fd96bd46e29b0c13cd5410033cb102d8" class=""><input type="checkbox" id="input-fd96bd46e29b0c13cd5410033cb102d8" value="stay|room_description"> Room Description </label>
+
+              </fieldset>
+
+              <h3>Sub Heading</h3>
+
+              <fieldset class="checkboxes">
+
+                <label for="input-3c3e1a8f063232ba5bebd41b9568af29" class=""><input type="checkbox" id="input-3c3e1a8f063232ba5bebd41b9568af29" value="stay|payment_type"> Payment Type </label><label for="input-552f53d44c05743bf082bf0d35980c76" class=""><input type="checkbox" id="input-552f53d44c05743bf082bf0d35980c76" value="stay|comparable_cost"> Comparable Cost </label><label for="input-89f89cc292911dd2bfc304cbdfb5984c" class=""><input type="checkbox" id="input-89f89cc292911dd2bfc304cbdfb5984c" value="stay|total_charge"> Total Charge </label><label for="input-4576106278863f579067c9d263ed7bcc" class=""><input type="checkbox" id="input-4576106278863f579067c9d263ed7bcc" value="stay|certificate_number"> Certificate Number </label><label for="input-b5dbaf548ffedc645e665d8c4ee7a592" class=""><input type="checkbox" id="input-b5dbaf548ffedc645e665d8c4ee7a592" value="stay|points_used"> Points Used </label><label for="input-559bb53507f3dfa90173e494c6f39706" class=""><input type="checkbox" id="input-559bb53507f3dfa90173e494c6f39706" value="stay|charge_reconcile"> Charge Reconcile </label><label for="input-476418e583fe36dcb874571e2f070fb7" class=""><input type="checkbox" id="input-476418e583fe36dcb874571e2f070fb7" value="stay|hotel_reconcile"> Hotel Reconcile </label><label for="input-75f6d8f133dac315e2a3e899750e0378" class=""><input type="checkbox" id="input-75f6d8f133dac315e2a3e899750e0378" value="stay|created_at"> Created At </label><label for="input-0a66f92f85ca3be52c1c9a388e8d3179" class=""><input type="checkbox" id="input-0a66f92f85ca3be52c1c9a388e8d3179" value="stay|updated_at"> Updated At </label><label for="input-30acd8b5210f1f5d504c114df8d3cb28" class=""><input type="checkbox" id="input-30acd8b5210f1f5d504c114df8d3cb28" value="stay|hotel_chain"> Hotel Chain </label><label for="input-41f38c9c26a9602be9ed3ca402f39621" class=""><input type="checkbox" id="input-41f38c9c26a9602be9ed3ca402f39621" value="stay|hotel_brand"> Hotel Brand </label><label for="input-497502a885ad2cb56aa558cc35e4cfd1" class=""><input type="checkbox" id="input-497502a885ad2cb56aa558cc35e4cfd1" value="stay|hotel_property"> Hotel Property </label><label for="input-a49580e37f6b62f3b8851b386c45d428" class=""><input type="checkbox" id="input-a49580e37f6b62f3b8851b386c45d428" value="stay|hotel_city"> Hotel City </label><label for="input-75b6616f4cde5bdb186cff74f522f693" class=""><input type="checkbox" id="input-75b6616f4cde5bdb186cff74f522f693" value="stay|hotel_state"> Hotel State </label><label for="input-ad7b8c97cf039f4105eddfd8cf838d46" class=""><input type="checkbox" id="input-ad7b8c97cf039f4105eddfd8cf838d46" value="stay|hotel_contact_name"> Hotel Contact Name </label><label for="input-bbc12887c6749f864bdfc0cabedbc37e" class=""><input type="checkbox" id="input-bbc12887c6749f864bdfc0cabedbc37e" value="stay|hotel_contact_email"> Hotel Contact Email </label><label for="input-f0fade75fee2d88fd6953f491e6d00b7" class=""><input type="checkbox" id="input-f0fade75fee2d88fd6953f491e6d00b7" value="stay|hotel_contact_telephone"> Hotel Contact Telephone </label><label for="input-78e215ac5c81d0eb96e8eb1f8069b115" class=""><input type="checkbox" id="input-78e215ac5c81d0eb96e8eb1f8069b115" value="stay|hotel_contact_extension"> Hotel Contact Extension </label>
+
+              </fieldset>
+
+              <h3>Sub Heading</h3>
+              
+              <fieldset class="checkboxes">
+
+                <label for="input-b6da2bac149e8e6c7ab18407a79d4ee4" class=""><input type="checkbox" id="input-b6da2bac149e8e6c7ab18407a79d4ee4" value="application|id"> Application ID </label><label for="input-b95f63d4e83a126dd0ed3eaf32dcffe7" class=""><input type="checkbox" id="input-b95f63d4e83a126dd0ed3eaf32dcffe7" value="application|status"> Application Status </label><label for="input-3aa19c8cdc5953eeb7ac054a75bc890b" class=""><input type="checkbox" id="input-3aa19c8cdc5953eeb7ac054a75bc890b" value="application|liaison_name"> Liaison Name </label><label for="input-a37ca3edd0165ae4f0a5ea6316ab20bb" class=""><input type="checkbox" id="input-a37ca3edd0165ae4f0a5ea6316ab20bb" value="application|liaison_affiliation"> Liaison Affiliation </label><label for="input-dfa72367cb9c17aea6c93cff2e1506a2" class=""><input type="checkbox" id="input-dfa72367cb9c17aea6c93cff2e1506a2" value="application|base_va_name" checked=""> Base or VA Name </label><label for="input-eefc8d33dd9f3e6fa284d393411c7206" class=""><input type="checkbox" id="input-eefc8d33dd9f3e6fa284d393411c7206" value="application|number_of_guests"> Number of Guests </label><label for="input-30ff50b9064dc744aea4f078ca6945d6" class=""><input type="checkbox" id="input-30ff50b9064dc744aea4f078ca6945d6" value="application|guest_names"> Guest Name(s) </label><label for="input-64513d8bf7f7720a54faeba7d79a1791" class=""><input type="checkbox" id="input-64513d8bf7f7720a54faeba7d79a1791" value="application|guest_relationships"> Guest Relationship(s) </label><label for="input-60fed9ed732f1a4fc14da8c9e43d5f73" class=""><input type="checkbox" id="input-60fed9ed732f1a4fc14da8c9e43d5f73" value="application|guest_email"> Guest Email </label><label for="input-a7bbb6c158d89aa56d584e16e1bb0846" class=""><input type="checkbox" id="input-a7bbb6c158d89aa56d584e16e1bb0846" value="application|guest_telephone"> Guest Telephone </label><label for="input-ff6dfdb6a3e7fdb5772c5348ec2249fe" class=""><input type="checkbox" id="input-ff6dfdb6a3e7fdb5772c5348ec2249fe" value="application|guest_extension"> Guest Extension </label><label for="input-94bacf39151ded220f89320cdb7b094f" class=""><input type="checkbox" id="input-94bacf39151ded220f89320cdb7b094f" value="application|exception_narrative"> Exception Narrative </label><label for="input-8888c0b6aca8f04db186e65fcefa7e7e" class=""><input type="checkbox" id="input-8888c0b6aca8f04db186e65fcefa7e7e" value="application|created_at"> Created At </label><label for="input-9e0296031708f9cc6ba503266fe653dd" class=""><input type="checkbox" id="input-9e0296031708f9cc6ba503266fe653dd" value="application|updated_at"> Updated At </label><label for="input-827bd549ae0620f488acfd9d624ccf36" class=""><input type="checkbox" id="input-827bd549ae0620f488acfd9d624ccf36" value="application|referrer_name"> Referrer Name </label><label for="input-dd1cad0dd4a4f8d1fdc2a44835226a03" class=""><input type="checkbox" id="input-dd1cad0dd4a4f8d1fdc2a44835226a03" value="application|referrer_email"> Referrer Email </label><label for="input-387529d9354a5036d6d2293d2491025d" class=""><input type="checkbox" id="input-387529d9354a5036d6d2293d2491025d" value="application|referrer_telephone"> Referrer Telephone </label><label for="input-f4730d991ec8ccd5d55814b4f1954a29" class=""><input type="checkbox" id="input-f4730d991ec8ccd5d55814b4f1954a29" value="application|referrer_extension"> Referrer Extension </label><label for="input-b64d31d7b5fec705a335ef3d3688a75c" class=""><input type="checkbox" id="input-b64d31d7b5fec705a335ef3d3688a75c" value="application|referrer_title"> Referrer Title </label><label for="input-92e367c72afacca568176916c69708e6" class=""><input type="checkbox" id="input-92e367c72afacca568176916c69708e6" value="application|referrer_affiliation"> Referrer Affiliation </label><label for="input-b2d1415d1d97ba5fb24561ff31ac4758" class=""><input type="checkbox" id="input-b2d1415d1d97ba5fb24561ff31ac4758" value="application|sm_name"> Service Member Name </label><label for="input-0aba40452fbf3decc00f1bb7f13cf7f3" class=""><input type="checkbox" id="input-0aba40452fbf3decc00f1bb7f13cf7f3" value="application|sm_email"> Service Member Email </label><label for="input-cbad61a3b7bdf2e77d2fe6b4e55c6f9f" class=""><input type="checkbox" id="input-cbad61a3b7bdf2e77d2fe6b4e55c6f9f" value="application|sm_telephone"> Service Member Telephone </label><label for="input-2e4fbfd24dd16869b515682d27fae04d" class=""><input type="checkbox" id="input-2e4fbfd24dd16869b515682d27fae04d" value="application|sm_extension"> Service Member Extension </label><label for="input-4d7bfe959c313b42d7aace0797252d05" class=""><input type="checkbox" id="input-4d7bfe959c313b42d7aace0797252d05" value="application|sm_branch_of_service"> Branch of Service </label><label for="input-b519b01edd528ba167072248117333d9" class=""><input type="checkbox" id="input-b519b01edd528ba167072248117333d9" value="application|sm_status"> Current Status </label><label for="input-e2dfc862cdebab9695bca481c02194cc" class=""><input type="checkbox" id="input-e2dfc862cdebab9695bca481c02194cc" value="application|sm_on_travel_orders"> Is the family on military Travel orders or eligible for lodging reimbursement? </label><label for="input-ef2762c3a6b6175a14489adccbe2fa14" class=""><input type="checkbox" id="input-ef2762c3a6b6175a14489adccbe2fa14" value="application|sm_other_patient"> Is the Patient Someone Other than the Service Member? </label><label for="input-084e6c7cc54239ab9215a07b48c24c93" class=""><input type="checkbox" id="input-084e6c7cc54239ab9215a07b48c24c93" value="application|patient_name"> Patient Name </label><label for="input-83c161de673d9c053337766e3433603e" class=""><input type="checkbox" id="input-83c161de673d9c053337766e3433603e" value="application|patient_relationship"> Patient Relationship </label><label for="input-fcd2892f8778150f852b64fd0fe433ca" class=""><input type="checkbox" id="input-fcd2892f8778150f852b64fd0fe433ca" value="application|sm_treatment_facility"> Treatment Facility </label>
+              
+              </fieldset>
+
+            </div><!-- end .custom-export -->
+
+            <div class="dialog-controls">
+
+              <button class="cancel">Cancel</button>
+              <button class="ok">Export CSV</button>
+
+            </div>
+
+          </form>
+
+        </div><!-- end .dialog-content -->
+
+      </div><!-- end .dialog-box -->
+
+    </div><!-- end .dialog -->
+
+    <!-- add blur class to .page-container below when dialog is visible -->
+
+    <div class="page-container admin">
+
+      <header class="main-header full-bleed logged-in">
+
+        <div class="flag">&nbsp;</div>
+
+        <div class="container">
+
+          <h1>Hotels for Heroes</h1>
+
+          <div class="logo-nav">
+
+            <a class="hotels-logo" href="index.html" title="">
+
+              <img src="../img/hfh_logo.svg" alt="Hotels for Heroes Logo" />
+
+            </a><!-- end .hotels-logo -->
+
+          </div><!-- end .logo-nav -->
+
+          <nav class="main-nav" role="navigation">
+
+            <ul class="site-menu">
+              <li><a href="#" title="">Home<span class="pending badge">20</span></a></li>
+              <li><a class="current" href="#" title="">App<span class="abbrv">lication</span>s</a></li>
+              <li><a href="#" title="">Users<span class="pending badge">20</span></a></li>
+              <li><a href="#" title="">Reconcile</a></li>
+              <li><a href="#" title="">System</a></li>
+              <li><a href="#" title="">Log Out</a></li>
+            </ul>
+
+          </nav>
+
+        </div><!-- end .container -->
+
+      </header><!-- end .main-header -->
+
+      <div class="intro-block">
+
+      </div><!-- end .intro-block -->
+
+      <section class="main-content">
+
+        <div class="container">
+
+          <div class="announcements">
+
+            <h2>Announcements <button class="update">Edit</button></h2>
+
+            <ul>
+              <li>Main System Announcement Lorem ipsum dolor sit amet.</li>
+              <li class="secondary">Secondary System Announcement Lorem ipsum dolor sit amet.</li>
+            </ul>
+
+          </div><!-- end .annoucements -->
+
+          <header class="list-header" id="adv-anchor">
+
+            <h1>Applications <div class="new"><button class="add">New Application</button> <button class="add">New Group</button></div></h1>
+
+            <form id="main-search" class="main-search">
+
+              <fieldset class="radios">
+                <h4>Show:</h4>
+                <label><input id="application_radio" name="state" type="radio" /> Applications</label>
+                <label><input id="stays_radio" name="state" type="radio" checked /> Individual Stays</label>
+                <label><input id="groups_radio" name="groups_radio" type="radio" /> Groups</label>
+              </fieldset>
+
+              <div class="text-search">
+                <input type="search" id="main-search-input" class="no-label" />
+                <input type="submit" id="main-search-submit" value="Search" />
+              </div><!-- end .text-search -->
+
+              <h3>Filters</h3>
+
+              <div class="filters">
+
+                  <ul>
+                      <li><label class="status-requested"><input type="checkbox" checked /> Requested</label></li>
+                      <li><label class="status-exception"><input type="checkbox" checked /> Exception</label></li>
+                      <li><label class="status-approved"><input type="checkbox" /> Approved</label></li>
+                      <li><label class="status-complete"><input type="checkbox" /> Completed</label></li>
+                      <li><label class="status-reviewed"><input type="checkbox" /> Reviewed</label></li>
+                      <li class="adv-search"><label class="status-draft"><input type="checkbox" /> Draft</label></li>
+                      <li class="adv-search"><label class="status-closed"><input type="checkbox" /> Closed</label></li>
+                      <li class="adv-search"><label class="status-returned"><input type="checkbox" /> Returned</label></li>
+                      <li class="adv-search"><label class="status-declined"><input type="checkbox" /> Declined</label></li>
+                  </ul>
+
+              </div><!-- end filters -->
+
+              <a class="advanced-link" href="#adv-anchor" title="More Filter Options">Advanced Search</a>
+
+              <div class="admin advanced-search hidden" id="advanced-search">
+
+                <h3>Advanced Filters</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="fisher-house input-combo">
+
+                    <label>Fisher House</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="medical-center input-combo">
+
+                    <label>Medical Center</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="base input-combo">
+
+                    <label>Base</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="organization input-combo">
+
+                    <label>Organization</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="hotel-chain input-combo">
+
+                    <label>Hotel Chain</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="hotel-brand input-combo">
+
+                    <label>Fisher House</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                </div><!-- end these .advanced-filters -->
+
+                <h3>Filter by Stay Dates</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="date-filter-setting input-combo">
+                    <label for="start-date-input">Date Filter</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Both Check-in and Check-out</option>
+                        <option>Check-in Only</option>
+                        <option>Check-out Only</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="start-date input-combo">
+                    <label for="start-date-input">Start Date</label>
+                    <input type="date" id="start-date-input" />
+                  </div>
+
+                  <div class="end-date input-combo">
+                    <label for="end-date-input">End Date</label>
+                    <input type="date" id="end-date-input" />
+                  </div>
+
+                </div><!-- end these .advanced-filters -->
+
+                <h3>Filter by User Action</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="admin-action input-combo">
+                    <label>Admin Action</label>
+                    <div class="dual selectbox">
+                      <select>
+                        <option>Select Admin&hellip;</option>
+                      </select>
+                      <select>
+                        <option>Select Action&hellip;</option>
+                        <option>Request</option>
+                        <option>Return</option>
+                        <option>Decline</option>
+                        <option>Approve</option>
+                        <option>Complete</option>
+                        <option>Reviewed</option>
+                        <option>Unreviewed</option>
+                        <option>Close</option>
+                        <option>Change Manager</option>
+                        <option>Change Admin</option>
+                        <option>Change Data</option>
+                        <option>Add Note</option>
+                        <option>Regress</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="liaison input-combo">
+                    <label>Liaison Action</label>
+                    <div class="dual selectbox">
+                      <select>
+                        <option>Select Liaison&hellip;</option>
+                      </select>
+                      <select>
+                        <option>Select Action&hellip;</option>
+                        <option>New Application</option>
+                        <option>Request Initial Stay</option>
+                        <option>Request Exception</option>
+                        <option>Request Extended Stay</option>
+                        <option>Complete Initial Stay</option>
+                        <option>Complete Extended Stay</option>
+                        <option>Change Manager</option>
+                        <option>Add Note</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="start-date input-combo">
+                    <label for="start-date-input">Start Date</label>
+                    <input type="date" id="start-date-input" />
+                  </div>
+
+                  <div class="end-date input-combo">
+                    <label for="end-date-input">End Date</label>
+                    <input type="date" id="end-date-input" />
+                  </div>
+
+                </div><!-- end these .advanced-filters -->
+
+                <div class="half-pane">
+
+                  <h3>Filter by Assigned User</h3>
+
+                  <div class="advanced-filters">
+
+                    <div class="admin input-combo">
+                      <label for="admin-input">Admin</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Admin&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="liaison input-combo">
+                      <label for="liaison-input">Liaison</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Liaison&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div><!-- end these .advanced-filters -->
+
+                </div><!-- end this .half-pane -->
+
+                <div class="half-pane">
+
+                  <h3>Filter by Group or Batch</h3>
+
+                  <div class="advanced-filters">
+
+                    <div class="group input-combo">
+                      <label for="admin-input">Group</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Group&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="batch input-combo">
+                      <label for="admin-input">Batch</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Batch&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div><!-- end these .advanced-filters -->
+
+                </div><!-- end this .half-pane -->
+
+                <div class="half-pane">
+
+                  <h3>Limit Text Search</h3>
+
+                  <div class="limit-text-search">
+
+                    <fieldset class="checkboxes">
+                      <label for="limit_text_search_0"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_0" name="limit_text_search_0" type="checkbox" value="0">Referred By</label>
+                      <label for="limit_text_search_1"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_1" name="limit_text_search_1" type="checkbox" value="1">Service Members</label>
+                      <label for="limit_text_search_2"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_2" name="limit_text_search_2" type="checkbox" value="2">Guests</label>
+                      <label for="limit_text_search_3"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_3" name="limit_text_search_3" type="checkbox" value="3">Emails</label>
+                      <label for="limit_text_search_4"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_4" name="limit_text_search_4" type="checkbox" value="4">Confirmation Number</label>
+                    </fieldset>
+
+                  </div><!-- end .limit-text-search -->
+
+                </div><!-- end this .half-pane -->
+
+                <div class="half-pane">
+
+                  <h3>Limit Affiliation Search</h3>
+
+                  <div class="limit-affiliation-search">
+
+                    <fieldset class="checkboxes">
+                      <label for="limit_affiliation_search_0"><input type="checkbox" name="limit_affiliation_search_0" value="0">Liaison Affiliations</label>
+                      <label for="limit_affiliation_search_1"><input type="checkbox" name="limit_affiliation_search_1" value="1">Referrer Affiliations</label>
+                      <label for="limit_affiliation_search_2"><input type="checkbox" name="limit_affiliation_search_2" value="2">Treatment Center</label>
+                      <label for="limit_affiliation_search_3"><input type="checkbox" name="limit_affiliation_search_3" value="3">VA Assigned</label>
+                      <label for="limit_affiliation_search_4"><input type="checkbox" name="limit_affiliation_search_4" value="4">Base Assigned</label>
+                    </fieldset>
+
+                  </div><!-- end .limit-affiliation-search -->
+
+                </div><!-- end this .half-pane -->
+
+              </div><!-- end .admin.advanced-search -->
+
+            </form><!-- end .main-search -->
+
+          </header><!-- end .list-header -->
+
+          <div class="admin-list infinite-scroll">
+
+            <h3 class="disclose">5 results <button>Clear Search</button></h3>
+
+            <table class="admin-inbox-table">
+              <thead>
+                <tr>
+                  <th class="checkin-col"><a class="selected" href="#" title="">Check-in</a></th>
+                  <th class="checkout-col"><a href="#" title="">Check-out</a></th>
+                  <th class="recipient-col"><a href="#" title="">Service Member</a></th>
+                  <th class="hotel-col"><a href="#" title="">Hotel Property</a></th>
+                  <th class="last-action-col"><a href="#" title="">Liaison</a></th>
+                  <th class="admin-col"><a href="#" title="">Admin</a></th>
+                  <th class="status-col"><a href="#" title="">Status</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Hotel Property Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="fixed-list-end">
+
+              <div class="list-end table-controls">
+
+                <div class="admin table-controls-panel">
+
+                  <div class="buttons">
+                    <button class="delete">Delete</button>
+                    <button>Export CSV</button>
+                    <button>Close Stays (#)</button>
+                  </div><!-- end .new-group.input-combo -->
+
+                </div><!-- end .table-control-panel -->
+
+              </div><!-- end .table-controls -->
+
+            </div><!-- end .fixed-list-end -->
+
+          </div><!-- end .admin-table -->
+
+        </div><!-- end .container -->
+
+      </section><!-- end .main-content -->
+
+      <footer class="main-footer">
+
+      </footer><!-- end .main-footer -->
+
+    </div><!-- end .page-container -->
+
+
+    <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+      <script src="../js/plugins.js"></script>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="../js/main-min.js"></script>
+
+      <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+      <script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+      </script>
+      <script src="https://www.google-analytics.com/analytics.js" async></script>
+    </body>
+
+    </html>

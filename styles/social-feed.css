@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.social-feed {
+  padding: 0 1rem;
+  position: relative;
+  text-align: left;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  align-items: stretch;
+}
+.social-feed h2 {
+  color: #fff;
+  flex: none;
+  display: block;
+  width: 100%;
+}
+
+.social-feed-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  margin: 0 1rem 1rem;
+  padding: 0;
+  width: 100%;
+  min-height: calc(100% - 1rem);
+  background-color: rgba(0, 0, 0, 0.25);
+  border-bottom: 0.6em solid #325a85;
+  color: #bfbfbf;
+}
+.social-feed-item:hover {
+  border-bottom: 0.6rem solid #F4C182;
+}
+.social-feed-item .post:before {
+  content: "";
+  background-color: red;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: -2.5em;
+  right: -2.5em;
+  height: 5em;
+  width: 5em;
+  transform: rotate(45deg);
+}
+.social-feed-item .post:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2em;
+  width: 2em;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 60% auto;
+}
+.social-feed-item .post.facebook:before {
+  background-color: #1877f2;
+}
+.social-feed-item .post.facebook:after {
+  background-image: url(../public/img/facebook_logo.svg);
+}
+.social-feed-item .post.twitter:before {
+  background-color: #1da1f2;
+}
+.social-feed-item .post.twitter:after {
+  background-image: url(../public/img/twitter_logo.svg);
+}
+.social-feed-item .post.instagram:before {
+  background-image: linear-gradient(-95deg, #1400c8, #b900b4, #f50000, #fedd56);
+}
+.social-feed-item .post.instagram:after {
+  background-image: url(../public/img/instagram_logo.svg);
+}
+.social-feed-item .post.text-only .social-content:before {
+  content: "";
+  display: block;
+  height: 1.5em;
+  width: 2em;
+  float: right;
+}
+.social-feed-item img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+.social-feed-item .social-content {
+  padding: 1rem;
+}
+.social-feed-item h3 {
+  color: #f2f2f2;
+  margin-bottom: 0;
+}
+.social-feed-item p {
+  color: #d9d9d9;
+  margin: 0;
+  font-size: 1em;
+}
+.social-feed-item span.timestamp {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #6699cc;
+}
+.social-feed-item span.timestamp strong {
+  color: #d9d9d9;
+}
+.social-feed-item span.timestamp strong:before {
+  content: "·";
+  margin-right: 0.3em;
+  color: #bfbfbf;
+}
+.social-feed-item:hover {
+  border-bottom: 0.6rem solid #F4C182;
+  background-color: #fff;
+}
+.social-feed-item:hover h3 {
+  color: #262626;
+}
+.social-feed-item:hover p {
+  color: #595959;
+}
+.social-feed-item:hover span.timestamp strong {
+  color: #333333;
+}
+.classic .social-feed-item {
+  background-color: #fff;
+  border-bottom: 0.6rem solid #F4C182;
+}
+.classic .social-feed-item:hover {
+  border-bottom: 0.6rem solid #6699cc;
+}
+.classic .social-feed-item h3 {
+  color: #262626;
+}
+.classic .social-feed-item p {
+  color: #595959;
+}
+
+@media screen and (min-width: 35rem) {
+  .social-feed {
+    padding: 0 2rem;
+    margin-bottom: 0;
+  }
+  .social-feed h2 {
+    padding: 0;
+  }
+  .sidebar .social-feed {
+    margin: 0 -2rem 1rem;
+  }
+
+  .social-feed-item {
+    margin: 0 0 2rem 1rem;
+    width: calc(50% - 0.5rem);
+    min-height: calc(100% - 2.5rem);
+  }
+}
+@media screen and (min-width: 45rem) {
+  .social-feed {
+    padding: 0 1rem;
+  }
+  .sidebar .social-feed {
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+
+  .social-feed-item {
+    width: calc(33.3333% - 0.6666rem);
+    margin: 0 0 1rem 1rem;
+    min-height: calc(100% - 1.5rem);
+  }
+  .sidebar .social-feed-item {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .social-feed {
+    padding: 0 2rem;
+  }
+  .sidebar .social-feed {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .social-feed-item {
+    width: calc(33.3333% - 1.3333rem);
+    margin: 0 0 2rem 2rem;
+    min-height: calc(100% - 2.5rem);
+  }
+  .sidebar .social-feed-item {
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .social-feed-item {
+    width: calc(16.6666% - 1.6666rem);
+    min-height: calc(100% - 2.5rem);
+  }
+  .sidebar .social-feed-item {
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}

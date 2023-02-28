@@ -1,0 +1,66 @@
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
+.row-controls-panel {
+  color: #f2f2f2;
+  padding: 0.75rem 1rem 1rem;
+}
+.row-controls-panel h3 {
+  color: #f2f2f2;
+}
+.row-controls-panel .input-combo:last-child {
+  margin-bottom: 0;
+}
+.row-controls-panel label {
+  color: #262626;
+  background-color: #b3cce6;
+  font-weight: bold;
+}
+.row-controls-panel .selectbox {
+  background-color: #a6a6a6;
+}
+.row-controls-panel label.unread-toggle {
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #f2f2f2;
+  display: block;
+  transition: background-color 0.2s ease;
+}
+.row-controls-panel label.unread-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.row-controls-panel label.unread-toggle.unread {
+  background-color: #6699cc;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.2) 100%);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.25);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+.row-controls-panel label.unread-toggle input {
+  margin-right: 0.5rem;
+}
+@media screen and (min-width: 35rem) {
+  .row-controls-panel {
+    display: flex;
+    align-items: center;
+  }
+  .row-controls-panel > * {
+    margin-right: 2rem;
+  }
+  .row-controls-panel > *:last-child {
+    margin-right: 0;
+  }
+  .row-controls-panel .input-combo {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  .row-controls-panel .input-combo.liaison {
+    min-width: 50%;
+  }
+}
+@media screen and (min-width: 55rem) {
+  .row-controls-panel .input-combo.liaison {
+    min-width: 25%;
+  }
+}

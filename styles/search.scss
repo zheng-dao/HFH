@@ -1,0 +1,318 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.main-search {
+
+	.text-search {
+		margin-bottom: 0;
+		position: relative;
+		input[type=search].no-label {
+			line-height: 2.5rem;
+			width: 100%;
+			padding: 0 4rem 0 1em;
+			border-radius: .8rem !important;
+		}
+		input[type=submit] {
+			position: absolute;
+			top: 0;
+			right: 0;
+			line-height: 2.5em;
+			border-radius: .6rem;
+			margin: .25rem .25rem 0 0;
+		}
+	}
+
+	label	{
+		display: inline-block;
+		font-family: $sans;
+		text-transform: uppercase;
+		color: #fff;
+		background-color: $navy;
+		border-radius: .5em .5em 0 0;
+		&.required	{
+			&:after {
+				content: "";
+				display: inline-block;
+				background-color: #fff;
+				height: .5em;
+				width: .5em;
+				border-radius: 50%;
+				margin-left: .8em;
+				position: relative;
+				top: -.1em;
+			}
+		}
+		&.check	{
+			display: block;
+			background-color: transparent;
+			color: $gray80;
+			text-transform: none;
+			font-size: 1em;
+			margin-bottom: 1em;
+		}
+	}
+	li label {
+		text-transform: none !important;
+	}
+
+	#{$all-text-inputs}, textarea	{
+		border-radius: 0 .3em .3em .3em;
+		&.nolabel, &.mainsearch	{
+			border-radius: .3em;
+		}
+	}
+
+	.selectbox, .displaybox	{
+		display: block;
+		background-color: $gray15;
+		border-radius: 0 .3em .3em .3em;
+		margin-bottom: 1em;
+		position: relative;
+		select	{
+			margin: 0;
+			position: relative;
+			width: 100%;
+		}
+		label {
+			background-color: transparent;
+			text-transform: none;
+			color: $gray80;
+			font-size: 1em;
+			padding: 0;
+			border-radius: 0;
+			margin-bottom: 0;
+			position: relative;
+			top: -.1em;
+		}
+	}
+	.checkboxes, .radios {
+		padding: 0;
+		background-color: transparent;
+		margin-bottom: .75rem;
+		font-size: 1em;
+		font-weight: normal;
+		width: 100%;
+		display: block;
+		h4 {
+			margin: 0 1rem 0 0;
+			width: auto;
+			@media #{$small} {
+				display: inline-block;
+			}
+		}
+		label {
+			@include cleanlabel;
+			flex: 1;
+			width: auto !important;
+			margin-right: 1rem;
+			padding: 0;
+			color: $gray05;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.search-clear {
+	display: block;
+	float: none;
+	clear: both;
+	top: 0;
+	p { 
+		display: inline-block;
+		margin: 0 1em 1em 0;
+		font-family: $sans;
+		color: $gray80;
+	}
+	button {
+		font-size: .7em;
+		background-color: $gray80;
+		padding: .4em .8em;
+		border-radius: .5em;
+		display: inline-block !important;
+		width: auto !important;
+		position: relative;
+		top: -.2em;
+	}
+	@media #{$tiny} {
+		display: inline-block;
+		float: right;
+		position: relative;
+		top: 1.75em;
+		&.advanced {
+			top: .5em;
+		}
+	}
+}
+
+#main-search, .main-search {
+
+	a.advanced-link {
+		margin-top: 0;
+		color: $gray05;
+		font-size: .8em;
+		display: inline-block;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.filters {
+
+		color: $gray05;
+		margin-bottom: 1rem;
+
+		&.disabled {
+			visibility: hidden;
+		}
+
+		ul {
+			@include cleanlist;
+			margin: 0 !important;
+		}
+
+		li {
+			display: inline-block;
+			font-size: .8em;
+			&.adv-search {
+				display: none;
+			}
+			&.group-break {
+				margin-right: 2rem;
+			}
+		}
+
+		&.advanced-search-open li.adv-search { display: inline-block; }
+
+		select {
+			display: inline;
+			width: auto !important;
+			margin-right: 1em;
+		}
+
+		label {
+			display: inline-block !important;
+			font-size: inherit;
+			font-weight: bold;
+			color: #fff;
+			padding: .2em .7em;
+			line-height: 2em;
+			margin: 0 .5rem .5rem 0;
+			border-radius: .5em;
+			width: auto;
+			transition: background-color, color, 0.2s ease;
+			&.status-incomplete, &.status-draft	{ 
+				background-color: $gray15; 
+				border: .2em solid $gray25; 
+				color: $gray65;
+				padding: 0 .7em;
+			}
+			&.status-pending, &.status-unreconciled { background-color: $orange; color: $gray85; }
+			&.status-returned { background-color: $purple; }
+			&.status-completed, &.status-complete { background-color: $blue; }
+			&.status-expired { background-color: $gray60; color: $gray85; }
+			&.status-requested	{ background-color: $orange; color: $gray85; }
+			&.status-exception	{ background-color: $pink; color: $gray85; }
+			&.status-deleted, &.status-declined	{ background-color: $dark_red; }
+			&.status-approved, &.status-reconciled, &.status-active	{ background-color: $green; }
+			&.status-reviewed { background-color: $dark_green; }
+			&.status-closed { background-color: $gray95; }
+			&.status-blacklisted { background-color: #000; }
+			&.status-unread, &.status-read, &.status-admin, &.status-liaison { background-color: $light_overlay; border: .1em solid $light_blue; color: $gray10; padding: .1em .7em; }
+			&.status-archived, &.status-inactive { background-color: $gray50; }
+			&:hover, &.active	{
+				background-color: $gray75 !important;
+				color: #fff !important;
+				border-color: $gray75; 
+			}
+			input[type=checkbox] {
+				margin-right: .25em;
+			}
+		}
+
+	}
+
+	.filters {
+		label {
+			font-size: 1em;
+		}
+		input[type=checkbox] {
+			top: .2em;
+		}
+		li select {
+			font-size: 1.2em;
+			height: 2em !important;
+			border-radius: .4rem;
+		}
+	}
+
+	@media #{$small} {
+
+		.filters {
+			padding: 1rem 1rem 0;
+			border-radius: .6rem;
+			background-color: $light_overlay;
+			margin-bottom: 0;
+			&.advanced-search-open {
+				margin-bottom: 1rem;
+			}
+			label {
+				margin-bottom: 1rem !important;
+			}
+		}
+
+	}
+
+	@media #{$xlarge} {
+
+		.filters {
+
+			label {
+				font-size: 1.2em;
+			}
+			input[type=checkbox] {
+				top: .1em;
+			}
+
+		}
+
+	}
+
+}
+
+.text-search.multi {
+	padding: .5rem;
+	background-color: $light_overlay;
+	border-radius: .5rem;
+	.input-combo label {
+		background-color: $light_blue;
+		color: $gray85;
+		font-weight: bold;
+	}
+	@media #{$med} {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		.input-combo {
+			flex: 0 0 calc(33.3333% - .3333rem);
+			margin-right: .5rem;
+			margin-bottom: 0;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+	@media #{$large} {
+		padding: .75rem 1rem 1rem;
+		.input-combo {
+			flex: 0 0 calc(33.3333% - .6666rem);
+			margin-right: 1rem;
+			margin-bottom: 0;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+}

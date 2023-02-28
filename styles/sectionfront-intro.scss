@@ -1,0 +1,33 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.sectionfront-intro {
+
+	margin-bottom: 1rem;
+
+	.reading-block {
+		padding-bottom: 1rem;
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.sectionfront-intro {
+
+		margin-bottom: 2rem;
+
+		.reading-block {
+			padding-bottom: 2rem;
+			*:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+	}
+
+}

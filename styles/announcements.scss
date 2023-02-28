@@ -1,0 +1,105 @@
+@import "bourbon";
+@import "_vars.scss";
+@import "_helpers.scss";
+
+.announcements {
+	color: $gray05;
+	z-index: 1;
+	position: relative;
+	background-color: $overlay;
+	padding: 1rem;
+	h2 {
+		color: $gray05;
+		font-size: 1em;
+		font-weight: normal;
+		button {
+			font-size: .7em;
+			margin-left: 1em;
+			display: inline-block;
+			position: relative;
+			top: -.2em;
+			border-radius: 1em;
+			padding: 0 1em;
+			&:active {
+				top: -.1em !important;
+			}
+		}
+	}
+	ul {
+		@include cleanlist;
+		@include clearfix;
+	}
+	li {
+		font-size: 1.2em;
+		font-weight: bold;
+		&.secondary {
+			margin-top: .2em;
+			border-top: 1px solid $gray20;
+			padding-top: .4em;
+			font-size: 1em;
+			font-weight: normal;
+		}
+		label {
+			display: inline-block;
+			clear: left !important;
+			font-family: $sans;
+			font-weight: normal;
+			font-size: .6em;
+			text-transform: uppercase;
+			padding: .3em 1em;
+			color: #fff;
+			background-color: $navy;
+			border-radius: .5em .5em 0 0;
+		}
+	}
+}
+
+@media #{$small} {
+
+	.announcements {
+		border-radius: .6rem;
+	}
+
+}
+
+@media #{$med}	{
+
+	.announcements {
+		padding: 1rem;
+	}
+
+}
+
+@media #{$large}	{
+
+	.announcements {
+		
+	}
+
+}
+
+@media #{$xlarge} {
+
+	.announcements {
+		padding: 2rem;
+	}
+
+}
+
+@media #{$xxlarge} {
+
+	.announcements {
+		
+
+	}
+
+}
+
+@media #{$xxxlarge} {
+
+	.announcements {
+		
+
+	}
+
+}

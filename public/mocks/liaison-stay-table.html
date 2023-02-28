@@ -1,0 +1,319 @@
+<!doctype html>
+  <html class="no-js" lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="//use.typekit.net/yta3jvz.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- object-specific stylesheets -->
+    <link rel="stylesheet" href="./css/featured-slides.css">
+    <link rel="stylesheet" href="./css/intro-banner.css">
+    <link rel="stylesheet" href="./css/full-bleed-banner.css">
+    <link rel="stylesheet" href="./css/reading-block.css">
+    <link rel="stylesheet" href="./css/announcements.css">
+    <link rel="stylesheet" href="./css/app-pane.css">
+    <link rel="stylesheet" href="./css/app-controls.css">
+    <link rel="stylesheet" href="./css/admin-table.css">
+    <link rel="stylesheet" href="./css/table-controls-panel.css">
+    <link rel="stylesheet" href="./css/row-controls-panel.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/adv-search.css">
+    <link rel="stylesheet" href="./css/breadcrumbs.css">
+    <link rel="stylesheet" href="./css/section-nav.css">
+    <link rel="stylesheet" href="./css/small-feature.css">
+    <link rel="stylesheet" href="./css/video-block.css">
+    <link rel="stylesheet" href="./css/list-header.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+
+  </head>
+
+  <body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <div class="page-container">
+
+      <header class="main-header full-bleed logged-in">
+
+        <div class="flag">&nbsp;</div>
+
+        <div class="container">
+
+          <h1>Hotels for Heroes</h1>
+
+          <div class="logo-nav">
+
+            <a class="hotels-logo" href="index.html" title="">
+
+              <img src="../img/hfh_logo.svg" alt="Hotels for Heroes Logo" />
+
+            </a><!-- end .hotels-logo -->
+
+          </div><!-- end .logo-nav -->
+
+          <nav class="main-nav" role="navigation">
+
+            <ul class="site-menu">
+              <li><a class="current" href="#" title="">Home<span class="pending badge">20</span></a></li>
+              <li><a href="#" title="">App<span class="abbrv">lication</span>s</a></li>
+              <li><a href="#" title="">My Profile</a></li>
+              <li><a href="#" title="">Log Out</a></li>
+            </ul>
+
+          </nav>
+
+        </div><!-- end .container -->
+
+      </header><!-- end .main-header -->
+
+      <div class="intro-block">
+
+      </div><!-- end .intro-block -->
+
+      <section class="main-content">
+
+        <div class="container">
+
+          <div class="announcements">
+
+            <h2>Announcements</h2>
+
+            <ul>
+              <li>Main System Announcement Lorem ipsum dolor sit amet.</li>
+              <li class="secondary">Secondary System Announcement Lorem ipsum dolor sit amet.</li>
+            </ul>
+
+          </div><!-- end .annoucements -->
+
+          <header class="list-header" id="adv-anchor">
+
+            <h1>Applications<div class="new"><button class="add">New Application</button> <button class="add" id="new-group">New Group</button></div></h1>
+
+            <form id="main-search" class="main-search">
+
+              <fieldset class="radios">
+                <h4>Show:</h4>
+                <label><input id="application_radio" name="state" type="radio" /> Applications</label>
+                <label><input id="stays_radio" name="state" type="radio" checked /> Individual Stays</label>
+                <label><input id="groups_radio" name="groups_radio" type="radio" /> Groups</label>
+              </fieldset>
+
+              <div class="text-search">
+                <input type="search" id="main-search-input" class="no-label" />
+                <input type="submit" id="main-search-submit" value="Search" />
+              </div><!-- end .text-search -->
+
+              <h3>Filters</h3>
+
+              <div class="filters">
+
+                  <ul>
+                      <li><label class="status-incomplete"><input type="checkbox" checked /> Draft</label></li>
+                      <li><label class="status-requested"><input type="checkbox" checked /> Requested</label></li>
+                      <li><label class="status-exception"><input type="checkbox" checked /> Exception</label></li>
+                      <li><label class="status-returned"><input type="checkbox" checked /> Returned</label></li>
+                      <li><label class="status-approved"><input type="checkbox" checked /> Approved</label></li>
+                      <li><label class="status-complete"><input type="checkbox" /> Completed</label></li>
+                      <li><label class="status-declined"><input type="checkbox" /> Declined</label></li>
+                  </ul>
+
+              </div><!-- end filters -->
+
+              <a class="advanced-link" href="#adv-anchor" title="More Filter Options">Advanced Search</a>
+
+              <div class="liaison advanced-search hidden" id="advanced-search">
+
+                <h3>Filter by dates and users</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="start-date input-combo">
+                    <label for="start-date-input">Start Date</label>
+                    <input type="date" id="start-date-input" />
+                  </div>
+
+                  <div class="end-date input-combo">
+                    <label for="end-date-input">End Date</label>
+                    <input type="date" id="end-date-input" />
+                  </div>
+
+                  <div class="admin input-combo">
+                    <label for="admin-input">Admin</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select Admin&hellip;</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="liaison input-combo">
+                    <label for="liaison-input">Liaison</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select Liaison&hellip;</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div><!-- end .advanced-filters -->
+
+                <h3>Limit Text Search</h3>
+
+                <div class="limit-text-search">
+
+                  <fieldset class="checkboxes">
+                    <label for="limit_text_search_0"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_0" name="limit_text_search_0" type="checkbox" value="0">Referred By</label>
+                    <label for="limit_text_search_1"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_1" name="limit_text_search_1" type="checkbox" value="1">Service Members</label>
+                    <label for="limit_text_search_2"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_2" name="limit_text_search_2" type="checkbox" value="2">Guests</label>
+                    <label for="limit_text_search_3"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_3" name="limit_text_search_3" type="checkbox" value="3">Emails</label>
+                    <label for="limit_text_search_4"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_4" name="limit_text_search_4" type="checkbox" value="4">Confirmation Number</label>
+                  </fieldset>
+
+                </div><!-- end .limit-text-search -->
+
+              </div><!-- end .liaison.advanced-search -->
+
+            </form><!-- end .main-search -->
+
+          </header><!-- end .list-header -->
+
+          <div class="liaison-table">
+
+            <h3 class="disclose">5 Results <button>Clear Search</button></h3>
+
+            <table class="liaison-search-results">
+              <thead>
+                <tr>
+                  <th class="checkin-col"><a class="selected" href="#" title="">Check-in</a></th>
+                  <th class="checkout-col"><a href="#" title="">Check-out</a></th>
+                  <th class="recipient-col"><a href="#" title="">Service Member</a></th>
+                  <th class="admin-col"><a href="#" title="">Managed By</a></th>
+                  <th class="admin-col"><a href="#" title="">Admin</a></th>
+                  <th class="status-col"><a href="#" title="">Status</a></th>
+                  <th class="actions-col">&emsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="button status-draft">Draft</span></td>
+                  <td class="actions"><button class="actions" title="Actions">&hellip;</button></td>
+                </tr>
+                <tr class="row-controls-active" id="unread-target-row">
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="button status-draft">Draft</span></td>
+                  <td class="actions"><button class="actions close" title="Close">&#10006;</button></td>
+                </tr>
+                <tr class="row-controls">
+                  <td colspan="8">
+                    <div class="liaison row-controls-panel">
+
+                      <div class="read-unread input-combo">
+                        <label class="unread-toggle" id="unread-toggle"><input type="checkbox" />Unread</label>
+                      </div><!-- end .read-unread.input-combo -->
+
+                      <div class="liaison input-combo">
+                        <label>Liaison</label>
+                        <div class="selectbox">
+                            <select>
+                                <option>Select&hellip;</option>
+                            </select>
+                        </div>
+                      </div><!-- end .liaison.input-combo -->
+
+                    </div><!-- end .row-controls-panel -->
+                  </td>
+                </tr><!-- end .row-controls -->
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="button status-draft">Draft</span></td>
+                  <td class="actions"><button class="actions" title="Actions">&hellip;</button></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="button status-draft">Draft</span></td>
+                  <td class="actions"><button class="actions" title="Actions">&hellip;</button></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><span class="button status-draft">Draft</span></td>
+                  <td class="actions"><button class="actions" title="Actions">&hellip;</button></td>
+                </tr>
+                <tr class="more">
+                  <td colspan="8"><a class="showmore" href="#" title="Show More">(10 of 260) <strong>Show More</strong></a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="list-end table-controls">
+
+              <div class="liaison table-controls-panel">
+
+                <div class="buttons">
+
+                  <button>Export CSV</button>
+
+                </div><!-- end .buttons -->
+
+              </div><!-- end .table-control-panel -->
+
+            </div><!-- end .table-controls -->
+
+          </div><!-- end .liaison-table -->
+
+        </div><!-- end .container -->
+
+      </section><!-- end .main-content -->
+
+      <footer class="main-footer">
+
+      </footer><!-- end .main-footer -->
+
+    </div><!-- end .page-container -->
+
+
+    <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+      <script src="../js/plugins.js"></script>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="../js/main.js"></script>
+
+      <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+      <script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+      </script>
+      <script src="https://www.google-analytics.com/analytics.js" async></script>
+    </body>
+
+    </html>

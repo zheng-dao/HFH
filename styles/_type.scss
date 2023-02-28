@@ -1,0 +1,45 @@
+body	{
+	font-family: $sans;
+}
+
+h1, h2, h3, h4, h5	{
+	font-family: $sans;
+	&:first-child	{
+		margin-top: 0;
+	}
+}
+
+hr {
+	display: block;
+	border: 0;
+	height: 4px;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 1.5px;
+	margin-bottom: 1.5em;
+	position: relative;
+	.classic & {
+		background-color: $gray10;
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: .4em;
+			width: 1.4em;
+			background-color: $gold;
+		}
+	}
+}
+
+a	{
+	text-decoration: none;
+	transition: color 0.2s ease, background-color 0.2s ease;
+	.content &, .leading &, .related &	{
+		color: $light_blue;
+		&:hover	{
+			color: $navy;
+			text-decoration: underline;
+		}
+	}
+}

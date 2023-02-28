@@ -1,0 +1,137 @@
+@import "_vars.scss";
+
+.full-bleed-banner {
+
+	z-index: 1;
+	position: relative;
+	margin-top: -1.75rem;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 150%;
+		top: -100%;
+		left: -25%;
+		box-shadow: 0 0 20px 20px $navy;
+		z-index: 10;
+	}
+
+	img {
+		width: 100%;
+		max-width: none;
+		position: relative;
+	}
+
+}
+
+@media #{$small} {
+
+	.full-bleed-banner {
+
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		padding: 0;
+		margin-top: -2.5rem;
+
+		&:before {
+			box-shadow: 0 0 30px 30px $navy;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 150%;
+			top: 100%;
+			left: -25%;
+			box-shadow: 0 0 40px 40px $navy;
+		}
+
+	}
+
+}
+
+@media #{$med} {
+
+	.full-bleed-banner {
+		
+		padding: 0;
+		&:after {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 150%;
+			top: 100%;
+			left: -25%;
+			box-shadow: 0 0 60px 60px $navy;
+		}
+
+	}
+
+}
+
+@media #{$large} {
+
+	.full-bleed-banner {
+
+		position: relative;
+		overflow: hidden;
+		z-index: 9;
+		&:after {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 150%;
+			top: 100%;
+			left: -25%;			
+			box-shadow: 0 0 80px 80px $navy;
+		}
+
+		h1 {
+			background-color: $light_blue;
+			color: #fff;
+			padding: 1rem;
+			z-index: 100;
+			margin: 0;
+			line-height: 1em;
+		}
+
+		.toggle {
+			display: none;
+		}
+
+		nav	{
+
+			height: auto;
+			overflow: visible;
+			width: 100%;
+			z-index: 90;
+
+			li {
+				display: inline-block;
+				border-bottom: none;
+				&:first-child {
+					border-top: none;
+				}
+			}
+
+			a {
+				padding: .5em 1em;
+			}
+
+		}
+
+	}
+
+}
+
+@media #{$hd} {
+
+	.full-bleed-banner img {
+		position: relative;
+		top: -2vh;
+	}
+
+}

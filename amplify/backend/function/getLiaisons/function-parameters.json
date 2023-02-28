@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "auth": {
+      "hotelsforheroes": ["read"]
+    }
+  },
+  "lambdaLayers": []
+}

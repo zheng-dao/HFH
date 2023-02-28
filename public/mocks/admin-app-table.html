@@ -1,0 +1,547 @@
+<!doctype html>
+  <html class="no-js" lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="//use.typekit.net/yta3jvz.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- object-specific stylesheets -->
+    <link rel="stylesheet" href="./css/featured-slides.css">
+    <link rel="stylesheet" href="./css/intro-banner.css">
+    <link rel="stylesheet" href="./css/full-bleed-banner.css">
+    <link rel="stylesheet" href="./css/reading-block.css">
+    <link rel="stylesheet" href="./css/announcements.css">
+    <link rel="stylesheet" href="./css/app-pane.css">
+    <link rel="stylesheet" href="./css/AppControls.module.css">
+    <link rel="stylesheet" href="./css/admin-table.css">
+    <link rel="stylesheet" href="./css/table-controls-panel.css">
+    <link rel="stylesheet" href="./css/row-controls-panel.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/adv-search.css">
+    <link rel="stylesheet" href="./css/list-header.css">
+    <link rel="stylesheet" href="./css/dialog.css">
+
+  </head>
+
+  <body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+    <div id="dialog" class="dialog hidden">
+
+      <div class="dialog-box">
+
+        <button class="close">Close</button>
+
+        <div class="dialog-content">
+
+          <form>
+
+            <h2>New Group</h2>
+
+            <label>Group Name</label>
+            <input class="group-name" type="text" />
+
+            <p>Enter the number of blank applications you want to create.</p>
+
+            <input class="number-of-apps no-label" type="text" />
+
+            <div class="dialog-controls">
+
+              <button class="cancel">Cancel</button>
+              <button class="ok">Create Group</button>
+
+            </div>
+
+          </form>
+
+        </div><!-- end .dialog-content -->
+
+      </div><!-- end  .dialog-box -->
+
+    </div><!-- end .dialog -->
+
+    <!-- add blur class to .page-container below when dialog is visible -->
+
+    <div class="page-container admin">
+
+      <header class="main-header full-bleed logged-in">
+
+        <div class="flag">&nbsp;</div>
+
+        <div class="container">
+
+          <h1>Hotels for Heroes</h1>
+
+          <div class="logo-nav">
+
+            <a class="hotels-logo" href="index.html" title="">
+
+              <img src="../img/hfh_logo.svg" alt="Hotels for Heroes Logo" />
+
+            </a><!-- end .hotels-logo -->
+
+          </div><!-- end .logo-nav -->
+
+          <nav class="main-nav" role="navigation">
+
+            <ul class="site-menu">
+              <li><a href="#" title="">Home<span class="pending badge">20</span></a></li>
+              <li><a class="current" href="#" title="">App<span class="abbrv">lication</span>s</a></li>
+              <li><a href="#" title="">Users<span class="pending badge">20</span></a></li>
+              <li><a href="#" title="">Reconcile</a></li>
+              <li><a href="#" title="">System</a></li>
+              <li><a href="#" title="">Log Out</a></li>
+            </ul>
+
+          </nav>
+
+        </div><!-- end .container -->
+
+      </header><!-- end .main-header -->
+
+      <div class="intro-block">
+
+      </div><!-- end .intro-block -->
+
+      <section class="main-content">
+
+        <div class="container">
+
+          <div class="announcements">
+
+            <h2>Announcements <button class="update">Edit</button></h2>
+
+            <ul>
+              <li>Main System Announcement Lorem ipsum dolor sit amet.</li>
+              <li class="secondary">Secondary System Announcement Lorem ipsum dolor sit amet.</li>
+            </ul>
+
+          </div><!-- end .annoucements -->
+
+          <header class="list-header" id="adv-anchor">
+
+            <h1>Applications <div class="new"><button class="add">New Application</button> <button class="add" id="new-group">New Group</button></div></h1>
+
+            <form id="main-search" class="main-search">
+
+              <fieldset class="radios">
+                <h4>Show:</h4>
+                <label><input id="application_radio" name="state" type="radio" checked /> Applications</label>
+                <label><input id="stays_radio" name="state" type="radio" /> Individual Stays</label>
+                <label><input id="groups_radio" name="groups_radio" type="radio" /> Groups</label>
+              </fieldset>
+
+              <div class="text-search multi">
+                <div class="input-combo first-name-search">
+                  <label>First Name</label>
+                  <input type="search" id="first-name-search-input" />
+                </div>
+                <div class="input-combo last-name-search">
+                  <label>Last Name</label>
+                  <input type="search" id="last-name-search-input" />
+                </div>
+                <div class="input-combo confirmation-number-search">
+                  <label>Confirmation Number</label>
+                  <input type="search" id="confirmation-number-search-input" />
+                </div>
+              </div><!-- end .text-search -->
+
+              <h3>Filters</h3>
+
+              <div class="filters">
+
+                  <ul>
+                      <!-- /// NOTE: the following "adv-search" list items should not actually have this class and should not be loaded by default. The class is there to hide them in the mock. I'm not sure how best to handle the separations. Ideally, the group-break class would be applied dynamically if that is not too much trouble. I suppose it could be done with inline styling, as well, but the key here is to apply the 2rem right-margin to the item immediately preceding the grouped filters so that when the line wraps there isn't extra space to the left of the group. Right now, it doesn't look correct until you reveal the advanced search ///-->
+                      <li class="adv-search"><label class="status-draft"><input type="checkbox" /> Draft</label></li>
+                      <li><label class="status-requested"><input type="checkbox" checked /> Requested</label></li>
+                      <li><label class="status-exception"><input type="checkbox" checked /> Exception</label></li>
+                      <li><label class="status-approved"><input type="checkbox" /> Approved</label></li>
+                      <li><label class="status-complete"><input type="checkbox" /> Completed</label></li>
+                      <li><label class="status-reviewed"><input type="checkbox" /> Reviewed</label></li>
+                      <li class="adv-search group-break"><label class="status-closed"><input type="checkbox" /> Closed</label></li>
+                      <li class="adv-search returned-declined group-break">
+                        <label class="status-returned"><input type="checkbox" /> Returned</label>
+                        <label class="status-declined"><input type="checkbox" /> Declined</label>
+                      </li>
+                      <li class="read-unread">
+                        <label class="status-read"><input type="checkbox" /> Read</label>
+                        <label class="status-unread"><input type="checkbox" /> Unread</label>
+                      </li>
+                  </ul>
+
+              </div><!-- end filters -->
+
+              <a class="advanced-link" href="#adv-anchor" title="More Filter Options">Advanced Search</a>
+
+              <div class="admin advanced-search hidden" id="advanced-search">
+
+                <h3>Advanced Filters</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="fisher-house input-combo">
+
+                    <label>Fisher House</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="medical-center input-combo">
+
+                    <label>Medical Center</label>
+                    <div class="selectbox">
+                      <div class="search-select css-b62m3t-container"><span id="react-select-7-live-region" class="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span><div class="search-select__control css-1s2u09g-control"><div class="search-select__value-container css-1d8n9bt"><div class="search-select__placeholder css-14el2xx-placeholder" id="react-select-7-placeholder">Select...</div><div class="search-select__input-container css-ackcql" data-value=""><input class="search-select__input" autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-7-input" spellcheck="false" tabindex="0" type="text" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" aria-controls="react-select-7-listbox" aria-owns="react-select-7-listbox" role="combobox" aria-describedby="react-select-7-placeholder" value="" style="color: inherit; background: 0px center; opacity: 1; width: 100%; grid-area: 1 / 2 / auto / auto; font: inherit; min-width: 2px; border: 0px; margin: 0px; outline: 0px; padding: 0px;"></div></div><div class="search-select__indicators css-1wy0on6"><span class="search-select__indicator-separator css-1okebmr-indicatorSeparator"></span><div class="search-select__indicator search-select__dropdown-indicator css-tlfecz-indicatorContainer" aria-hidden="true"><svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg></div></div></div></div>
+                    </div>
+
+                  </div>
+
+                  <div class="base input-combo">
+
+                    <label>Base</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="organization input-combo">
+
+                    <label>Organization</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="hotel-chain input-combo">
+
+                    <label>Hotel Chain</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="hotel-brand input-combo">
+
+                    <label>Hotel Brand</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Select&hellip;</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                </div><!-- end these .advanced-filters -->
+
+                <h3>Filter by Stay Dates</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="date-filter-setting input-combo">
+                    <label for="start-date-input">Date Filter</label>
+                    <div class="selectbox">
+                      <select>
+                        <option>Both Check-in and Check-out</option>
+                        <option>Check-in Only</option>
+                        <option>Check-out Only</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="start-date input-combo">
+                    <label for="start-date-input">Start Date</label>
+                    <input type="date" id="start-date-input" />
+                  </div>
+
+                  <div class="end-date input-combo">
+                    <label for="end-date-input">End Date</label>
+                    <input type="date" id="end-date-input" />
+                  </div>
+
+                </div><!-- end these .advanced-filters -->
+
+                <h3>Filter by User Action</h3>
+
+                <div class="advanced-filters">
+
+                  <div class="admin-action input-combo">
+                    <label>Admin Action</label>
+                    <div class="dual selectbox">
+                      <select>
+                        <option>Select Admin&hellip;</option>
+                      </select>
+                      <select>
+                        <option>Select Action&hellip;</option>
+                        <option>Request</option>
+                        <option>Return</option>
+                        <option>Decline</option>
+                        <option>Approve</option>
+                        <option>Complete</option>
+                        <option>Reviewed</option>
+                        <option>Unreviewed</option>
+                        <option>Close</option>
+                        <option>Change Manager</option>
+                        <option>Change Admin</option>
+                        <option>Change Data</option>
+                        <option>Add Note</option>
+                        <option>Regress</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="liaison input-combo">
+                    <label>Liaison Action</label>
+                    <div class="dual selectbox">
+                      <select>
+                        <option>Select Liaison&hellip;</option>
+                      </select>
+                      <select>
+                        <option>Select Action&hellip;</option>
+                        <option>New Application</option>
+                        <option>Request Initial Stay</option>
+                        <option>Request Exception</option>
+                        <option>Request Extended Stay</option>
+                        <option>Complete Initial Stay</option>
+                        <option>Complete Extended Stay</option>
+                        <option>Change Manager</option>
+                        <option>Add Note</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="start-date input-combo">
+                    <label for="start-date-input">Start Date</label>
+                    <input type="date" id="start-date-input" />
+                  </div>
+
+                  <div class="end-date input-combo">
+                    <label for="end-date-input">End Date</label>
+                    <input type="date" id="end-date-input" />
+                  </div>
+
+                </div><!-- end these .advanced-filters -->
+
+                <div class="half-pane">
+
+                  <h3>Filter by Assigned User</h3>
+
+                  <div class="advanced-filters">
+
+                    <div class="admin input-combo">
+                      <label for="admin-input">Admin</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Admin&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="liaison input-combo">
+                      <label for="liaison-input">Liaison</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Liaison&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div><!-- end these .advanced-filters -->
+
+                </div><!-- end this .half-pane -->
+
+                <div class="half-pane">
+
+                  <h3>Filter by Group or Batch</h3>
+
+                  <div class="advanced-filters">
+
+                    <div class="group input-combo">
+                      <label for="admin-input">Group</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Group&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="batch input-combo">
+                      <label for="admin-input">Batch</label>
+                      <div class="selectbox">
+                        <select>
+                          <option>Select Batch&hellip;</option>
+                        </select>
+                      </div>
+                    </div>
+
+                  </div><!-- end these .advanced-filters -->
+
+                </div><!-- end this .half-pane -->
+
+                <div class="half-pane">
+
+                  <h3>Limit Text Search</h3>
+
+                  <div class="limit-text-search">
+
+                    <fieldset class="checkboxes">
+                      <label for="limit_text_search_0"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_0" name="limit_text_search_0" type="checkbox" value="0">Referred By</label>
+                      <label for="limit_text_search_1"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_1" name="limit_text_search_1" type="checkbox" value="1">Service Members</label>
+                      <label for="limit_text_search_2"><input class="advance_limit_text_search_field advance_fields" id="limit_text_search_2" name="limit_text_search_2" type="checkbox" value="2">Guests</label>
+                    </fieldset>
+
+                  </div><!-- end .limit-text-search -->
+
+                </div><!-- end this .half-pane -->
+
+                <div class="half-pane">
+
+                  <h3>Limit Affiliation Search</h3>
+
+                  <div class="limit-affiliation-search">
+
+                    <fieldset class="checkboxes">
+                      <label for="limit_affiliation_search_0"><input type="checkbox" name="limit_affiliation_search_0" value="0">Liaison Affiliations</label>
+                      <label for="limit_affiliation_search_1"><input type="checkbox" name="limit_affiliation_search_1" value="1">Referrer Affiliations</label>
+                      <label for="limit_affiliation_search_2"><input type="checkbox" name="limit_affiliation_search_2" value="2">Treatment Center</label>
+                      <label for="limit_affiliation_search_3"><input type="checkbox" name="limit_affiliation_search_3" value="3">VA Assigned</label>
+                      <label for="limit_affiliation_search_4"><input type="checkbox" name="limit_affiliation_search_4" value="4">Base Assigned</label>
+                    </fieldset>
+
+                  </div><!-- end .limit-affiliation-search -->
+
+                </div><!-- end this .half-pane -->
+
+              </div><!-- end .admin.advanced-search -->
+
+            </form><!-- end .main-search -->
+
+          </header><!-- end .list-header -->
+
+          <div class="admin-list">
+
+            <h3 class="disclose">5 results <button>Clear Search</button></h3>
+
+            <table class="admin-inbox-table">
+              <thead>
+                <tr>
+                  <th class="checkin-col"><a class="selected" href="#" title="">Check-in</a></th>
+                  <th class="recipient-col"><a href="#" title="">Service Member</a></th>
+                  <th class="liaison-affiliation-col"><a href="#" title="">Liaison Affiliation</a></th>
+                  <th class="last-action-col"><a href="#" title="">Liaison</a></th>
+                  <th class="admin-col"><a href="#" title="">Admin</a></th>
+                  <th class="group-col"><a href="#" title="">Group</a></th>
+                  <th class="status-col"><a href="#" title="">Status</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Organization Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Group Name</a></td>
+                  <td><span class="status status-draft">Draft</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Organization Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Group Name</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Organization Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Group Name</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Organization Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Group Name</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+                <tr>
+                  <td><a href="#" title="">MM/DD/YYYY</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Organization Name</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">First M Last</a></td>
+                  <td><a href="#" title="">Group Name</a></td>
+                  <td><span class="status status-requested">Requested</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="list-end table-controls">
+
+              <div class="admin table-controls-panel">
+
+                <div class="buttons">
+                  <button>Browse</button>
+                  <button>Bulk Edit</button>
+                </div><!-- end .new-group.input-combo -->
+
+              </div><!-- end .table-control-panel -->
+
+            </div><!-- end .table-controls -->
+
+          </div><!-- end .admin-table -->
+
+        </div><!-- end .container -->
+
+      </section><!-- end .main-content -->
+
+      <footer class="main-footer">
+
+      </footer><!-- end .main-footer -->
+
+    </div><!-- end .page-container -->
+
+
+    <script src="../js/vendor/modernizr-3.8.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+      <script src="../js/plugins.js"></script>
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="../js/main-min.js"></script>
+
+      <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+      <script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+      </script>
+      <script src="https://www.google-analytics.com/analytics.js" async></script>
+    </body>
+
+    </html>

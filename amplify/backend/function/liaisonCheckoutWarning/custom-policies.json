@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["ses:SendEmail"],
+    "Resource": ["arn:aws:ses:us-east-1:744473394486:identity/*"]
+  }
+]
